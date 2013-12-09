@@ -1,0 +1,340 @@
+{
+  "menus": [
+    {
+      "title": "业务管理",
+      "type": "menus",
+      "desc": "业务管理",
+      "icon": "",
+      "menus": [
+        {
+          "title": "分类信息管理",
+          "type": "menus",
+          "desc": "分类信息管理",
+          "icon": "",
+          "menus": [
+          	{
+              "id":"info_add",
+              "title": "发布信息",
+              "type": "item",
+              "url": "/categoryInfo/add",
+              "desc": "发布信息",
+              "icon": ""
+            },
+          	{
+              "id":"info_list",
+              "title": "信息查询",
+              "type": "item",
+              "url": "/categoryInfo/list",
+              "desc": "信息查询",
+              "icon": ""
+            },
+            {
+              "id":"info_approve",
+              "title": "信息审批",
+              "type": "item",
+              "url": "/categoryInfo/approval/list",
+              "desc": "信息审批",
+              "icon": ""
+            }
+          ]
+        },
+        {
+          "title": "客户管理",
+          "type": "menus",
+          "desc": "客户管理",
+          "icon": "",
+          "menus": [
+          	{
+              "id":"cust_add",
+              "title": "客户信息登记",
+              "type": "item",
+              "url": "/customer/add",
+              "desc": "客户信息登记",
+              "icon": ""
+            },
+          	{
+              "id":"cust_list",
+              "title": "客户信息维护",
+              "type": "item",
+              "url": "/customer/list",
+              "desc": "客户信息维护",
+              "icon": ""
+            }
+          ]
+        },
+        {
+          "title": "用户管理",
+          "type": "menus",
+          "desc": "用户管理",
+          "icon": "",
+          "menus": [
+          	{
+              "id":"user_list",
+              "title": "用户信息查询",
+              "type": "item",
+              "url": "/user/list",
+              "desc": "用户信息查询",
+              "icon": ""
+            }
+          ]
+        },
+        {
+          "title": "微信公众帐号管理",
+          "type": "menus",
+          "desc": "微信公众帐号管理",
+          "icon": "",
+          "menus": [
+          	{
+	          "title": "都市微秘书",
+	          "type": "menus",
+	          "desc": "微秘书",
+	          "icon": "",
+	          "menus": [
+	          	{
+	              "id":"wmsUser",
+	              "title": "我的用户",
+	              "type": "item",
+	              "url": "/wms/userlist",
+	              "desc": "我的用户",
+	              "icon": ""
+	           	},
+	            {
+	              "id":"adList",
+	              "title": "广告列表",
+	              "type": "item",
+	              "url": "/wms/adlist",
+	              "desc": "广告列表",
+	              "icon": ""
+	            },
+	            {
+	              "id":"wmsKeySend",
+	              "title": "关键词回复管理",
+	              "type": "item",
+	              "url": "/weixin/keySend/wms",
+	              "desc": "关键词回复管理",
+	              "icon": ""
+	            },
+	            {
+	              "id":"wmsSendMsg",
+	              "title": "发送消息",
+	              "type": "item",
+	              "url": "/wms/sendmsg",
+	              "desc": "发送消息",
+	              "icon": ""
+	            }
+	          ]
+	        },
+	        {
+	          "title": "都市生活通",
+	          "type": "menus",
+	          "desc": "都市生活通",
+	          "icon": "",
+	          "menus": [
+	          	{
+	              "id":"shtUser",
+	              "title": "我的用户",
+	              "type": "item",
+	              "url": "/sht/userlist",
+	              "desc": "我的用户",
+	              "icon": ""
+	           	},
+	            {
+	              "id":"subList",
+	              "title": "订阅列表",
+	              "type": "item",
+	              "url": "/sht/sublist",
+	              "desc": "订阅列表",
+	              "icon": ""
+	            },
+	            {
+	              "id":"shtKeySend",
+	              "title": "关键词回复管理",
+	              "type": "item",
+	              "url": "/weixin/keySend/sht",
+	              "desc": "关键词回复管理",
+	              "icon": ""
+	            },
+	            {
+	              "id":"shtSendMsg",
+	              "title": "发送消息",
+	              "type": "item",
+	              "url": "/sht/sendmsg",
+	              "desc": "发送消息",
+	              "icon": ""
+	            }
+	          ]
+	        }
+          ]
+        },
+        {
+          "title": "分类信息模板管理",
+          "type": "menus",
+          "desc": "分类信息模板管理",
+          "icon": "",
+          "menus": [
+            {
+              "id":"muban",
+              "title": "模板管理",
+              "type": "item",
+              "url": "/categoryInfo/categoryInfo/templateManage/manage",
+              "desc": "模板管理",
+              "icon": ""
+            }
+          ]
+        },
+        {
+          "title": "审批流程配置",
+          "type": "menus",
+          "desc": "审批流程配置",
+          "icon": "",
+          "menus": [
+            {
+              "id":"shenpi",
+              "title": "审批流程维护",
+              "type": "item",
+              "url": "/categoryInfo/approval/flowManage/param",
+              "desc": "审批流程维护",
+              "icon": ""
+            }
+          ]
+        },
+        {
+          "title": "统计报表",
+          "type": "menus",
+          "desc": "统计报表",
+          "icon": "",
+          "menus": [
+          	{
+              "id":"userReport",
+              "title": "用户增长量报表",
+              "type": "item",
+              "url": "/chart/userIncrease",
+              "desc": "用户增长量",
+              "icon": ""
+            },
+            {
+              "id":"custReport",
+              "title": "客户增长量报表",
+              "type": "item",
+              "url": "/chart/customerIncrease",
+              "desc": "客户增长量",
+              "icon": ""
+            }
+          ]
+        },
+        {
+          "title": "系统管理",
+          "type": "menus",
+          "desc": "系统管理",
+          "icon": "",
+          "menus": [
+	        {
+	          "title": "个人账号管理",
+	          "type": "menus",
+	          "desc": "个人资料",
+	          "icon": "",
+	          "menus": [
+	          	{
+	              "id":"personalModify",
+	              "title": "修改基本信息",
+	              "type": "item",
+	              "url": "/account/edit",
+	              "desc": "修改基本信息",
+	              "icon": ""
+	           	},
+	            {
+	              "id":"passwordModify",
+	              "title": "修改密码",
+	              "type": "item",
+	              "url": "/account/password/modify",
+	              "desc": "修改密码",
+	              "icon": ""
+	            }
+	          ]
+	        },
+	        {
+	          "title": "业务元数据管理",
+	          "type": "menus",
+	          "desc": "业务元数据管理",
+	          "icon": "",
+	          "menus": [
+	          	{
+	              "id":"dictManager",
+	              "title": "字典项管理",
+	              "type": "item",
+	              "url": "/initPage",
+	              "desc": "字典项管理",
+	              "icon": ""
+	           	},
+	            {
+	              "id":"channelManager",
+	              "title": "频道管理",
+	              "type": "item",
+	              "url": "/initPage",
+	              "desc": "频道管理",
+	              "icon": ""
+	            },
+	            {
+	              "id":"regionManager",
+	              "title": "区域管理",
+	              "type": "item",
+	              "url": "/initPage",
+	              "desc": "区域管理",
+	              "icon": ""
+	            },
+	            {
+	              "id":"newspaperManager",
+	              "title": "报纸管理",
+	              "type": "item",
+	              "url": "/initPage",
+	              "desc": "报纸管理",
+	              "icon": ""
+	            }
+	          ]
+	        },
+          	{
+              "id":"templateList",
+              "title": "菜单管理",
+              "type": "item",
+              "url": "/menu/list",
+              "desc": "菜单管理",
+              "icon": ""
+            },
+            {
+	          "id":"templateList",
+	          "title": "员工管理",
+	          "type": "item",
+	          "url": "/staff/list",
+	          "desc": "员工管理",
+	          "icon": ""
+	        },
+	        {
+	          "id":"templateList",
+	          "title": "角色管理",
+	          "type": "item",
+	          "url": "/role/list",
+	          "desc": "角色管理",
+	          "icon": ""
+	        },
+	        {
+	          "id":"templateList",
+	          "title": "组织机构管理",
+	          "type": "item",
+	          "url": "/org/list",
+	          "desc": "组织机构管理",
+	          "icon": ""
+	        },
+            {
+              "id":"templateList",
+              "title": "数据权限管理",
+              "type": "item",
+              "url": "/initPage",
+              "desc": "数据权限管理",
+              "icon": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
