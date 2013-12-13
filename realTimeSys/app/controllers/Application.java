@@ -40,6 +40,11 @@ public class Application extends Controller {
 		return ok(index.render(menuHtml.toString()));
     }
     
+    // ajax提交响应方法
+    public static Result ajaxDone(){
+    	return ok("{ \"statusCode\":\"200\", \"message\":\"操作成功。\", \"navTabId\":\"\", \"rel\":\"\", \"callbackType\":\"\", \"forwardUrl\":\"\", \"confirmMsg\":\"\" }");
+    }
+    
     private static void submenu(final StringBuilder menuHtml, String menuitem) {
 		JSONUtils.list(menuitem, "$.menus", new ListCallback() {
             @Override

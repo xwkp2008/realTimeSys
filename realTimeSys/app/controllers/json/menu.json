@@ -38,7 +38,7 @@
                   "id": "id1",
                   "title": "内存",
                   "type": "item",
-                  "url": "#",
+                  "url": "/monitor/status/memory",
                   "desc": "内存",
                   "icon": ""
                 },
@@ -358,7 +358,7 @@
                   "id": "id28",
                   "title": "人员配置",
                   "type": "item",
-                  "url": "#",
+                  "url": "/system/privilege/staff",
                   "desc": "人员配置",
                   "icon": ""
                 },
@@ -366,7 +366,7 @@
                   "id": "id29",
                   "title": "角色配置",
                   "type": "item",
-                  "url": "#",
+                  "url": "/system/privilege/role",
                   "desc": "角色配置",
                   "icon": ""
                 },
@@ -374,7 +374,7 @@
                   "id": "id30",
                   "title": "组配置",
                   "type": "item",
-                  "url": "#",
+                  "url": "/system/privilege/group",
                   "desc": "组配置",
                   "icon": ""
                 },
@@ -382,7 +382,7 @@
                   "id": "id30",
                   "title": "权限分配",
                   "type": "item",
-                  "url": "#",
+                  "url": "/system/privilege/privilege",
                   "desc": "权限分配",
                   "icon": ""
                 }
@@ -424,7 +424,7 @@
               "id": "id34",
               "title": "参数配置",
               "type": "item",
-              "url": "#",
+              "url": "/system/parameter",
               "desc": "参数配置",
               "icon": ""
             }

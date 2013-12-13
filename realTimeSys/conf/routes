@@ -2,8 +2,19 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+# Common
+GET     /ajaxDone                   controllers.Application.ajaxDone()
+POST    /ajaxDone                   controllers.Application.ajaxDone()
+
 # Home page
 GET     /                           controllers.Application.index()
+
+#　监控功能
+GET		/monitor/status/memory		controllers.monitor.status.Memory.index()
+
+# 权限管理
+GET		/system/privilege/staff		controllers.system.privilege.Staff.list()
+POST	/system/privilege/staff		controllers.system.privilege.Staff.list()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
