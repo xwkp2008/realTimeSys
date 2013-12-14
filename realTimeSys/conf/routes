@@ -19,5 +19,11 @@ GET		/system/privilege/staff/detail	controllers.system.privilege.Staff.detail()
 GET		/system/privilege/staff/add		controllers.system.privilege.Staff.add()
 GET		/system/privilege/staff/edit	controllers.system.privilege.Staff.edit()
 
+GET		/system/privilege/group			controllers.system.privilege.Group.list()
+POST	/system/privilege/group			controllers.system.privilege.Group.list()
+GET		/system/privilege/group/detail	controllers.system.privilege.Group.detail()
+GET		/system/privilege/group/add		controllers.system.privilege.Group.add()
+GET		/system/privilege/group/edit	controllers.system.privilege.Group.edit()
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

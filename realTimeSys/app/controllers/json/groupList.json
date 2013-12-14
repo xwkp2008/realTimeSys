@@ -1,0 +1,147 @@
+{
+  "url": "/system/privilege/group",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+   {
+      "text": "详情",
+      "class": "icon",
+      "title": "查看组信息",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "href": "/system/privilege/group/detail?{rid}",
+      "warn": "请选择要查看的组。"
+    },
+    {
+      "text": "新增",
+      "class": "add",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "title": "添加组",
+      "href": "/system/privilege/group/add"
+    },
+    {
+      "text": "修改",
+      "class": "edit",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "title": "组资料编辑",
+      "href": "/system/privilege/group/edit?{rid}",
+      "warn": "请选择一个要修改的组。"
+    },
+    {
+      "text": "注销",
+      "class": "delete",
+      "target": "ajaxTodo",
+      "title": "是否要注销该组？删除以后将不可恢复。",
+      "href": "/ajaxDone?id={rid}",
+      "warn": "请选择一个要注销的组。"
+    }
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "userId",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+    {
+      "id": "groupName",
+      "name": "组名",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"userAcct"
+      }
+    },
+    {
+      "id": "status",
+      "name": "状态",
+      "tag": "comboxSelect",
+      "display":true,
+      "value":"",
+      "compare":"equal",
+      "attrs":{
+      	"name":"org"
+      },
+      "dict":[
+      	{
+      		"dictVal":"0",
+      		"dictName":"注销"
+      	},
+      	{
+      		"dictVal":"1",
+      		"dictName":"有效"
+      	}
+      ]
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "组编号",
+      "orderField": true,
+      "display": true
+    },
+    {
+      "id": "groupName",
+      "name": "组名",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "desc",
+      "name": "描述",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "status",
+      "name": "状态",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "createDate",
+      "name": "创建时间",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"G00001",
+  		"groupName":"管理组",
+  		"status":"有效",
+  		"desc":"管理员组别",
+  		"createDate":"2013-12-10 08:35:11"
+  	},
+  	{
+  		"rid":"G00002",
+  		"groupName":"运维组",
+  		"status":"有效",
+  		"desc":"运维相关角色组",
+  		"createDate":"2013-12-10 08:35:31"
+  	},
+  	{
+  		"rid":"G00003",
+  		"groupName":"技术组",
+  		"status":"有效",
+  		"desc":"技术支撑角色组别",
+  		"createDate":"2013-12-10 08:36:02"
+  	}
+  ]
+}
