@@ -13,8 +13,11 @@ GET     /                           controllers.Application.index()
 GET		/monitor/status/memory		controllers.monitor.status.Memory.index()
 
 # 权限管理
-GET		/system/privilege/staff		controllers.system.privilege.Staff.list()
-POST	/system/privilege/staff		controllers.system.privilege.Staff.list()
+GET		/system/privilege/staff			controllers.system.privilege.Staff.list()
+POST	/system/privilege/staff			controllers.system.privilege.Staff.list()
+GET		/system/privilege/staff/detail	controllers.system.privilege.Staff.detail()
+GET		/system/privilege/staff/add		controllers.system.privilege.Staff.add()
+GET		/system/privilege/staff/edit	controllers.system.privilege.Staff.edit()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

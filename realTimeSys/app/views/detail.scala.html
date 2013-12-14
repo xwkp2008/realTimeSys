@@ -1,0 +1,15 @@
+@(data:String)
+
+@import tags.dwz._
+@import _root_.tng.ark.common.json.JSONUtils
+
+@headin = {
+} 
+
+@formTitle={ 
+	@JSONUtils.getStr(data, "$.formTitle") 
+} 
+@content={
+	@dwzFormTag(data)
+} 
+@formPage(headin,formTitle,content)

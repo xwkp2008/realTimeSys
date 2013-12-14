@@ -1,0 +1,86 @@
+@(data:String)
+@import _root_.play.Play
+@import _root_.tng.ark.common.json.JSONUtils 
+
+@headin = {
+<script type="text/javascript" src="@routes.Assets.at("javascripts/staff/staffEdit.js")">
+</script>
+}
+
+@content={
+<form id="staffEditForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="height: 208px; overflow: auto;">
+		<dl>
+			<dt>帐号：</dt>
+			<dd>
+				<input type="text" id="userAcct" name="userAcct" class="textInput" value="staff001">
+			</dd>
+		</dl>
+		<dl>
+			<dt>密码：</dt>
+			<dd>
+				<input type="password" id="userPassword" name="userPassword" value="123456" class="textInput">
+			</dd>
+		</dl>
+		<dl>
+			<dt>姓名：</dt>
+			<dd>
+				<input type="text" id="userName" name="userName" value="张三" class="textInput">
+			</dd>
+		</dl>
+		<dl>
+			<dt>性别：</dt>
+			<dd>
+				<select id="userSex" name="userSex">
+					<option value="0" selected>男</option>
+					<option value="1">女</option>
+				</select>
+			</dd>
+		</dl>
+		<dl>
+			<dt>联系电话：</dt>
+			<dd>
+				<input type="text" id="userPhone" name="userPhone" class="textInput" value="18601234567">
+			</dd>
+		</dl>
+		<div class="divider"></div>
+		<dl>
+			<dt>所属部门：</dt>
+			<dd>
+				<select id="regionId" name="regionId">
+					<option value="1" selected>技术部</option>
+					<option value="2">市场部</option>
+				</select>
+			</dd>
+		</dl>
+		<dl class="nowrap">
+			<dt>角色：</dt>
+			<dd>
+				<label><input type="checkbox" name="c1" value="1">超级管理员</label>
+				<label><input type="checkbox" name="c1" value="1" checked>部门管理员</label>
+				<label><input type="checkbox" name="c1" value="2" checked>员工</label>
+			</dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="buttonActive">
+					<div class="buttonContent">
+						<button type="button" onclick="saveEdit();">保存</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+}
+
+@formPage(headin,Html("人员资料编辑"),content)

@@ -1,0 +1,212 @@
+{
+  "url": "/system/privilege/staff",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+   {
+      "text": "详情",
+      "class": "icon",
+      "title": "查看人员信息",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "href": "/system/privilege/staff/detail?{rid}",
+      "warn": "请选择要查看的人员。"
+    },
+    {
+      "text": "新增",
+      "class": "add",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "title": "添加人员",
+      "href": "/system/privilege/staff/add"
+    },
+    {
+      "text": "修改",
+      "class": "edit",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "title": "人员资料编辑",
+      "href": "/system/privilege/staff/edit?{rid}",
+      "warn": "请选择一个要修改的人员。"
+    },
+    {
+      "text": "删除",
+      "class": "delete",
+      "target": "ajaxTodo",
+      "title": "是否要删除该人员？删除以后将不可恢复。",
+      "href": "/ajaxDone?id={rid}",
+      "warn": "请选择一个要删除的人员。"
+    }
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "userId",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+  	{
+      "id": "userName",
+      "name": "人员姓名",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"userName"
+      }
+    },
+    {
+      "id": "userAcct",
+      "name": "人员帐号",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"userAcct"
+      }
+    },
+    {
+      "id": "org",
+      "name": "所属部门",
+      "tag": "comboxSelect",
+      "display":true,
+      "value":"",
+      "compare":"equal",
+      "attrs":{
+      	"name":"org"
+      },
+      "dict":[
+      	{
+      		"dictVal":"0",
+      		"dictName":"技术部"
+      	},
+      	{
+      		"dictVal":"1",
+      		"dictName":"市场部"
+      	}
+      ]
+    },
+    {
+      "id": "role",
+      "name": "角色",
+      "tag": "comboxSelect",
+      "display":true,
+      "value":"",
+      "compare":"equal",
+      "attrs":{
+      	"name":"role"
+      },
+      "dict":[
+      	{
+      		"dictVal":"0",
+      		"dictName":"管理员"
+      	},
+      	{
+      		"dictVal":"1",
+      		"dictName":"人员"
+      	}
+      ]
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "人员编号",
+      "orderField": true,
+      "display": false
+    },
+    {
+      "id": "userAcct",
+      "name": "工号",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "userName",
+      "name": "人员姓名",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "userPhone",
+      "name": "联系电话",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "group",
+      "name": "部门",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "role",
+      "name": "角色",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"0001",
+  		"userAcct":"10010",
+  		"userName":"张三",
+  		"userPhone":"18512345678",
+  		"group":"技术部",
+  		"role":"管理员"
+  	},
+  	{
+  		"rid":"0001",
+  		"userAcct":"10010",
+  		"userName":"张三",
+  		"userPhone":"18512345678",
+  		"group":"技术部",
+  		"role":"管理员"
+  	},
+  	{
+  		"rid":"0001",
+  		"userAcct":"10010",
+  		"userName":"张三",
+  		"userPhone":"18512345678",
+  		"group":"技术部",
+  		"role":"管理员"
+  	},
+  	{
+  		"rid":"0001",
+  		"userAcct":"10010",
+  		"userName":"张三",
+  		"userPhone":"18512345678",
+  		"group":"技术部",
+  		"role":"管理员"
+  	},
+  	{
+  		"rid":"0001",
+  		"userAcct":"10010",
+  		"userName":"张三",
+  		"userPhone":"18512345678",
+  		"group":"技术部",
+  		"role":"管理员"
+  	},
+  	{
+  		"rid":"0001",
+  		"userAcct":"10010",
+  		"userName":"张三",
+  		"userPhone":"18512345678",
+  		"group":"技术部",
+  		"role":"管理员"
+  	}
+  ]
+}

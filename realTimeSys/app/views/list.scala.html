@@ -1,0 +1,47 @@
+@(data:String)
+
+@import tags.dwz._
+@import tng.ark.common.json.JSONUtils
+@import tng.ark.common.json.JSONUtils.MapCallback
+
+@headin = {
+<script type="text/javascript">
+$(function(){
+	// 隐藏高级检索按钮
+	var advSearchBtn = $(".subBar", navTab.getCurrentPanel()).find("ul").find("#advSearch");
+	if(advSearchBtn){
+		advSearchBtn.hide();
+	}
+});
+</script>
+}
+
+@*装填表单pagerForm信息*@
+@getPager(data:String) = @{
+	var html:String = "";
+      JSONUtils.map(data, "$.pagerInfo", new MapCallback{
+      def callback(key:String,value:Object):Unit={
+      	if(key!="total"){
+      		html += "<input type=\"hidden\" name=\"" + key +"\" value=\"" + value + "\" />"
+      	}
+      }
+    });
+    Html(html)
+}
+
+@content={
+<form id="pagerForm" method="post" action="@(JSONUtils.getStr(data, "url"))">
+	@getPager(data)
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return dwzSearch(this@if(JSONUtils.getBln(data, "$.pagerInfo.dialog")){,'dialog'});" action="@(JSONUtils.getStr(data, "url"))" method="post">
+		@dwzListHeadTag(data)
+	</form>
+</div>
+<div class="pageContent">
+	@dwzListBodyTag(data)
+	@dwzListPagerTag(data)
+</div>
+}
+
+@listPage(headin,content)
