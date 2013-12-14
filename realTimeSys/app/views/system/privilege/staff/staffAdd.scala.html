@@ -50,7 +50,7 @@
 		</dl>
 		<div class="divider"></div>
 		<dl>
-			<dt>所属部门：</dt>
+			<dt>所属机构：</dt>
 			<dd>
 				<select id="regionId" name="regionId">
 					<option value="1">技术部</option>
@@ -58,11 +58,21 @@
 				</select>
 			</dd>
 		</dl>
+		<dl>
+			<dt>组别：</dt>
+			<dd>
+				<select id="regionId" name="regionId">
+					<option value="1">管理组</option>
+					<option value="2">运维组</option>
+					<option value="2">技术组</option>
+				</select>
+			</dd>
+		</dl>
 		<dl class="nowrap">
 			<dt>角色：</dt>
 			<dd>
 				<label><input type="checkbox" name="c1" value="1">超级管理员</label>
-				<label><input type="checkbox" name="c1" value="1">部门管理员</label>
+				<label><input type="checkbox" name="c1" value="1">机构管理员</label>
 				<label><input type="checkbox" name="c1" value="2">员工</label>
 			</dd>
 		</dl>
@@ -88,4 +98,4 @@
 </form>
 }
 
-@formPage(headin,Html("人员资料编辑"),content)
+@formPage(headin,Html("人员新增"),content)

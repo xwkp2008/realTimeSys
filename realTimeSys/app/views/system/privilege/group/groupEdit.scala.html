@@ -11,63 +11,27 @@
 <form id="staffEditForm" method="post" action="/" class="pageForm" validated="validated">
 	<div class="pageFormContent" layouth="97" style="height: 208px; overflow: auto;">
 		<dl>
-			<dt>帐号：</dt>
+			<dt>组名：</dt>
 			<dd>
-				staff001
+				<input type="text" id="userAcct" name="userAcct" class="textInput" value="管理组">
 			</dd>
 		</dl>
 		<dl>
-			<dt>密码：</dt>
+			<dt>描述：</dt>
 			<dd>
-				123456
-			</dd>
-		</dl>
-		<dl>
-			<dt>姓名：</dt>
-			<dd>
-				张三
-			</dd>
-		</dl>
-		<dl>
-			<dt>性别：</dt>
-			<dd>
-				男
-			</dd>
-		</dl>
-		<dl>
-			<dt>联系电话：</dt>
-			<dd>
-				18601234567
-			</dd>
-		</dl>
-		<dl>
-			<dt>工号：</dt>
-			<dd>
-				10010
-			</dd>
-		</dl>
-		<div class="divider"></div>
-		<dl>
-			<dt>所属机构：</dt>
-			<dd>
-				技术部
-			</dd>
-		</dl>
-		<dl>
-			<dt>组别：</dt>
-			<dd>
-				管理组
-			</dd>
-		</dl>
-		<dl class="nowrap">
-			<dt>角色：</dt>
-			<dd>
-				机构管理员,员工
+				<input type="text" id="userAcct" name="userAcct" class="textInput" value="管理员组别">
 			</dd>
 		</dl>
 	</div>
 	<div class="formBar">
 		<ul>
+			<li>
+				<div class="buttonActive">
+					<div class="buttonContent">
+						<button type="button" onclick="saveEdit('组信息修改成功。');">保存</button>
+					</div>
+				</div>
+			</li>
 			<li>
 				<div class="button">
 					<div class="buttonContent">
@@ -80,4 +44,4 @@
 </form>
 }
 
-@formPage(headin,Html("人员详情"),content)
+@formPage(headin,Html("人员资料编辑"),content)
