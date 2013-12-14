@@ -1,0 +1,53 @@
+@(data:String)
+@import _root_.play.Play
+@import _root_.tng.ark.common.json.JSONUtils 
+
+@headin = {
+<script type="text/javascript" src="@routes.Assets.at("javascripts/role/roleEdit.js")">
+</script>
+}
+
+@content={
+<form id="roleEditForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="overflow: auto;">
+		<dl>
+			<dt>角色编号：</dt>
+			<dd>
+				<input type="text" id="roleId" name="roleId" class="textInput">
+			</dd>
+		</dl>
+		<dl>
+			<dt>角色名称：</dt>
+			<dd>
+				<input type="text" id="roleName" name="roleName" value="" class="textInput">
+			</dd>
+		</dl>
+		<dl class="">
+			<dt>描述：</dt>
+			<dd>
+				<textarea rows="3" style="width: 300px;"></textarea>
+			</dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="buttonActive">
+					<div class="buttonContent">
+						<button type="button" onclick="saveRole();">添加</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+}
+
+@formPage(headin,Html("新增角色"),content)

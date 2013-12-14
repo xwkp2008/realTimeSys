@@ -1,0 +1,53 @@
+@(data:String)
+@import _root_.play.Play
+@import _root_.tng.ark.common.json.JSONUtils 
+
+@headin = {
+<script type="text/javascript" src="@routes.Assets.at("javascripts/staff/staffEdit.js")">
+</script>
+}
+
+@content={
+<form id="staffEditForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="overflow: auto;">
+		<dl>
+			<dt>角色编号：</dt>
+			<dd>
+				<input type="text" id="roleId" name="roleId" value="10000" class="textInput readonly" readonly="readonly">
+			</dd>
+		</dl>
+		<dl>
+			<dt>角色名称：</dt>
+			<dd>
+				<input type="text" id="roleName" name="roleName" value="超级管理员" class="textInput">
+			</dd>
+		</dl>
+		<dl class="">
+			<dt>描述：</dt>
+			<dd>
+				<textarea rows="3" style="width: 300px;">角色的简要描述</textarea>
+			</dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="buttonActive">
+					<div class="buttonContent">
+						<button type="button" onclick="saveRoleEdit();">保存</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+}
+
+@formPage(headin,Html("角色编辑"),content)

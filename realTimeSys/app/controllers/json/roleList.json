@@ -1,0 +1,170 @@
+{
+  "url": "/system/privilege/role",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+    {
+      "text": "新增",
+      "class": "add",
+      "target": "dialog",
+      "mask":true,
+      "width":"500",
+      "height":"300",
+      "title": "添加角色",
+      "href": "/system/privilege/role/add"
+    },
+    {
+      "text": "修改",
+      "class": "edit",
+      "target": "dialog",
+      "mask":true,
+      "width":"500",
+      "height":"300",
+      "title": "编辑角色",
+      "href": "/system/privilege/role/edit?{rid}",
+      "warn": "请选择一个要编辑的角色。"
+    },
+    {
+      "text": "删除",
+      "class": "delete",
+      "target": "ajaxTodo",
+      "title": "是否要删除该角色？删除以后将不可恢复。",
+      "href": "/ajaxDone?id={rid}",
+      "warn": "请选择一个要删除的角色。"
+    },
+    {
+      "text": "分配权限",
+      "class": "icon",
+      "title": "分配权限",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "href": "/system/privilege/role/detail?{rid}",
+      "warn": "请选择要分配的角色。"
+    }
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "roleId",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+  	{
+      "id": "roleId",
+      "name": "角色编号",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"roleId"
+      }
+    },
+    {
+      "id": "roleName",
+      "name": "角色名",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"roleName"
+      }
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": false
+    },
+    {
+      "id": "roleId",
+      "name": "角色编号",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "roleName",
+      "name": "角色名",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "desc",
+      "name": "描述",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "createTime",
+      "name": "创建时间",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "status",
+      "name": "状态",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"0001",
+  		"roleId":"10000",
+  		"roleName":"管理员",
+  		"desc":"超级管理员角色",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"roleId":"10000",
+  		"roleName":"管理员",
+  		"desc":"超级管理员角色",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"roleId":"10000",
+  		"roleName":"管理员",
+  		"desc":"超级管理员角色",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"roleId":"10000",
+  		"roleName":"管理员",
+  		"desc":"超级管理员角色",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"roleId":"10000",
+  		"roleName":"管理员",
+  		"desc":"超级管理员角色",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"roleId":"10000",
+  		"roleName":"管理员",
+  		"desc":"超级管理员角色",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	}
+  ]
+}
