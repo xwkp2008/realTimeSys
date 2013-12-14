@@ -42,9 +42,9 @@
       "title": "分配权限",
       "target": "dialog",
       "mask":true,
-      "width":"800",
-      "height":"350",
-      "href": "/system/privilege/role/detail?{rid}",
+      "width":"690",
+      "height":"550",
+      "href": "/system/privilege/assignPrivilege?{rid}",
       "warn": "请选择要分配的角色。"
     }
   ],

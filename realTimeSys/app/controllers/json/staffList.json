@@ -46,6 +46,17 @@
       "title": "是否要删除该人员？删除以后将不可恢复。",
       "href": "/ajaxDone?id={rid}",
       "warn": "请选择一个要删除的人员。"
+    },
+    {
+      "text": "分配权限",
+      "class": "icon",
+      "title": "分配权限",
+      "target": "dialog",
+      "mask":true,
+      "width":"690",
+      "height":"550",
+      "href": "/system/privilege/assignPrivilege?{rid}",
+      "warn": "请选择要分配的人员。"
     }
   ],
   "pagerInfo": {

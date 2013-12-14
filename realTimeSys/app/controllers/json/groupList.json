@@ -46,6 +46,17 @@
       "title": "是否要注销该组？删除以后将不可恢复。",
       "href": "/ajaxDone?id={rid}",
       "warn": "请选择一个要注销的组。"
+    },
+    {
+      "text": "分配权限",
+      "class": "icon",
+      "title": "分配权限",
+      "target": "dialog",
+      "mask":true,
+      "width":"690",
+      "height":"550",
+      "href": "/system/privilege/assignPrivilege?{rid}",
+      "warn": "请选择要分配的组。"
     }
   ],
   "pagerInfo": {

@@ -8,6 +8,7 @@ import play.mvc.Result;
 import tng.ark.common.util.FileUtils;
 import views.html.list;
 import views.html.system.privilege.role.*;
+import views.html.system.privilege.assignPrivilege;
 
 public class Role extends Controller{
 	// 角色列表
@@ -31,5 +32,10 @@ public class Role extends Controller{
 	// 修改角色
 	public static Result edit(){
 		return ok(roleEdit.render(""));
+	}
+	
+	// 分配权限
+	public static Result assignPrivilege(){
+		return ok(assignPrivilege.render(""));
 	}
 }

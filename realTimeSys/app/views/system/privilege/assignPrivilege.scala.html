@@ -1,0 +1,142 @@
+@(data:String) 
+@import _root_.play.Play 
+@import _root_.tng.ark.common.json.JSONUtils 
+@headin = { 
+	<script type="text/javascript" src="@routes.Assets.at("javascripts/role/assignPrivilege.js")">
+	</script>
+} 
+@content={
+	<form id="staffEditForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="overflow: auto;">
+		<div style="float:left;width:220px;">
+      	<div class="panel" defH="150">
+			<h1>监控功能</h1>
+      		<div>
+            	<ul class="tree treeCheck expand">
+					<li><a href="#">全选</a>
+					<ul>
+					<li><a href="#">实时监控 </a>
+					<ul>
+						<li><a href="#">硬盘存储</a></li>
+						<li><a href="#" checked="true">网络信息 </a></li>
+					</ul></li>
+					<li><a href="#">配置文件采集</a>
+					<ul>
+						<li><a href="#">数据库参数 </a></li>
+						<li><a href="#">网络参数 </a></li>
+						<li><a href="#">系统参数 </a></li>
+					</ul></li>
+					<li><a href="#">历史监控记录</a>
+					<ul>
+						<li><a href="#">系统资源占用率 </a></li>
+						<li><a href="#">数据库占用率 </a></li>
+					</ul></li>
+					</ul></li>
+				</ul>
+			</div>
+      	</div>
+      </div>
+      <div style="float:left;width:220px;">
+      	<div class="panel" defH="150">
+			<h1>分析功能</h1>
+      		<div>
+            	<ul class="tree treeCheck expand">
+					<li><a href="#">全选</a>
+					<ul>
+					<li><a href="#">SQL记录采集 </a>
+					<ul>
+						<li><a href="#" checked="true">定时采集 </a></li>
+						<li><a href="#">峰值采集 </a></li>
+					</ul></li>
+					<li><a href="#">SQL优化分析 </a>
+					<ul>
+						<li><a href="#" checked="true">执行计划分析</a></li>
+						<li><a href="#">表分析 </a></li>
+					</ul></li>
+					</ul></li>
+				</ul>
+			</div>
+      	</div>
+      </div>
+      <div style="float:left;width:220px;">
+      	<div class="panel" defH="150">
+			<h1>预警功能</h1>
+      		<div>
+            	<ul class="tree treeCheck expand">
+					<li><a href="#">全选</a>
+					<ul>
+					<li><a href="#">定制预警策略 </a></li>
+					<li><a href="#" checked="true">定制信息采集 </a></li>
+					<li><a href="#">发送短信 </a></li>
+					</ul></li>
+				</ul>
+			</div>
+      	</div>
+      </div>
+      <div style="float:left;width:220px;">
+      	<div class="panel" defH="150">
+			<h1>专家策略</h1>
+      		<div>
+            	<ul class="tree treeCheck expand">
+					<li><a href="#">全选</a>
+					<ul>
+					<li><a href="#">策略分析 </a></li>
+					<li><a href="#">策略更新 </a></li>
+					<li><a href="#">策略搜索</a></li>
+					</ul></li>
+				</ul>
+			</div>
+      	</div>
+      </div>
+      <div style="float:left;width:220px;">
+      	<div class="panel" defH="150">
+			<h1>日志查询</h1>
+      		<div>
+            	<ul class="tree treeCheck expand">
+					<li><a href="#">全选</a>
+					<ul>
+					<li><a href="#" checked="true">日志流水记录 </a></li>
+					<li><a href="#">日志条件筛选 </a></li>
+					</ul></li>
+				</ul>
+			</div>
+      	</div>
+      </div>
+      <div style="float:left;width:220px;">
+      	<div class="panel" defH="150">
+			<h1>系统管理</h1>
+      		<div>
+            	<ul class="tree treeCheck expand">
+					<li><a href="#">全选</a>
+					<ul>
+					<li><a href="#">权限管理 </a></li>
+					<li><a href="#">监控系统管理 </a></li>
+					<li><a href="#">参数配置 </a></li>
+					</ul></li>
+				</ul>
+			</div>
+      	</div>
+      </div>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="buttonActive">
+					<div class="buttonContent">
+						<button type="button" onclick="saveAssignPrivilege();">保存</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+} 
+
+@formPage(headin,Html("权限分配"),content)
