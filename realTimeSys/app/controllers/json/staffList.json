@@ -80,7 +80,7 @@
     },
     {
       "id": "org",
-      "name": "所属部门",
+      "name": "所属机构",
       "tag": "comboxSelect",
       "display":true,
       "value":"",
@@ -96,6 +96,31 @@
       	{
       		"dictVal":"1",
       		"dictName":"市场部"
+      	}
+      ]
+    },
+    {
+      "id": "group",
+      "name": "组别",
+      "tag": "comboxSelect",
+      "display":true,
+      "value":"",
+      "compare":"equal",
+      "attrs":{
+      	"name":"role"
+      },
+      "dict":[
+      	{
+      		"dictVal":"0",
+      		"dictName":"管理组"
+      	},
+      	{
+      		"dictVal":"1",
+      		"dictName":"运维组"
+      	},
+      	{
+      		"dictVal":"1",
+      		"dictName":"技术组"
       	}
       ]
     },
@@ -147,8 +172,14 @@
       "display": true
     },
     {
+      "id": "org",
+      "name": "机构",
+      "orderField": false,
+      "display": true
+    },
+    {
       "id": "group",
-      "name": "部门",
+      "name": "组别",
       "orderField": false,
       "display": true
     },
@@ -165,7 +196,8 @@
   		"userAcct":"10010",
   		"userName":"张三",
   		"userPhone":"18512345678",
-  		"group":"技术部",
+  		"org":"技术部",
+  		"group":"管理组",
   		"role":"管理员"
   	},
   	{
@@ -173,7 +205,8 @@
   		"userAcct":"10010",
   		"userName":"张三",
   		"userPhone":"18512345678",
-  		"group":"技术部",
+  		"org":"技术部",
+  		"group":"运维组",
   		"role":"管理员"
   	},
   	{
@@ -181,7 +214,8 @@
   		"userAcct":"10010",
   		"userName":"张三",
   		"userPhone":"18512345678",
-  		"group":"技术部",
+  		"org":"技术部",
+  		"group":"运维组",
   		"role":"管理员"
   	},
   	{
@@ -189,7 +223,8 @@
   		"userAcct":"10010",
   		"userName":"张三",
   		"userPhone":"18512345678",
-  		"group":"技术部",
+  		"org":"技术部",
+  		"group":"运维组",
   		"role":"管理员"
   	},
   	{
@@ -197,7 +232,8 @@
   		"userAcct":"10010",
   		"userName":"张三",
   		"userPhone":"18512345678",
-  		"group":"技术部",
+  		"org":"技术部",
+  		"group":"技术组",
   		"role":"管理员"
   	},
   	{
@@ -205,7 +241,8 @@
   		"userAcct":"10010",
   		"userName":"张三",
   		"userPhone":"18512345678",
-  		"group":"技术部",
+  		"org":"技术部",
+  		"group":"技术组",
   		"role":"管理员"
   	}
   ]
