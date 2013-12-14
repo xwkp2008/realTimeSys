@@ -13,11 +13,17 @@ GET     /                           controllers.Application.index()
 GET		/monitor/status/memory		controllers.monitor.status.Memory.index()
 
 # 权限管理
+GET		/system/privilege/menu			controllers.system.privilege.Menu.list()
+POST	/system/privilege/menu			controllers.system.privilege.Menu.list()
+GET		/system/privilege/menu/add		controllers.system.privilege.Menu.add()
+GET		/system/privilege/menu/edit	    controllers.system.privilege.Menu.edit()
+
 GET		/system/privilege/role			controllers.system.privilege.Role.list()
 POST	/system/privilege/role			controllers.system.privilege.Role.list()
 GET		/system/privilege/role/add		controllers.system.privilege.Role.add()
 GET		/system/privilege/role/edit	    controllers.system.privilege.Role.edit()
 GET		/system/privilege/assignPrivilege	   controllers.system.privilege.Role.assignPrivilege()
+
 GET		/system/privilege/staff			controllers.system.privilege.Staff.list()
 POST	/system/privilege/staff			controllers.system.privilege.Staff.list()
 GET		/system/privilege/staff/detail	controllers.system.privilege.Staff.detail()

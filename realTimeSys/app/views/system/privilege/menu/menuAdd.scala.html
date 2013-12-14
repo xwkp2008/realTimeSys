@@ -1,0 +1,68 @@
+@(data:String)
+@import _root_.play.Play
+@import _root_.tng.ark.common.json.JSONUtils 
+
+@headin = {
+<script type="text/javascript" src="@routes.Assets.at("javascripts/menu/menuEdit.js")">
+</script>
+}
+
+@content={
+<form id="menuEditForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="overflow: auto;">
+		<dl>
+			<dt>菜单名称：</dt>
+			<dd>
+				<input type="text" id="menuName" name="menuName" value="" class="textInput">
+			</dd>
+		</dl>
+		<dl>
+			<dt>上级菜单名称：</dt>
+			<dd>
+				<input type="text" id="menupName" readonly="readonly" name="menupName" value="实时监控系统" class="textInput readonly">
+			</dd>
+		</dl>
+		<dl>
+			<dt>菜单图标：</dt>
+			<dd>
+				<div style="float:left;cursor:pointer; height:23px;width:23px;background:url(@routes.Assets.at("stylesheets/themes/default/images/grid/grid.png")) no-repeat;background-position:0 -696px;"></div>
+				<div style="float:left;cursor:pointer; height:23px;width:23px;background:url(@routes.Assets.at("stylesheets/themes/default/images/grid/grid.png")) no-repeat;background-position:0 -796px;"></div>
+				<div style="float:left;cursor:pointer; height:23px;width:23px;background:url(@routes.Assets.at("stylesheets/themes/default/images/grid/grid.png")) no-repeat;background-position:0 -746px;"></div>
+				<div style="float:left;cursor:pointer; height:23px;width:23px;background:url(@routes.Assets.at("stylesheets/themes/default/images/grid/grid.png")) no-repeat;background-position:0 -846px;"></div>
+			</dd>
+		</dl>
+		<dl class="nowrap">
+			<dt>菜单链接：</dt>
+			<dd>
+				<input type="text" id="menupName" style="width: 600px;" name="menupName" class="textInput">
+			</dd>
+		</dl>
+		<dl class="nowrap">
+			<dt>描述：</dt>
+			<dd>
+				<textarea rows="3" style="width: 600px;"></textarea>
+			</dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="buttonActive">
+					<div class="buttonContent">
+						<button type="button" onclick="saveMenu();">添加</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+}
+
+@formPage(headin,Html("新增菜单"),content)

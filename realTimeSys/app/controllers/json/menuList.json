@@ -1,0 +1,258 @@
+{
+  "url": "/system/privilege/menu",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+    {
+      "text": "新增",
+      "class": "add",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "title": "添加菜单",
+      "href": "/system/privilege/menu/add?{rid}",
+      "warn": "请选择一个菜单节点进行添加。"
+    },
+    {
+      "text": "修改",
+      "class": "edit",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "title": "编辑菜单",
+      "href": "/system/privilege/menu/edit?{rid}",
+      "warn": "请选择一个要编辑的菜单。"
+    },
+    {
+      "text": "删除",
+      "class": "delete",
+      "target": "ajaxTodo",
+      "title": "是否要删除该菜单？删除以后将不可恢复。",
+      "href": "/ajaxDone?id={rid}",
+      "warn": "请选择一个要删除的菜单。"
+    }
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "menuId",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+    {
+      "id": "menuName",
+      "name": "菜单名",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"menuName"
+      }
+    },
+    {
+      "id": "status",
+      "name": "状态",
+      "tag": "comboxSelect",
+      "display":true,
+      "value":"",
+      "compare":"equal",
+      "attrs":{
+      	"name":"org"
+      },
+      "dict":[
+      	{
+      		"dictVal":"0",
+      		"dictName":"注销"
+      	},
+      	{
+      		"dictVal":"1",
+      		"dictName":"有效"
+      	}
+      ]
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": false
+    },
+    {
+      "id": "menuName",
+      "name": "菜单名",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "menuUrl",
+      "name": "菜单链接",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "desc",
+      "name": "描述",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "createTime",
+      "name": "创建时间",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "status",
+      "name": "状态",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"0001",
+  		"menuName":"<b>实时监控系统</b>",
+  		"menuUrl":"",
+  		"desc":"实时监控系统",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;|--<b>监控功能</b>",
+  		"menuUrl":"",
+  		"desc":"监控功能",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--实时监控",
+  		"desc":"实时监控",
+  		"menuUrl":"http://ip:port/ssjk",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--配置文件采集",
+  		"menuUrl":"http://ip:port/wjcj",
+  		"desc":"文件采集菜单",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--历史监控记录",
+  		"menuUrl":"http://ip:port/lsjk",
+  		"desc":"历史监控记录菜单",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;|--<b>分析功能</b>",
+  		"menuUrl":"",
+  		"desc":"分析功能",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--SQL记录采集",
+  		"menuUrl":"http://ip:port/ssjk",
+  		"desc":"SQL记录采集菜单",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--SQL优化分析",
+  		"menuUrl":"http://ip:port/ssjk",
+  		"desc":"SQL优化分析菜单",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;|--<b>预警功能</b>",
+  		"menuUrl":"",
+  		"desc":"预警功能",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--定制预警策略",
+  		"menuUrl":"http://ip:port/ssjk",
+  		"desc":"定制预警策略",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--定制信息采集",
+  		"menuUrl":"http://ip:port/ssjk",
+  		"desc":"定制信息采集菜单",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--发送短信",
+  		"menuUrl":"http://ip:port/ssjk",
+  		"desc":"发送短信菜单",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;|--<b>专家策略</b>",
+  		"menuUrl":"",
+  		"desc":"专家策略",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--策略分类",
+  		"menuUrl":"http://ip:port/ssjk",
+  		"desc":"策略分类",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--策略更新",
+  		"menuUrl":"http://ip:port/ssjk",
+  		"desc":"策略更新",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--策略管理",
+  		"menuUrl":"http://ip:port/ssjk",
+  		"desc":"策略管理",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	},
+  	{
+  		"rid":"0001",
+  		"menuName":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--策略搜索",
+  		"menuUrl":"http://ip:port/ssjk",
+  		"desc":"策略搜索",
+  		"createTime":"2013-12-14 11:57:45",
+  		"status":"有效"
+  	}
+  ]
+}

@@ -380,10 +380,10 @@
                 },
                 {
                   "id": "id30",
-                  "title": "权限分配",
+                  "title": "菜单管理",
                   "type": "item",
-                  "url": "/system/privilege/privilege",
-                  "desc": "权限分配",
+                  "url": "/system/privilege/menu",
+                  "desc": "菜单管理",
                   "icon": ""
                 }
               ]
