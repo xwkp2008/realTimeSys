@@ -1,0 +1,227 @@
+{
+  "url": "/process/list",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+    
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "roleId",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+  	{
+      "id": "PID",
+      "name": "PID",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"PID"
+      }
+    },
+    {
+      "id": "COMMAND",
+      "name": "COMMAND",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"COMMAND"
+      }
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": false
+    },
+    {
+      "id": "COMMAND",
+      "name": "COMMAND",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "PID",
+      "name": "PID",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "USER",
+      "name": "USER",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "FD",
+      "name": "FD",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "TYPE",
+      "name": "TYPE",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "DEVICE",
+      "name": "DEVICE",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "SIZE/OFF",
+      "name": "SIZE/OFF",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "NODE",
+      "name": "NODE",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "NAME",
+      "name": "NAME",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"0001",
+  		"COMMAND":"sendmail",
+  		"PID":"605",
+  		"USER":"orrt",
+  		"FD":"cwd",
+  		"TYPE":"VDIR",
+  		"DEVICE":"136,8",
+  		"SIZE/OFF":"1024",
+  		"NODE":"23554",
+  		"NAME":"/var/spool/mqueue"
+  	},
+  	{
+  		"rid":"0001",
+  		"COMMAND":"sendmail",
+  		"PID":"605",
+  		"USER":"orrt",
+  		"FD":"cwd",
+  		"TYPE":"VDIR",
+  		"DEVICE":"136,8",
+  		"SIZE/OFF":"1024",
+  		"NODE":"23554",
+  		"NAME":"/var/spool/mqueue"
+  	},
+  	{
+  		"rid":"0001",
+  		"COMMAND":"sendmail",
+  		"PID":"605",
+  		"USER":"orrt",
+  		"FD":"cwd",
+  		"TYPE":"VDIR",
+  		"DEVICE":"136,8",
+  		"SIZE/OFF":"1024",
+  		"NODE":"23554",
+  		"NAME":"/var/spool/mqueue"
+  	},
+  	{
+  		"rid":"0001",
+  		"COMMAND":"sendmail",
+  		"PID":"605",
+  		"USER":"orrt",
+  		"FD":"cwd",
+  		"TYPE":"VDIR",
+  		"DEVICE":"136,8",
+  		"SIZE/OFF":"1024",
+  		"NODE":"23554",
+  		"NAME":"/var/spool/mqueue"
+  	},
+  	{
+  		"rid":"0001",
+  		"COMMAND":"sendmail",
+  		"PID":"605",
+  		"USER":"orrt",
+  		"FD":"cwd",
+  		"TYPE":"VDIR",
+  		"DEVICE":"136,8",
+  		"SIZE/OFF":"1024",
+  		"NODE":"23554",
+  		"NAME":"/var/spool/mqueue"
+  	},
+  	{
+  		"rid":"0001",
+  		"COMMAND":"sendmail",
+  		"PID":"605",
+  		"USER":"orrt",
+  		"FD":"cwd",
+  		"TYPE":"VDIR",
+  		"DEVICE":"136,8",
+  		"SIZE/OFF":"1024",
+  		"NODE":"23554",
+  		"NAME":"/var/spool/mqueue"
+  	},
+  	{
+  		"rid":"0001",
+  		"COMMAND":"sendmail",
+  		"PID":"605",
+  		"USER":"orrt",
+  		"FD":"cwd",
+  		"TYPE":"VDIR",
+  		"DEVICE":"136,8",
+  		"SIZE/OFF":"1024",
+  		"NODE":"23554",
+  		"NAME":"/var/spool/mqueue"
+  	},
+  	{
+  		"rid":"0001",
+  		"COMMAND":"sendmail",
+  		"PID":"605",
+  		"USER":"orrt",
+  		"FD":"cwd",
+  		"TYPE":"VDIR",
+  		"DEVICE":"136,8",
+  		"SIZE/OFF":"1024",
+  		"NODE":"23554",
+  		"NAME":"/var/spool/mqueue"
+  	},
+  	{
+  		"rid":"0001",
+  		"COMMAND":"sendmail",
+  		"PID":"605",
+  		"USER":"orrt",
+  		"FD":"cwd",
+  		"TYPE":"VDIR",
+  		"DEVICE":"136,8",
+  		"SIZE/OFF":"1024",
+  		"NODE":"23554",
+  		"NAME":"/var/spool/mqueue"
+  	},
+  	{
+  		"rid":"0001",
+  		"COMMAND":"sendmail",
+  		"PID":"605",
+  		"USER":"orrt",
+  		"FD":"cwd",
+  		"TYPE":"VDIR",
+  		"DEVICE":"136,8",
+  		"SIZE/OFF":"1024",
+  		"NODE":"23554",
+  		"NAME":"/var/spool/mqueue"
+  	}
+  ]
+}

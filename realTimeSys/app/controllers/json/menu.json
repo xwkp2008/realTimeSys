@@ -92,7 +92,7 @@
                       "id": "id6",
                       "title": "进程详细信息",
                       "type": "item",
-                      "url": "#",
+                      "url": "/process/list",
                       "desc": "进程详细信息",
                       "icon": ""
                     },

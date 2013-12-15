@@ -17,6 +17,10 @@ GET		/log/loglist				controllers.log.Log.list()
 POST	/log/loglist				controllers.log.Log.list()
 GET		/log/detail				controllers.log.Log.detail()
 
+# 进程信息
+GET		/process/list				controllers.process.Process.list()
+POST	/process/list				controllers.process.Process.list()
+
 # 权限管理
 GET		/system/privilege/menu			controllers.system.privilege.Menu.list()
 POST	/system/privilege/menu			controllers.system.privilege.Menu.list()
