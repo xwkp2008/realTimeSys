@@ -114,6 +114,9 @@ $.extend(true, navTab, {
 		if ($.fn.upload) {
 			$(".uploadify", this._getPanels().eq(index)).uploadify("destroy");
 		}
+		if($("#placeholder", navTab.getCurrentPanel())){
+			$("#placeholder", navTab.getCurrentPanel()).remove();
+		}
 		this._getPanels().eq(index).trigger(DWZ.eventType.pageClear).remove();
 		this._getMoreLi().eq(index).remove();
 		if (this._currentIndex >= index) this._currentIndex--;

@@ -22,7 +22,7 @@
                   "id": "CPU",
                   "title": "CPU",
                   "type": "item",
-                  "url": "#",
+                  "url": "/monitor/status/CPU",
                   "desc": "CPU",
                   "icon": ""
                 },
@@ -46,7 +46,7 @@
                   "id": "id2",
                   "title": "硬盘存储",
                   "type": "item",
-                  "url": "#",
+                  "url": "/monitor/status/storage",
                   "desc": "硬盘存储",
                   "icon": ""
                 },

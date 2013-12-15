@@ -1,0 +1,19 @@
+@(tableTitle:String, tableHtml: Html)(chartTitle:String, chartScript:Html)
+
+<div class="pageContent" layoutH="0">
+	<div class="panel" minh="100" style="width:60%;display:block;float:left;">
+		<h1>@tableTitle</h1>
+		<div>
+			<table class="list" width="100%" layoutH="50">
+				@tableHtml
+			</table>
+		</div>
+	</div>
+	<div class="panel" minh="100" style="width:38%;display:block;float: left;clear: none;">
+		<h1>@chartTitle</h1>
+		<div id="placeholderContainer" class="pageContent" layoutH="50">
+			<div id="placeholder" style="height:450px;width:90%;padding:20px;10px;"></div>
+		</div>
+	</div>
+</div>
+@chartScript

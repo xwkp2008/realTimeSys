@@ -1,11 +1,5 @@
 @(jsonStr: String)
-
-<div class="pageContent" layoutH="0">
-	<div class="panel collapse" minh="100" defH="755" style="width:60%;display:block;float:left;">
-		<h1>内存块列表</h1>
-		<div>
-			<table class="list" width="100%">
-
+@tableHtml={
 				<thead>
 					<tr>
 						<th width="80" orderField="name" class="asc">编号</th>
@@ -84,7 +78,7 @@
 						<td>480524</td>
 						<td>1313115</td>
 						<td>27963569</td>
-						<td>/infomation</td>
+						<td title="/infomation/resource/memory/06/rootdbs">/infomation/resource/memory/06/rootdbs</td>
 					</tr>
 					<tr target="sid_user" rel="7">
 						<td>7</td>
@@ -197,28 +191,19 @@
 						<td>/infomation</td>
 					</tr>
 				</tbody>
-			</table>
-		</div>
-	</div>
-	<div class="panel collapse" minh="100" defH="755" style="width:38%;display:block;float: left;clear: none;">
-		<h1>运行占比图</h1>
-		<div class="pageContent">
-			<div id="placeholder" style="height:450px;width:90%;"></div>
-		</div>
-	</div>
-</div>
+}
+
+@chartScript = {
 <script src="@routes.Assets.at("javascripts/flot/jquery.flot.pie.min.js")" type="text/javascript"></script>
 <script type="text/javascript">
 	$(function() {
 		var data = [
-			{ label: "Series1",  data: 10},
-			{ label: "Series2",  data: 30},
-			{ label: "Series3",  data: 90},
-			{ label: "Series4",  data: 70},
-			{ label: "Series5",  data: 80},
-			{ label: "Series6",  data: 110}
+			{ label: "rootdbs",  data: 10},
+			{ label: "datadbs",  data: 30},
+			{ label: "rootdbs",  data: 90},
+			{ label: "phydbs",  data: 70}
 		];
-		$.plot($("#placeholder"), data,
+		$.plot($("#placeholder", navTab.getCurrentPanel()), data,
 			{
 	        series: {
 	            pie: {
@@ -231,3 +216,6 @@
 		});
 	});
 </script>
+}
+
+@tableChart("内存块列表",tableHtml)("内存占比图",chartScript)
