@@ -328,16 +328,8 @@
               "id": "id26",
               "title": "日志流水记录",
               "type": "item",
-              "url": "#",
+              "url": "/log/loglist",
               "desc": "日志流水记录",
-              "icon": ""
-            },
-            {
-              "id": "id27",
-              "title": "日志条件筛选",
-              "type": "item",
-              "url": "#",
-              "desc": "日志条件筛选",
               "icon": ""
             }
           ]

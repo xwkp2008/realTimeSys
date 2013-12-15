@@ -1,0 +1,165 @@
+{
+  "url": "/log/loglist",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+    {
+      "text": "详情",
+      "class": "icon",
+      "title": "查看日志详细信息",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "href": "/log/detail?{rid}",
+      "warn": "请选择要查看的日志记录。"
+    }
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "roleId",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+  	{
+      "id": "logType",
+      "name": "日志类别",
+      "tag": "comboxSelect",
+      "display":true,
+      "value":"",
+      "compare":"equal",
+      "attrs":{
+      	"name":"logType"
+      },
+      "dict":[
+      	{
+      		"dictVal":"0",
+      		"dictName":"CPU"
+      	},
+      	{
+      		"dictVal":"1",
+      		"dictName":"IO"
+      	},
+      	{
+      		"dictVal":"2",
+      		"dictName":"内存"
+      	},
+      	{
+      		"dictVal":"3",
+      		"dictName":"硬盘存储"
+      	},
+      	{
+      		"dictVal":"4",
+      		"dictName":"网络"
+      	}
+      ]
+    },
+    {
+      "id": "logLevel",
+      "name": "日志级别",
+      "tag": "comboxSelect",
+      "display":true,
+      "value":"",
+      "compare":"equal",
+      "attrs":{
+      	"name":"logLevel"
+      },
+      "dict":[
+      	{
+      		"dictVal":"0",
+      		"dictName":"INFO"
+      	},
+      	{
+      		"dictVal":"1",
+      		"dictName":"WARN"
+      	},
+      	{
+      		"dictVal":"2",
+      		"dictName":"ERROR"
+      	}
+      ]
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": false
+    },
+    {
+      "id": "logType",
+      "name": "日志类别",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "logLevel",
+      "name": "日志级别",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "desc",
+      "name": "描述",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "createTime",
+      "name": "记录时间",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"0001",
+  		"logType":"<span style='color:#33cc00'>内存</span>",
+  		"logLevel":"<span style='color:#33cc00'>WARN</span>",
+  		"desc":"<span style='color:#33cc00'>进程ID为5902的进程占用内存达70%，请及时检查！</span>",
+  		"createTime":"<span style='color:#33cc00'>2013-12-15 11:58:40</span>"
+  	},
+  	{
+  		"rid":"0002",
+  		"logType":"<span style='color:#ff0000'>IO</span>",
+  		"logLevel":"<span style='color:#ff0000'>ERROR</span>",
+  		"desc":"<span style='color:#ff0000'>读取文件config.json时出现IO错误，请立即检查！</span>",
+  		"createTime":"<span style='color:#ff0000'>2013-12-15 11:58:40</span>"
+  	},
+  	{
+  		"rid":"0003",
+  		"logType":"<span style=''>内存</span>",
+  		"logLevel":"<span style=''>INFO</span>",
+  		"desc":"<span style=''>进程ID为5902的进程占用内存已释放，目前占用内存比例为5%</span>",
+  		"createTime":"<span style=''>2013-12-15 12:58:40</span>"
+  	},
+  	{
+  		"rid":"0004",
+  		"logType":"<span style=''>硬盘存储</span>",
+  		"logLevel":"<span style=''>INFO</span>",
+  		"desc":"<span style=''>当前硬盘使用率60%，未来3个月内，可不增加硬盘存储……</span>",
+  		"createTime":"<span style=''>2013-12-15 12:58:40</span>"
+  	},
+  	{
+  		"rid":"0005",
+  		"logType":"<span style='color:#ff0000'>IO</span>",
+  		"logLevel":"<span style='color:#ff0000'>ERROR</span>",
+  		"desc":"<span style='color:#ff0000'>读取文件config.json时出现IO错误，请立即检查！</span>",
+  		"createTime":"<span style='color:#ff0000'>2013-12-15 11:59:40</span>"
+  	},
+  	{
+  		"rid":"0006",
+  		"logType":"<span style='color:#ff0000'>IO</span>",
+  		"logLevel":"<span style='color:#ff0000'>ERROR</span>",
+  		"desc":"<span style='color:#ff0000'>读取文件config.json时出现IO错误，请立即检查！</span>",
+  		"createTime":"<span style='color:#ff0000'>2013-12-15 11:59:50</span>"
+  	}
+  ]
+}

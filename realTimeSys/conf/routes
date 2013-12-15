@@ -12,6 +12,11 @@ GET     /                           controllers.Application.index()
 #　监控功能
 GET		/monitor/status/memory		controllers.monitor.status.Memory.index()
 
+# 流水日志
+GET		/log/loglist				controllers.log.Log.list()
+POST	/log/loglist				controllers.log.Log.list()
+GET		/log/detail				controllers.log.Log.detail()
+
 # 权限管理
 GET		/system/privilege/menu			controllers.system.privilege.Menu.list()
 POST	/system/privilege/menu			controllers.system.privilege.Menu.list()
