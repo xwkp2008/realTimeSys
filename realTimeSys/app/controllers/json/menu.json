@@ -13,11 +13,19 @@
           "icon": "",
           "menus": [
             {
-              "title": "实时监控--运行状态",
+              "title": "实时监控",
               "type": "menus",
-              "desc": "实时监控--运行状态",
+              "desc": "实时监控",
               "icon": "",
               "menus": [
+              	{
+                  "id": "zl",
+                  "title": "总览",
+                  "type": "item",
+                  "url": "/monitor/status/CPU",
+                  "desc": "总览",
+                  "icon": ""
+                },
                 {
                   "id": "CPU",
                   "title": "CPU",
@@ -51,60 +59,28 @@
                   "icon": ""
                 },
                 {
+                  "id":"network",
                   "title": "网络",
-                  "type": "menus",
+                  "type": "item",
+                  "url": "#",
                   "desc": "网络",
-                  "icon": "",
-                  "menus": [
-                    {
-                      "id": "id3",
-                      "title": "数据包",
-                      "type": "item",
-                      "url": "#",
-                      "desc": "数据包",
-                      "icon": ""
-                    },
-                    {
-                      "id": "id4",
-                      "title": "链接",
-                      "type": "item",
-                      "url": "#",
-                      "desc": "链接",
-                      "icon": ""
-                    },
-                    {
-                      "id": "id5",
-                      "title": "用户",
-                      "type": "item",
-                      "url": "#",
-                      "desc": "用户",
-                      "icon": ""
-                    }
-                  ]
+                  "icon": ""
                 },
                 {
-                  "title": "进程信息",
-                  "type": "menus",
-                  "desc": "进程信息",
-                  "icon": "",
-                  "menus": [
-                    {
-                      "id": "id6",
-                      "title": "进程详细信息",
-                      "type": "item",
-                      "url": "/process/list",
-                      "desc": "进程详细信息",
-                      "icon": ""
-                    },
-                    {
-                      "id": "id7",
-                      "title": "进程隶属关系（用户、上下文）",
-                      "type": "item",
-                      "url": "#",
-                      "desc": "进程隶属关系（用户、上下文）",
-                      "icon": ""
-                    }
-                  ]
+                  "id":"fwxx",
+                  "title": "服务信息",
+                  "type": "item",
+                  "url":"/process/list",
+                  "desc": "服务信息",
+                  "icon": ""
+                },
+                {
+                  "id": "id6",
+                  "title": "数据库信息",
+                  "type": "item",
+                  "url": "#",
+                  "desc": "数据库信息",
+                  "icon": ""
                 }
               ]
             },
@@ -123,28 +99,28 @@
                   "icon": ""
                 },
                 {
+                  "id":"czxt",
                   "title": "操作系统参数信息",
-                  "type": "menus",
+                  "type": "item",
+                  "url":"#",
                   "desc": "操作系统参数信息",
-                  "icon": "",
-                  "menus": [
-                    {
-                      "id": "id9",
-                      "title": "网络参数",
-                      "type": "item",
-                      "url": "#",
-                      "desc": "网络参数",
-                      "icon": ""
-                    },
-                    {
-                      "id": "id10",
-                      "title": "系统参数",
-                      "type": "item",
-                      "url": "#",
-                      "desc": "系统参数",
-                      "icon": ""
-                    }
-                  ]
+                  "icon": ""
+                },
+                {
+                  "id": "id10",
+                  "title": "系统参数",
+                  "type": "item",
+                  "url": "#",
+                  "desc": "系统参数",
+                  "icon": ""
+                },
+                {
+                  "id": "id9",
+                  "title": "进程参数",
+                  "type": "item",
+                  "url": "#",
+                  "desc": "进程参数",
+                  "icon": ""
                 }
               ]
             },
@@ -169,6 +145,14 @@
                   "url": "#",
                   "desc": "数据库占用率趋势图",
                   "icon": ""
+                },
+                {
+                  "id": "jczy",
+                  "title": "进程资源占用率趋势图",
+                  "type": "item",
+                  "url": "#",
+                  "desc": "进程资源占用率趋势图",
+                  "icon": ""
                 }
               ]
             }
@@ -181,68 +165,20 @@
           "icon": "",
           "menus": [
             {
+              "id":"sqlcj",
               "title": "SQL记录采集",
-              "type": "menus",
+              "type": "item",
+              "url":"#",
               "desc": "SQL记录采集",
-              "icon": "",
-              "menus": [
-                {
-                  "id": "id13",
-                  "title": "定时采集",
-                  "type": "item",
-                  "url": "#",
-                  "desc": "定时采集",
-                  "icon": ""
-                },
-                {
-                  "id": "id14",
-                  "title": "峰值采集",
-                  "type": "item",
-                  "url": "#",
-                  "desc": "峰值采集",
-                  "icon": ""
-                },
-                {
-                  "id": "id15",
-                  "title": "日报",
-                  "type": "item",
-                  "url": "#",
-                  "desc": "日报",
-                  "icon": ""
-                }
-              ]
+              "icon": ""
             },
             {
+              "id":"sqlyh",
               "title": "SQL优化分析",
-              "type": "menus",
+              "url":"#",
+              "type": "item",
               "desc": "SQL优化分析",
-              "icon": "",
-              "menus": [
-                {
-                  "id": "id16",
-                  "title": "执行计划分析",
-                  "type": "item",
-                  "url": "#",
-                  "desc": "执行计划分析",
-                  "icon": ""
-                },
-                {
-                  "id": "id17",
-                  "title": "表分析",
-                  "type": "item",
-                  "url": "#",
-                  "desc": "表分析",
-                  "icon": ""
-                },
-                {
-                  "id": "id18",
-                  "title": "自动SQL语句优化",
-                  "type": "item",
-                  "url": "#",
-                  "desc": "自动SQL语句优化",
-                  "icon": ""
-                }
-              ]
+              "icon": ""
             }
           ]
         },
@@ -319,17 +255,17 @@
           ]
         },
         {
-          "title": "日志查询",
+          "title": "日志流水",
           "type": "menus",
-          "desc": "日志查询",
+          "desc": "日志流水",
           "icon": "",
           "menus": [
             {
               "id": "id26",
-              "title": "日志流水记录",
+              "title": "日志查看",
               "type": "item",
               "url": "/log/loglist",
-              "desc": "日志流水记录",
+              "desc": "日志查看",
               "icon": ""
             }
           ]
