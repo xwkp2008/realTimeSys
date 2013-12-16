@@ -15,8 +15,14 @@ public class RunningStatus extends Controller {
 		return ok(storage.render(""));
     }
 	
+	// 硬盘存储状态一览
+	public static Result storageFrame() {
+		return ok(storageFrame.render(""));
+    }
+	
 	// CPU状态一览
 	public static Result CPU() {
 		return ok(CPU.render(""));
     }
+	
 }
