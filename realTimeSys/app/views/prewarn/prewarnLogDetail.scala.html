@@ -1,0 +1,59 @@
+@(data:String)
+@import _root_.play.Play
+@import _root_.tng.ark.common.json.JSONUtils 
+
+@headin = {
+<script type="text/javascript" src="@routes.Assets.at("javascripts/staff/staffEdit.js")">
+</script>
+}
+
+@content={
+<form id="staffEditForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="height: 208px; overflow: auto;">
+		<dl>
+			<dt>监控对象：</dt>
+			<dd>
+				硬盘存储
+			</dd>
+		</dl>
+		<dl>
+			<dt>发送时间：</dt>
+			<dd>
+				2013-12-17 22:06:00
+			</dd>
+		</dl>
+		<dl>
+			<dt>接收人：</dt>
+			<dd>
+				张三
+			</dd>
+		</dl>
+		<dl>
+			<dt>接收号码：</dt>
+			<dd>
+				1388888888
+			</dd>
+		</dl>
+		<div class="divider"></div>
+		<dl class="nowrap">
+			<dt>描述：</dt>
+			<dd>
+				<b>[2013-12-15 12:58:40]</b>当前硬盘使用率60%，未来3个月内，可不增加硬盘存储,当前硬盘使用率60%，未来3个月内，可不增加硬盘存储,当前硬盘使用率60%，未来3个月内，可不增加硬盘存储……
+			</dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+}
+
+@formPage(headin,Html("短信详情"),content)

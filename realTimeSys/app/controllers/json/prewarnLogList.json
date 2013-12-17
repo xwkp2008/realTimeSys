@@ -1,0 +1,146 @@
+{
+  "url": "/prewarning/warnloglist",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+    {
+      "text": "详情",
+      "class": "icon",
+      "title": "查看短信详细信息",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "href": "/prewarning/warnlogdetail?{rid}",
+      "warn": "请选择要查看的短信记录。"
+    }
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "roleId",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+  	{
+      "id": "warnType",
+      "name": "监控对象",
+      "tag": "comboxSelect",
+      "display":true,
+      "value":"",
+      "compare":"equal",
+      "attrs":{
+      	"name":"warnType"
+      },
+      "dict":[
+      	{
+      		"dictVal":"0",
+      		"dictName":"CPU"
+      	},
+      	{
+      		"dictVal":"1",
+      		"dictName":"IO"
+      	},
+      	{
+      		"dictVal":"2",
+      		"dictName":"内存"
+      	},
+      	{
+      		"dictVal":"3",
+      		"dictName":"硬盘存储"
+      	}
+      ]
+    },
+    {
+      "id": "jsr",
+      "name": "短信接收人",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"jsr"
+      }
+    },
+    {
+      "id": "jsrhm",
+      "name": "短信接收号码",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"jsrhm"
+      }
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": false
+    },
+    {
+      "id": "warnType",
+      "name": "监控对象",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "jsr",
+      "name": "短信接收人",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "jsrhm",
+      "name": "接收号码",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "desc",
+      "name": "描述",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "sendTime",
+      "name": "发送时间",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"0001",
+  		"warnType":"内存",
+  		"jsr":"张三",
+  		"jsrhm":"13888888888",
+  		"desc":"内存使用率达80%，请及时检查！",
+  		"sendTime":"2013-12-15 11:58:40"
+  	},
+  	{
+  		"rid":"0002",
+  		"warnType":"内存",
+  		"jsr":"张三",
+  		"jsrhm":"13888888888",
+  		"desc":"内存使用率达80%，请及时检查！",
+  		"sendTime":"2013-12-15 11:58:40"
+  	},
+  	{
+  		"rid":"0003",
+  		"warnType":"内存",
+  		"jsr":"张三",
+  		"jsrhm":"13888888888",
+  		"desc":"内存使用率达80%，请及时检查！",
+  		"sendTime":"2013-12-15 11:58:40"
+  	}
+  ]
+}

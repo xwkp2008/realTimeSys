@@ -184,24 +184,24 @@
               "id": "id19",
               "title": "定制预警策略",
               "type": "item",
-              "url": "#",
+              "url": "/prewarning/makewarn",
               "desc": "定制预警策略",
               "icon": ""
             },
             {
               "id": "id20",
-              "title": "定制信息采集",
+              "title": "预警信息流水",
               "type": "item",
-              "url": "#",
-              "desc": "定制信息采集",
+              "url": "/prewarning/warninfolist",
+              "desc": "预警信息流水",
               "icon": ""
             },
             {
               "id": "id21",
-              "title": "发送短信",
+              "title": "短信历史记录",
               "type": "item",
-              "url": "#",
-              "desc": "发送短信",
+              "url": "/prewarning/warnloglist",
+              "desc": "短信历史记录",
               "icon": ""
             }
           ]

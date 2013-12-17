@@ -1,0 +1,126 @@
+{
+  "url": "/prewarning/warninfolist",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+    
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "roleId",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+  	{
+      "id": "warnType",
+      "name": "监控对象",
+      "tag": "comboxSelect",
+      "display":true,
+      "value":"",
+      "compare":"equal",
+      "attrs":{
+      	"name":"warnType"
+      },
+      "dict":[
+      	{
+      		"dictVal":"0",
+      		"dictName":"CPU"
+      	},
+      	{
+      		"dictVal":"1",
+      		"dictName":"IO"
+      	},
+      	{
+      		"dictVal":"2",
+      		"dictName":"内存"
+      	},
+      	{
+      		"dictVal":"3",
+      		"dictName":"硬盘存储"
+      	}
+      ]
+    },
+    {
+      "id": "warnLevel",
+      "name": "预警级别",
+      "tag": "comboxSelect",
+      "display":true,
+      "value":"",
+      "compare":"equal",
+      "attrs":{
+      	"name":"warnLevel"
+      },
+      "dict":[
+      	{
+      		"dictVal":"1",
+      		"dictName":"WARN"
+      	},
+      	{
+      		"dictVal":"2",
+      		"dictName":"ERROR"
+      	}
+      ]
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": false
+    },
+    {
+      "id": "warnType",
+      "name": "监控对象",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "warnLevel",
+      "name": "预警级别",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "desc",
+      "name": "描述",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "createTime",
+      "name": "记录时间",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"0001",
+  		"warnType":"<span style='color:#33cc00'>内存</span>",
+  		"warnLevel":"<span style='color:#33cc00'>高</span>",
+  		"desc":"<span style='color:#33cc00'>内存使用率达80%，请及时检查！</span>",
+  		"createTime":"<span style='color:#33cc00'>2013-12-15 11:58:40</span>"
+  	},
+  	{
+  		"rid":"0002",
+  		"warnType":"<span style='color:#ff0000'>硬盘存储</span>",
+  		"warnLevel":"<span style='color:#ff0000'>紧急</span>",
+  		"desc":"<span style='color:#ff0000'>硬盘使用率已达90%，请及时添加存储空间！</span>",
+  		"createTime":"<span style='color:#ff0000'>2013-12-15 11:58:40</span>"
+  	},
+  	{
+  		"rid":"0003",
+  		"warnType":"<span style='color:yellow'>内存</span>",
+  		"warnLevel":"<span style='color:yellow'>一般</span>",
+  		"desc":"<span style='color:yellow'>内存使用率达70%，请及时检查！</span>",
+  		"createTime":"<span style='color:yellow'>2013-12-15 11:58:40</span>"
+  	}
+  ]
+}

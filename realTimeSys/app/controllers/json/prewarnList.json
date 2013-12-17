@@ -1,0 +1,152 @@
+{
+  "url": "/prewarning/makewarn",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+    {
+      "text": "设置",
+      "class": "edit",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "title": "设置",
+      "href": "/prewarning/editWarn?{rid}",
+      "warn": "请选择一条记录。"
+    }
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "roleId",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+  	{
+      "id": "warnType",
+      "name": "监控对象",
+      "tag": "comboxSelect",
+      "display":true,
+      "value":"",
+      "compare":"equal",
+      "attrs":{
+      	"name":"warnType"
+      },
+      "dict":[
+      	{
+      		"dictVal":"0",
+      		"dictName":"CPU"
+      	},
+      	{
+      		"dictVal":"1",
+      		"dictName":"IO"
+      	},
+      	{
+      		"dictVal":"2",
+      		"dictName":"内存"
+      	},
+      	{
+      		"dictVal":"3",
+      		"dictName":"硬盘空间"
+      	}
+      ]
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": false
+    },
+    {
+      "id": "warnType",
+      "name": "监控对象",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "yjfz",
+      "name": "预警阀值(紧急)",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "lxjg",
+      "name": "轮询间隔",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "cssj",
+      "name": "超时时间",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "yjjg",
+      "name": "预警间隔",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "yjcs",
+      "name": "预警次数",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "status",
+      "name": "预警状态",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"0001",
+  		"warnType":"内存",
+  		"yjfz":">90%",
+  		"lxjg":"1800s",
+  		"cssj":"12s",
+  		"yjjg":"0s",
+  		"yjcs":"0",
+  		"status":"开启"
+  	},
+  	{
+  		"rid":"0002",
+  		"warnType":"硬盘空间",
+  		"yjfz":">80%",
+  		"lxjg":"3600s",
+  		"cssj":"30s",
+  		"yjjg":"60s",
+  		"yjcs":"2",
+  		"status":"开启"
+  	},
+  	{
+  		"rid":"0003",
+  		"warnType":"IO",
+  		"yjfz":">95%",
+  		"lxjg":"1800s",
+  		"cssj":"18s",
+  		"yjjg":"60s",
+  		"yjcs":"3",
+  		"status":"开启"
+  	},
+  	{
+  		"rid":"0004",
+  		"warnType":"CPU",
+  		"yjfz":">85%",
+  		"lxjg":"3600s",
+  		"cssj":"12s",
+  		"yjjg":"30s",
+  		"yjcs":"1",
+  		"status":"开启"
+  	}
+  ]
+}

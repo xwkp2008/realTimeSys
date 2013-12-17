@@ -17,6 +17,16 @@ GET		/monitor/status/CPU			controllers.monitor.status.RunningStatus.CPU()
 GET		/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
 POST	/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
 
+# 预警功能
+GET		/prewarning/makewarn		controllers.prewarn.PreWarn.makeWarn()
+POST	/prewarning/makewarn		controllers.prewarn.PreWarn.makeWarn()
+GET		/prewarning/editWarn		controllers.prewarn.PreWarn.editWarn()
+GET		/prewarning/warninfolist	controllers.prewarn.PreWarn.warnInfoList()
+POST	/prewarning/warninfolist	controllers.prewarn.PreWarn.warnInfoList()
+GET		/prewarning/warnloglist	controllers.prewarn.PreWarn.warnLogList()
+POST	/prewarning/warnloglist	controllers.prewarn.PreWarn.warnLogList()
+GET		/prewarning/warnlogdetail		controllers.prewarn.PreWarn.warnLogDetail()
+
 # 流水日志
 GET		/log/loglist				controllers.log.Log.list()
 POST	/log/loglist				controllers.log.Log.list()

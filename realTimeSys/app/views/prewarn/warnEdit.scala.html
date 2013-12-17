@@ -1,0 +1,104 @@
+@(data:String)
+@import _root_.play.Play
+@import _root_.tng.ark.common.json.JSONUtils 
+
+@headin = {
+<script type="text/javascript" src="@routes.Assets.at("javascripts/prewarn/warnEdit.js")">
+</script>
+}
+
+@content={
+<form id="staffEditForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="overflow: auto;">
+		<dl>
+			<dt>监控对象：</dt>
+			<dd>
+				<select id="warnType" name="warnType">
+					<option value="0" selected>CPU</option>
+					<option value="1">IO</option>
+					<option value="2">内存</option>
+					<option value="3">硬盘空间</option>
+				</select>
+			</dd>
+		</dl>
+		<dl>
+			<dt>状态：</dt>
+			<dd>
+				<select id="status" name="status">
+					<option value="0" selected>开启</option>
+					<option value="1">关闭</option>
+				</select>
+			</dd>
+		</dl>
+		<dl>
+			<dt>预警阀值（紧急）：</dt>
+			<dd>
+				<input type="text" id="lxjg1" name="lxjg1" class="textInput" value=">90%">
+			</dd>
+		</dl>
+		<dl>
+			<dt>预警阀值（高）：</dt>
+			<dd>
+				<input type="text" id="lxjg2" name="lxjg2" class="textInput" value=">80%">
+			</dd>
+		</dl>
+		<dl>
+			<dt>预警阀值（一般）：</dt>
+			<dd>
+				<input type="text" id="lxj3" name="lxjg3" class="textInput" value=">70%">
+			</dd>
+		</dl>
+		<dl>
+			<dt></dt>
+			<dd>
+				<p><input type="checkbox" name="lxjg33" class="textInput"> 红色预警的短信告知</p>
+			</dd>
+		</dl>
+		<div class="divider"></div>
+		<dl>
+			<dt>轮询间隔：</dt>
+			<dd>
+				<input type="text" id="lxjg" name="lxjg" class="textInput" value="3600"><span class="info">秒</span>
+			</dd>
+		</dl>
+		<dl>
+			<dt>超时时间：</dt>
+			<dd>
+				<input type="text" id="cssj" name="cssj" class="textInput" value="12"><span class="info">秒</span>
+			</dd>
+		</dl>
+		<dl>
+			<dt>预警间隔：</dt>
+			<dd>
+				<input type="text" id="yjjg" name="yjjg" class="textInput" value="0"><span class="info">秒</span>
+			</dd>
+		</dl>
+		<dl>
+			<dt>预警间隔：</dt>
+			<dd>
+				<input type="text" id="yjcs" name="yjcs" class="textInput" value="0"><span class="info">次</span>
+			</dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="buttonActive">
+					<div class="buttonContent">
+						<button type="button" onclick="saveWarnEdit();">保存</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+}
+
+@formPage(headin,Html("角色编辑"),content)
