@@ -9,8 +9,10 @@
 						<th width="100" orderField="num">对象名</th>
 						<th width="100">状态</th>
 						<th width="100">运行时间</th>
-						<th width="100">cpu使用率</th>
-						<th width="100">超出预警线时间占比</th>
+						<th width="100">上行速度</th>
+						<th width="100">下行速度</th>
+						<th width="100">网络使用率</th>
+						<th width="100">健康度</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -18,19 +20,25 @@
 						<td>Alert Cleanup</td>
 						<td style="color:green;">运行中</td>
 						<td class="runtime">15天20小时31分19秒</td>
-						<td class="percent">43%</td>
-						<td>7%</td>
+						<td class="data">35.5KB/s</td>
+						<td class="data">17.7KB/s</td>
+						<td class="percent">23%</td>
+						<td style="color:green;">良好</td>
 					</tr>
 					<tr target="sid_user" rel="2">
 						<td>B系统</td>
 						<td style="color:green;">运行中</td>
 						<td class="runtime">9天7小时44分17秒</td>
+						<td class="data">15.5KB/s</td>
+						<td class="data">6.3KB/s</td>
 						<td class="percent">12%</td>
-						<td>11%</td>
+						<td style="color:green;">良好</td>
 					</tr>
 					<tr target="sid_user" rel="3">
 						<td>C系统</td>
 						<td style="color:red;">停止</td>
+						<td></td>
+						<td></td>
 						<td></td>
 						<td>0%</td>
 						<td></td>
@@ -40,7 +48,7 @@
 		</div>
 	</div>
 	<div class="panel">
-		<h1>CPU使用率</h1>
+		<h1>网络带宽使用率</h1>
 		<div class="pageContent">
 			<div id="placeholder" style="height:350px;margin:10px;"></div>
 		</div>
@@ -53,22 +61,22 @@ $(function() {
 	var container = $("#placeholder",$box);
 	var maximum = container.outerWidth() / 2 || 300;
 	var refresh = true;
-	var data = [];
+	var data = [[],[]];// up down
 
-    function getRandomData() {
-        if (data.length) {
-            data = data.slice(1);
+    function getRandomData(index) {
+        if (data[index].length) {
+            data[index] = data[index].slice(1);
         }
 
-        while (data.length < maximum) {
-            var previous = data.length ? data[data.length - 1] : 20;
+        while (data[index].length < maximum) {
+            var previous = data[index].length ? data[index][data[index].length - 1] : 20;
             var y = previous + Math.random() * 10 - 5;
-            data.push(y < 0 ? 0 : y > 100 ? 100 : y);
+            data[index].push(y < 0 ? 0 : y > 100 ? 100 : y);
         }
 
         var res = [];
-        for (var i = 0; i < data.length; ++i) {
-            res.push([i, data[i]])
+        for (var i = 0; i < data[index].length; ++i) {
+            res.push([i, data[index][i]])
         }
 
         return res;
@@ -76,13 +84,22 @@ $(function() {
 
 	//
 
-	series = [{
-		data: getRandomData(),
-		label: "CPU0", 
-		lines: {
-			fill: false
+	series = [
+		{
+			data: getRandomData(0),
+			label: "上行速度", 
+			lines: {
+				fill: false
+			}
+		},
+		{
+			data: getRandomData(1),
+			label: "下行速度", 
+			lines: {
+				fill: false
+			}
 		}
-	}];
+	];
 
 	//
 
@@ -115,7 +132,7 @@ $(function() {
 		},
 		yaxis: {
 			min: 0,
-			max: 100
+			max: 1024
 		},
 		legend: {
 			show: true
@@ -123,14 +140,15 @@ $(function() {
 	});
 
 	var yaxisLabel = $("<div class='axisLabel yaxisLabel'></div>")
-		.text("使用率(%)")
+		.text("传输速度(KB/S)")
 		.appendTo(container);
 
 	yaxisLabel.css("margin-top", 5);
 
 	setInterval(function updateRandom() {
 		if(refresh){
-			series[0].data = getRandomData(data);
+			series[0].data = getRandomData(0);
+			series[1].data = getRandomData(1);
 			plot.setData(series);
 			plot.draw();
 		}
@@ -140,6 +158,9 @@ $(function() {
 		$(".percent", $box).each(function(){
 			$(this).empty().append(Math.round(Math.random()*100) + "%");
 		});
+		$(".data", $box).each(function(){
+			$(this).empty().append(Math.round(Math.random()*150) + "KB/S");
+		});
 	}, 3000);
 	
 	$("#objectList tbody tr", $box).click(function(){
@@ -147,11 +168,12 @@ $(function() {
 		if(index == 2){
 			refresh = false;
 			series[0].data = [];
+			series[1].data = [];
 			plot.setData(series);
 			plot.draw();
 		}else{
 			refresh = true;
-			data=[];
+			data=[[],[]];
 		}
     });
 });

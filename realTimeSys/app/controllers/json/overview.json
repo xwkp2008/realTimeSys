@@ -1,0 +1,146 @@
+{
+  "url": "/monitor/status/overview",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+    {
+      "text": "添加新任务",
+      "class": "add",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "title": "添加新任务",
+      "href": "/system/privilege/group/add"
+    },
+    {
+      "text": "删除任务",
+      "class": "delete",
+      "target": "ajaxTodo",
+      "title": "是否要删除该任务？删除以后将不可恢复。",
+      "href": "/ajaxDone?id={rid}",
+      "warn": "请选择一个要删除的任务。"
+    }
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "5",
+    "numPerPage": "20",
+    "orderField": "userId",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+    {
+      "id": "name",
+      "name": "名称",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"name"
+      }
+    }
+  ],
+  "cols": [
+  	{
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": false
+    },
+    {
+      "id": "name",
+      "name": "名称",
+      "orderField": true,
+      "display": true
+    },
+    {
+      "id": "startDate",
+      "name": "开始时间",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "endDate",
+      "name": "停止时间",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "freq",
+      "name": "运行频率",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "Monday",
+      "name": "M",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "Tuesday",
+      "name": "T",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "Wednesday",
+      "name": "W",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "Thursday",
+      "name": "T",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "Friday",
+      "name": "F",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "Saturday",
+      "name": "S",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "Sunday",
+      "name": "S",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "enable",
+      "name": "已启用",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"001",
+  		"name":"<a href='/monitor/status/overview/detail' target='navTab'>Alert Cleanup</a>",
+  		"startDate":"02:00:00",
+  		"endDate":"从不",
+  		"freq":"1 00:00:00",
+  		"Monday":"<span style='color:green;font-weight:bold;'>√</span>",
+  		"Tuesday":"<span style='color:green;font-weight:bold;'>√</span>",
+  		"Wednesday":"<span style='color:red;font-weight:bold;'>X</span>",
+  		"Thursday":"<span style='color:green;font-weight:bold;'>√</span>",
+  		"Friday":"<span style='color:green;font-weight:bold;'>√</span>",
+  		"Saturday":"<span style='color:green;font-weight:bold;'>√</span>",
+  		"Sunday":"<span style='color:green;font-weight:bold;'>√</span>",
+  		"enable":"<span style='color:green;font-weight:bold;'>√</span>"
+  	}
+  ]
+}

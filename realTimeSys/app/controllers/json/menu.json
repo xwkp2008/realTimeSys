@@ -22,7 +22,7 @@
                   "id": "zl",
                   "title": "总览",
                   "type": "item",
-                  "url": "/monitor/status/CPU",
+                  "url": "/monitor/status/overview",
                   "desc": "总览",
                   "icon": ""
                 },
@@ -62,7 +62,7 @@
                   "id":"network",
                   "title": "网络",
                   "type": "item",
-                  "url": "#",
+                  "url": "/monitor/status/network",
                   "desc": "网络",
                   "icon": ""
                 },
@@ -102,8 +102,16 @@
                   "id":"czxt",
                   "title": "操作系统参数信息",
                   "type": "item",
-                  "url":"/monitor/configFile/sysparmlist",
+                  "url":"#",
                   "desc": "操作系统参数信息",
+                  "icon": ""
+                },
+                {
+                  "id": "id10",
+                  "title": "系统参数",
+                  "type": "item",
+                  "url": "#",
+                  "desc": "系统参数",
                   "icon": ""
                 },
                 {
@@ -184,24 +192,24 @@
               "id": "id19",
               "title": "定制预警策略",
               "type": "item",
-              "url": "/prewarning/makewarn",
+              "url": "#",
               "desc": "定制预警策略",
               "icon": ""
             },
             {
               "id": "id20",
-              "title": "预警信息流水",
+              "title": "定制信息采集",
               "type": "item",
-              "url": "/prewarning/warninfolist",
-              "desc": "预警信息流水",
+              "url": "#",
+              "desc": "定制信息采集",
               "icon": ""
             },
             {
               "id": "id21",
-              "title": "短信历史记录",
+              "title": "发送短信",
               "type": "item",
-              "url": "/prewarning/warnloglist",
-              "desc": "短信历史记录",
+              "url": "#",
+              "desc": "发送短信",
               "icon": ""
             }
           ]

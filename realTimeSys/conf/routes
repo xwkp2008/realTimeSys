@@ -10,10 +10,14 @@ POST    /ajaxDone                   controllers.Application.ajaxDone()
 GET     /                           controllers.Application.index()
 
 #　监控功能
-GET		/monitor/status/memory		controllers.monitor.status.RunningStatus.memory()
-GET		/monitor/status/storage		controllers.monitor.status.RunningStatus.storage()
-GET		/monitor/status/storageFrame		controllers.monitor.status.RunningStatus.storageFrame()
-GET		/monitor/status/CPU			controllers.monitor.status.RunningStatus.CPU()
+GET		/monitor/status/overview		controllers.monitor.status.RunningStatus.overview()
+POST	/monitor/status/overview		controllers.monitor.status.RunningStatus.overview()
+GET		/monitor/status/overview/detail	controllers.monitor.status.RunningStatus.overviewDetail()
+GET		/monitor/status/memory			controllers.monitor.status.RunningStatus.memory()
+GET		/monitor/status/storage			controllers.monitor.status.RunningStatus.storage()
+GET		/monitor/status/storageFrame	controllers.monitor.status.RunningStatus.storageFrame()
+GET		/monitor/status/CPU				controllers.monitor.status.RunningStatus.CPU()
+GET		/monitor/status/network			controllers.monitor.status.RunningStatus.network()
 GET		/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
 POST	/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
 
