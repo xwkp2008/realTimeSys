@@ -102,16 +102,8 @@
                   "id":"czxt",
                   "title": "操作系统参数信息",
                   "type": "item",
-                  "url":"#",
+                  "url":"/monitor/configFile/sysparmlist",
                   "desc": "操作系统参数信息",
-                  "icon": ""
-                },
-                {
-                  "id": "id10",
-                  "title": "系统参数",
-                  "type": "item",
-                  "url": "#",
-                  "desc": "系统参数",
                   "icon": ""
                 },
                 {

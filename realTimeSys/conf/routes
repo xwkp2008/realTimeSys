@@ -13,6 +13,8 @@ GET     /                           controllers.Application.index()
 GET		/monitor/status/memory		controllers.monitor.status.RunningStatus.memory()
 GET		/monitor/status/storage		controllers.monitor.status.RunningStatus.storage()
 GET		/monitor/status/CPU			controllers.monitor.status.RunningStatus.CPU()
+GET		/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
+POST	/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
 
 # 流水日志
 GET		/log/loglist				controllers.log.Log.list()
