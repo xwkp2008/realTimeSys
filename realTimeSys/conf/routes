@@ -12,6 +12,7 @@ GET     /                           controllers.Application.index()
 #　监控功能
 GET		/monitor/status/memory		controllers.monitor.status.RunningStatus.memory()
 GET		/monitor/status/storage		controllers.monitor.status.RunningStatus.storage()
+GET		/monitor/status/storageFrame		controllers.monitor.status.RunningStatus.storageFrame()
 GET		/monitor/status/CPU			controllers.monitor.status.RunningStatus.CPU()
 GET		/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
 POST	/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()

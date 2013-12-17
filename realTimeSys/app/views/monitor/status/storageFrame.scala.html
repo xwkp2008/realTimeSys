@@ -1,0 +1,130 @@
+@(jsonStr: String)
+<div id="placeholder" style="height:450px;width:90%;padding:20px;10px;"></div>
+<script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+<script src="@routes.Assets.at("javascripts/flot/jquery.flot.min.js")" type="text/javascript"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jshashtable-2.1.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/jquery.numberformatter-1.2.4.min.js")"></script>
+<script type="text/javascript" src="@routes.Assets.at("javascripts/flot/jquery.flot.time.min.js")"></script>
+<script src="@routes.Assets.at("javascripts/flot/jquery.flot.stack.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+	var previousPoint = null, previousLabel = null;
+	$.fn.UseTooltip = function () {
+            $(this).bind("plothover", function (event, pos, item) {
+                if (item) {
+                    if ((previousLabel != item.series.label) ||
+                 (previousPoint != item.dataIndex)) {
+                        previousPoint = item.dataIndex;
+                        previousLabel = item.series.label;
+                        $("#tooltip").remove();
+ 
+                        var x = item.datapoint[0] - item.datapoint[2];
+                        var y = item.datapoint[1];
+ 
+                        var color = item.series.color;
+                        //alert(color)
+                        //console.log(item.series.xaxis.ticks[x].label);               
+ 
+                        showTooltip(item.pageX,
+                        item.pageY,
+                        color,
+                        "<strong>" + item.series.label + "</strong><br>" + item.series.yaxis.ticks[y].label +
+                        " : <strong>" + $.formatNumber(x, { format: "#.###", locale: "us" }) + "</strong> GB");
+                    }
+                } else {
+                    $("#tooltip").remove();
+                    previousPoint = null;
+                }
+            });
+        };
+        
+    function showTooltip(x, y, color, contents) {
+        $('<div id="tooltip">' + contents + '</div>').css({
+            position: 'absolute',
+            display: 'none',
+            top: y - 10,
+            left: x + 10,
+            border: '2px solid ' + color,
+            padding: '3px',
+            'font-size': '9px',
+            'border-radius': '5px',
+            'background-color': '#fff',
+            'font-family': 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+            opacity: 0.9
+        }).appendTo("body").fadeIn(200);
+    }
+    
+	$(function() {
+ 		var rawData0_0 = [[2.55, 5], [1.91, 4],[0.50, 3],[0.33, 2],[0.01, 1], [0.01, 0]];
+		var rawData0_1 = [[36.5, 5], [2.00, 4],[1.46, 3],[1.63, 2],[1.91, 1], [1.95, 0]];
+		
+		var rawData1_0 = [[15.55, 3], [3.91, 2],[2.70, 1],[1.01, 0]];
+		var rawData1_1 = [[22.5, 3], [8.00, 2],[0.46, 1],[0.93, 0]];
+		
+		var rawData2_0 = [[20.55, 4], [1.47, 3],[1.50, 2],[1.19, 1],[0.01, 0]];
+		var rawData2_1 = [[18.5, 4], [1.53, 3],[0.46, 2],[0.81, 1],[1.91, 0]];
+		
+		var dataArr = [[rawData0_0,rawData0_1],[rawData1_0,rawData1_1],[rawData2_0,rawData2_1]];
+		
+        var dataSet = [{ label:"已用空间",data: dataArr[0][0], color:"#2ea4ff"},{ label:"可用空间", data: dataArr[0][1], color:"#9ed5ff"}];
+        var ticks = [
+        				[[0, "tmpdbs"], [1, "sdstmdbs"], [2, "rootdbs"], [3, "phydbs"], [4, "logdbs"],[5, "datadbs"]],
+        				[[0, "rootdbs"], [1, "phydbs"], [2, "logdbs"],[3, "datadbs"]],
+        				[[0, "sdstmdbs"], [1, "rootdbs"], [2, "phydbs"], [3, "logdbs"],[4, "datadbs"]]
+        			];
+        var options = {
+            series: {
+            	stack:true,
+                bars: {
+                    show: true
+                }
+            },
+            bars: {
+                align: "center",
+                barWidth: 0.3,
+                horizontal: true,
+                fillColor: { colors: [{ opacity: 0.5 }, { opacity: 1}] },
+                lineWidth: 1
+            },
+            xaxis: {
+                axisLabel: "容量 (GB)",
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: 'Verdana, Arial',
+                axisLabelPadding: 10,
+                max: 40,
+                tickFormatter: function (v, axis) {
+                    return $.formatNumber(v, { format: "#,###", locale: "us" });
+                },
+                color: "black"
+            },
+            yaxis: {
+                axisLabel: "空间名",
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: 'Verdana, Arial',
+                axisLabelPadding: 2,
+                ticks: ticks[0]
+            },
+            legend: {
+                noColumns: 0,
+                labelBoxBorderColor: "#858585",
+                position: "ne"
+            },
+            grid: {
+                hoverable: true,
+                borderWidth: 2
+            }
+        };
+		$.plot($("#placeholder"), dataSet, options);
+        $("#placeholder").UseTooltip();
+        
+        $("#objectList tbody tr",window.parent.document).click(function(){
+        	var index = $(this).index();
+        	$("#storageList tbody",window.parent.document).hide();
+        	$("#storageList tbody",window.parent.document).eq(index).show();
+        	dataSet = [{ label:"已用空间",data: dataArr[index][0], color:"#2ea4ff"},{ label:"可用空间", data: dataArr[index][1], color:"#9ed5ff"}];
+        	options.yaxis.ticks = ticks[index];
+        	$.plot($("#placeholder"), dataSet, options);
+        });
+	});
+</script>
