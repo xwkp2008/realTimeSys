@@ -1,0 +1,123 @@
+{
+  "url": "/strategy/typelist",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+    {
+      "text": "新增",
+      "class": "add",
+      "target": "dialog",
+      "mask":true,
+      "width":"450",
+      "height":"200",
+      "title": "添加分类",
+      "href": "/strategy/addtype"
+    },
+    {
+      "text": "修改",
+      "class": "edit",
+      "target": "dialog",
+      "mask":true,
+      "width":"450",
+      "height":"200",
+      "title": "编辑分类",
+      "href": "/strategy/edittype?{rid}",
+      "warn": "请选择一个要编辑的分类。"
+    },
+    {
+      "text": "删除",
+      "class": "delete",
+      "target": "ajaxTodo",
+      "title": "是否要删除该分类？删除以后将不可恢复。",
+      "href": "/ajaxDone?id={rid}",
+      "warn": "请选择一个要删除的分类。"
+    }
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "key",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+  	{
+      "id": "bm",
+      "name": "分类编码",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"bm"
+      }
+    },
+    {
+      "id": "mc",
+      "name": "分类名称",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"mc"
+      }
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": false
+    },
+    {
+      "id": "bm",
+      "name": "分类编码",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "mc",
+      "name": "分类名称",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"0001",
+  		"bm":"201218205819",
+  		"mc":"SQL分析"
+  	},
+  	{
+  		"rid":"0002",
+  		"bm":"201218205820",
+  		"mc":"IO读写"
+  	},
+  	{
+  		"rid":"0003",
+  		"bm":"201218205821",
+  		"mc":"SQL优化"
+  	},
+  	{
+  		"rid":"0004",
+  		"bm":"201218205822",
+  		"mc":"内存管理"
+  	},
+  	{
+  		"rid":"0005",
+  		"bm":"201218205823",
+  		"mc":"硬盘分区"
+  	},
+  	{
+  		"rid":"0006",
+  		"bm":"201218205824",
+  		"mc":"网络跟踪"
+  	}
+  ]
+}

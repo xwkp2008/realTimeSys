@@ -1,0 +1,47 @@
+@(data:String)
+@import _root_.play.Play
+@import _root_.tng.ark.common.json.JSONUtils 
+
+@headin = {
+<script type="text/javascript" src="@routes.Assets.at("javascripts/strategy/strategyEdit.js")">
+</script>
+}
+
+@content={
+<form id="typeEditForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="overflow: auto;">
+		<dl>
+			<dt>分类编码：</dt>
+			<dd>
+				<input type="text" id="bm" name="bm" value="201218205821" class="textInput readonly" readonly="readonly">
+			</dd>
+		</dl>
+		<dl>
+			<dt>分类名称：</dt>
+			<dd>
+				<input type="text" id="mc" name="mc" value="SQL优化" class="textInput">
+			</dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="buttonActive">
+					<div class="buttonContent">
+						<button type="button" onclick="saveTypeEdit();">保存</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+}
+
+@formPage(headin,Html("分类编辑"),content)
