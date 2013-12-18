@@ -1,0 +1,288 @@
+@(jsonStr: String)
+<div class="pageContent" layoutH="0">
+	<div class="pageContent" layoutH="0" style="width:60%;display:block;float:left;">
+		<div class="panel">
+			<h1>监控对象列表</h1>
+			<div>
+				<table id="objectList" class="list" width="100%">
+					<thead>
+						<tr>
+							<th width="100" orderField="num">对象名</th>
+							<th width="100">状态</th>
+							<th width="100">运行时间</th>
+							<th width="100">输入超出预警线时间占比</th>
+							<th width="100">输出超出预警线时间占比</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr target="sid_user" rel="1" class="selected">
+							<td>Alert Cleanup</td>
+							<td style="color:green;">运行中</td>
+							<td class="runtime">15天20小时31分19秒</td>
+							<td>1.7%</td>
+							<td>0%</td>
+						</tr>
+						<tr target="sid_user" rel="2">
+							<td>B系统</td>
+							<td style="color:green;">运行中</td>
+							<td class="runtime">9天7小时44分17秒</td>
+							<td>0.6%</td>
+							<td>0.4%</td>
+						</tr>
+						<tr target="sid_user" rel="3">
+							<td>C系统</td>
+							<td style="color:red;">停止</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="panel">
+			<h1>IO监控</h1>
+			<div>
+				<table id="storageList" class="list" width="100%">
+					<thead>
+						<tr>
+							<th width="100"></th>
+							<th width="100">速度</th>
+							<th width="100">平均速度</th>
+							<th width="100">最低</th>
+							<th width="100">最高</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr target="sid_user" rel="1">
+							<td>输出</td>
+							<td class="curInput">9.51KB/s</td>
+							<td>8.77KB/s</td>
+							<td>0.09KB/s</td>
+							<td>13.81KB/s</td>
+						</tr>
+						<tr target="sid_user" rel="2">
+							<td>输入</td>
+							<td class="curOutput">13.25KB/s</td>
+							<td>8.77KB/s</td>
+							<td>1.38KB/s</td>
+							<td style="color:red;">26.20KB/s</td>
+						</tr>
+					</tbody>
+					
+					<tbody style="display:none;">
+						<tr target="sid_user" rel="1">
+							<td>datadbs</td>
+							<td>3.0</td>
+							<td>39.1GB</td>
+							<td>36.5GB</td>
+							<td>2.55GB</td>
+							<td style="color:green;">6.53%</td>
+						</tr>
+						<tr target="sid_user" rel="2">
+							<td>logdbs</td>
+							<td>1.0</td>
+							<td>3.91GB</td>
+							<td>2.00GB</td>
+							<td>1.91GB</td>
+							<td style="color:red;">48.83%</td>
+						</tr>
+						<tr target="sid_user" rel="3">
+							<td>phydbs</td>
+							<td>1.0</td>
+							<td>1.95GB</td>
+							<td>1.46GB</td>
+							<td>500MB</td>
+							<td style="color:green;">25.01%</td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td>rootdbs</td>
+							<td>1.0</td>
+							<td>1.95GB</td>
+							<td>1.63GB</td>
+							<td>331MB</td>
+							<td style="color:green;">16.54%</td>
+						</tr>
+					</tbody>
+					
+					<tbody style="display:none;">
+						<tr target="sid_user" rel="1">
+							<td>datadbs</td>
+							<td>3.0</td>
+							<td>39.1GB</td>
+							<td>36.5GB</td>
+							<td>2.55GB</td>
+							<td style="color:green;">6.53%</td>
+						</tr>
+						<tr target="sid_user" rel="2">
+							<td>logdbs</td>
+							<td>1.0</td>
+							<td>3.91GB</td>
+							<td>2.00GB</td>
+							<td>1.91GB</td>
+							<td style="color:red;">48.83%</td>
+						</tr>
+						<tr target="sid_user" rel="3">
+							<td>phydbs</td>
+							<td>1.0</td>
+							<td>1.95GB</td>
+							<td>1.46GB</td>
+							<td>500MB</td>
+							<td style="color:green;">25.01%</td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td>rootdbs</td>
+							<td>1.0</td>
+							<td>1.95GB</td>
+							<td>1.63GB</td>
+							<td>331MB</td>
+							<td style="color:green;">16.54%</td>
+						</tr>
+						<tr target="sid_user" rel="5">
+							<td>sdstmdbs</td>
+							<td>1.0</td>
+							<td>1.91GB</td>
+							<td>1.91GB</td>
+							<td>424KB</td>
+							<td style="color:green;">0.02%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="pageContent" layoutH="0" style="width:40%;display:block;float: left;clear: none;">
+		<div class="panel" minh="100">
+			<h1>IO实时监控</h1>
+			<div class="pageContent" layoutH="50">
+				<div id="placeholder" style="height:450px;width:90%;padding:20px;10px;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+	var $box = navTab.getCurrentPanel();
+	var container = $("#placeholder",$box);
+	var maximum = container.outerWidth() / 2 || 300;
+	var refresh = true;
+	var data = [[],[]];// read write
+
+    function getRandomData(index) {
+        if (data[index].length) {
+            data[index] = data[index].slice(1);
+        }
+
+        while (data[index].length < maximum) {
+            var previous = data[index].length ? data[index][data[index].length - 1] : 20;
+            var y ;
+            if(1==index){
+            	y = previous + Math.random() * 7 - 4;
+            }else{
+            	y = previous + Math.random() * 10 - 8;
+            }
+            data[index].push(y < 0 ? 0 : y > 30 ? 30 : y);
+        }
+
+        var res = [];
+        for (var i = 0; i < data[index].length; ++i) {
+            res.push([i, data[index][i]])
+        }
+
+        return res;
+    }
+
+	//
+
+	var series = [
+		{
+			data: getRandomData(0),
+			label: "read", 
+			lines: {
+				fill: true
+			}
+		},
+		{
+			data: getRandomData(1),
+			label: "write", 
+			lines: {
+				fill: true
+			}
+		}
+	];
+
+	//
+
+	var plot = $.plot(container, series, {
+		grid: {
+			borderWidth: 1,
+			minBorderMargin: 20,
+			labelMargin: 10,
+			backgroundColor: {
+				colors: ["#fff", "#e4f4f4"]
+			},
+			margin: {
+				top: 8,
+				bottom: 20,
+				left: 0
+			},
+			markings: function(axes) {
+				var markings = [];
+				var xaxis = axes.xaxis;
+				for (var x = Math.floor(xaxis.min); x < xaxis.max; x += xaxis.tickSize * 2) {
+					markings.push({ xaxis: { from: x, to: x + xaxis.tickSize }, color: "rgba(232, 232, 255, 0.2)" });
+				}
+				return markings;
+			}
+		},
+		xaxis: {
+			tickFormatter: function() {
+				return "";
+			}
+		},
+		yaxis: {
+			min: 0,
+			max: 30
+		},
+		legend: {
+			show: true
+		}
+	});
+
+	var yaxisLabel = $("<div class='axisLabel yaxisLabel'></div>")
+		.text("速度(KB/S)")
+		.appendTo(container);
+
+	yaxisLabel.css("margin-top", 5);
+
+	setInterval(function updateRandom() {
+		if(refresh){
+			series[0].data = getRandomData(0);
+			series[1].data = getRandomData(1);
+			plot.setData(series);
+			plot.draw();
+		}
+	}, 100);
+	
+	setInterval(function(){
+		$(".percent", $box).each(function(){
+			$(this).empty().append(Math.round(Math.random()*100) + "%");
+		});
+	}, 3000);
+	
+	$("#objectList tbody tr", $box).click(function(){
+		var index = $(this).index();
+		if(index == 2){
+			refresh = false;
+			series[0].data = [];
+			series[1].data = [];
+			plot.setData(series);
+			plot.draw();
+		}else{
+			refresh = true;
+			data=[[],[]];
+		}
+    });
+});
+</script>

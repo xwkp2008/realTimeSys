@@ -48,6 +48,11 @@ public class RunningStatus extends Controller {
 		return ok(CPU.render(""));
     }
 	
+	// CPU状态一览
+	public static Result IO() {
+		return ok(IO.render(""));
+    }
+	
 	// 网络状态一览
 	public static Result network() {
 		return ok(network.render(""));
