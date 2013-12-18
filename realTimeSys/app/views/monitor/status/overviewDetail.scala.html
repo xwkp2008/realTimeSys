@@ -13,23 +13,347 @@
 			<div id="placeholder" style="height:350px;margin:10px;"></div>
 		</div>
 	</div>
-	<div class="panel collapse">
-		<h1>CPU</h1>
-		<div>
-			<table id="objectList" class="list" width="100%">
+	<div class="pageContent" layoutH="0" style="width:50%;float:left;">
+		<div class="panel collapse">
+			<h1>CPU</h1>
+			<div>
+				<table id="objectList" class="list" width="100%">
+					<thead>
+						<tr>
+							<th width="100">使用率</th>
+							<th width="100">超过预警线时间占比</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr target="sid_user" rel="1">
+							<td class="percent">43%</td>
+							<td>7%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="panel collapse">
+			<h1>IO</h1>
+			<div>
+				<table id="objectList" class="list" width="100%">
+					<thead>
+						<tr>
+							<th width="100"></th>
+							<th width="100">速度</th>
+							<th width="100">平均速度</th>
+							<th width="100">最低</th>
+							<th width="100">最高</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr target="sid_user" rel="1">
+							<td>输出</td>
+							<td class="curInput">9.51KB/s</td>
+							<td>8.77KB/s</td>
+							<td>0.09KB/s</td>
+							<td>13.81KB/s</td>
+						</tr>
+						<tr target="sid_user" rel="2">
+							<td>输入</td>
+							<td class="curOutput">13.25KB/s</td>
+							<td>8.77KB/s</td>
+							<td>1.38KB/s</td>
+							<td style="color:red;">26.20KB/s</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="panel collapse">
+			<h1>网络</h1>
+			<div>
+				<table id="objectList" class="list" width="100%">
 				<thead>
 					<tr>
-						<th width="100">使用率</th>
-						<th width="100">超过预警线时间占比</th>
+						<th width="100">上行速度</th>
+						<th width="100">下行速度</th>
+						<th width="100">网络使用率</th>
+						<th width="100">健康度</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr target="sid_user" rel="1" class="selected">
-						<td class="percent">43%</td>
-						<td>7%</td>
+					<tr target="sid_user" rel="1">
+						<td class="data">35.5KB/s</td>
+						<td class="data">17.7KB/s</td>
+						<td class="percent">23%</td>
+						<td style="color:green;">良好</td>
 					</tr>
 				</tbody>
 			</table>
+			</div>
+		</div>
+	</div>
+	<div class="pageContent" layoutH="0" style="width:50%;float:left;">
+		<div class="panel collapse">
+			<h1>硬盘</h1>
+			<div>
+				<table id="storageList" class="list" width="100%">
+					<thead>
+						<tr>
+							<th width="100" orderField="num">空间名</th>
+							<th width="100">块数</th>
+							<th width="100">空间总数</th>
+							<th width="100">可用空间</th>
+							<th width="100">已用空间</th>
+							<th width="100">使用率</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr target="sid_user" rel="1">
+							<td>datadbs</td>
+							<td>3.0</td>
+							<td>39.1GB</td>
+							<td>36.5GB</td>
+							<td>2.55GB</td>
+							<td style="color:green;">6.53%</td>
+						</tr>
+						<tr target="sid_user" rel="2">
+							<td>logdbs</td>
+							<td>1.0</td>
+							<td>3.91GB</td>
+							<td>2.00GB</td>
+							<td>1.91GB</td>
+							<td style="color:red;">48.83%</td>
+						</tr>
+						<tr target="sid_user" rel="3">
+							<td>phydbs</td>
+							<td>1.0</td>
+							<td>1.95GB</td>
+							<td>1.46GB</td>
+							<td>500MB</td>
+							<td style="color:green;">25.01%</td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td>rootdbs</td>
+							<td>1.0</td>
+							<td>1.95GB</td>
+							<td>1.63GB</td>
+							<td>331MB</td>
+							<td style="color:green;">16.54%</td>
+						</tr>
+						<tr target="sid_user" rel="5">
+							<td>sdstmdbs</td>
+							<td>1.0</td>
+							<td>1.91GB</td>
+							<td>1.91GB</td>
+							<td>424KB</td>
+							<td style="color:green;">0.02%</td>
+						</tr>
+						<tr target="sid_user" rel="6">
+							<td>tmpdbs</td>
+							<td>1.0</td>
+							<td>1.95GB</td>
+							<td>1.95GB</td>
+							<td>212KB</td>
+							<td style="color:green;">0.01%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="panel collapse">
+			<h1>内存</h1>
+			<div>
+				<table id="objectList" class="list" width="100%">
+					<thead>
+					<tr>
+						<th width="80" orderField="name" class="asc">编号</th>
+						<th width="100" orderField="num">空间名</th>
+						<th width="100">可读数</th>
+						<th>可写数</th>
+						<th width="100">总数</th>
+						<th width="100">可读页</th>
+						<th width="100">可写页</th>
+						<th width="100">总页数</th>
+						<th width="100">路径</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr target="sid_user" rel="1">
+						<td>1</td>
+						<td>rootdbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+					<tr target="sid_user" rel="2">
+						<td>2</td>
+						<td>datadbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+					<tr target="sid_user" rel="3">
+						<td>3</td>
+						<td>rootdbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+					<tr target="sid_user" rel="4">
+						<td>4</td>
+						<td>phydbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+					<tr target="sid_user" rel="5">
+						<td>5</td>
+						<td>rootdbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+					<tr target="sid_user" rel="6">
+						<td>6</td>
+						<td>rootdbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td title="/infomation/resource/memory/06/rootdbs">/infomation/resource/memory/06/rootdbs</td>
+					</tr>
+					<tr target="sid_user" rel="7">
+						<td>7</td>
+						<td>rootdbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+					<tr target="sid_user" rel="8">
+						<td>8</td>
+						<td>datadbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+					<tr target="sid_user" rel="9">
+						<td>9</td>
+						<td>rootdbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+					<tr target="sid_user" rel="10">
+						<td>10</td>
+						<td>rootdbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+					<tr target="sid_user" rel="11">
+						<td>11</td>
+						<td>rootdbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+					<tr target="sid_user" rel="12">
+						<td>12</td>
+						<td>rootdbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+					<tr target="sid_user" rel="13">
+						<td>13</td>
+						<td>rootdbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+					<tr target="sid_user" rel="14">
+						<td>14</td>
+						<td>datadbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+					<tr target="sid_user" rel="15">
+						<td>15</td>
+						<td>rootdbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+					<tr target="sid_user" rel="16">
+						<td>16</td>
+						<td>rootdbs</td>
+						<td>130369</td>
+						<td>444764</td>
+						<td>575133.0</td>
+						<td>480524</td>
+						<td>1313115</td>
+						<td>27963569</td>
+						<td>/infomation</td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 </div>
@@ -37,8 +361,7 @@
 <script type="text/javascript">
 $(function() {
 	var $box = navTab.getCurrentPanel();
-	var container = $("#placeholder",$box);
-	var maximum = container.outerWidth() / 2 || 300;
+	var maximum = $("#placeholder",$box).outerWidth() / 2 || 300;
 	var refresh = true;
 	var data = [[],[],[],[],[]];// cpu io storage memory network
 	var showCPU = true;
@@ -74,7 +397,7 @@ $(function() {
 
 	//
 
-	series = [
+	var series = [
 		{
 			data: getRandomData(0),
 			label: "CPU", 
@@ -114,7 +437,7 @@ $(function() {
 
 	//
 
-	var plot = $.plot(container, series, {
+	var overviewPlot = $.plot($("#placeholder",$box), series, {
 		grid: {
 			borderWidth: 1,
 			minBorderMargin: 20,
@@ -152,7 +475,7 @@ $(function() {
 
 	var yaxisLabel = $("<div class='axisLabel yaxisLabel'></div>")
 		.text("使用率(%)")
-		.appendTo(container);
+		.appendTo($("#placeholder",$box));
 
 	yaxisLabel.css("margin-top", 5);
 
@@ -187,8 +510,8 @@ $(function() {
 			}else{
 				series[4].data = [];
 			}
-			plot.setData(series);
-			plot.draw();
+			overviewPlot.setData(series);
+			overviewPlot.draw();
 		}
 	}, 100);
 	
@@ -203,8 +526,8 @@ $(function() {
 		if(index == 2){
 			refresh = false;
 			series[0].data = [];
-			plot.setData(series);
-			plot.draw();
+			overviewPlot.setData(series);
+			overviewPlot.draw();
 		}else{
 			refresh = true;
 			data=[];

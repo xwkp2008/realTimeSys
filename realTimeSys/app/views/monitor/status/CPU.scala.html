@@ -42,7 +42,7 @@
 	<div class="panel">
 		<h1>CPU使用率</h1>
 		<div class="pageContent">
-			<div id="placeholder" style="height:350px;margin:10px;"></div>
+			<div id="CPUChart" style="height:350px;margin:10px;"></div>
 		</div>
 	</div>
 </div>
@@ -50,8 +50,7 @@
 <script type="text/javascript">
 $(function() {
 	var $box = navTab.getCurrentPanel();
-	var container = $("#placeholder",$box);
-	var maximum = container.outerWidth() / 2 || 300;
+	var maximum = $("#CPUChart",$box).outerWidth() / 2 || 300;
 	var refresh = true;
 	var data = [];
 
@@ -76,7 +75,7 @@ $(function() {
 
 	//
 
-	series = [{
+	var series = [{
 		data: getRandomData(),
 		label: "CPU0", 
 		lines: {
@@ -86,7 +85,7 @@ $(function() {
 
 	//
 
-	var plot = $.plot(container, series, {
+	var plot = $.plot($("#CPUChart",$box), series, {
 		grid: {
 			borderWidth: 1,
 			minBorderMargin: 20,
@@ -124,7 +123,7 @@ $(function() {
 
 	var yaxisLabel = $("<div class='axisLabel yaxisLabel'></div>")
 		.text("使用率(%)")
-		.appendTo(container);
+		.appendTo($("#CPUChart",$box));
 
 	yaxisLabel.css("margin-top", 5);
 

@@ -38,7 +38,7 @@
                   "id": "IO",
                   "title": "IO",
                   "type": "item",
-                  "url": "#",
+                  "url": "/monitor/status/IO",
                   "desc": "IO",
                   "icon": ""
                 },
