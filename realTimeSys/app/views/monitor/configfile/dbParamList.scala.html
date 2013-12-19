@@ -1,0 +1,33 @@
+@(data:String)
+
+<div class="tabs">
+	<div class="tabsHeader">
+		<div class="tabsHeaderContent">
+			<ul>
+				<li class="selected"><a href="#"><span>数据库列表</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="tabsContent" layouth="40">
+		<div inited="1000" style="display: block;">
+			<div layouth="45" style="float: left; display: block; overflow: auto; width: 240px; border: 1px solid rgb(204, 204, 204); line-height: 21px; background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: initial initial;">
+				<ul class="tree treeFolder expand">
+					<li><a href="#">数据库树 </a>
+	                     <ul>
+	                        <li><a href="/monitor/configFile/oparamlist" target="ajax" rel="paramlist">oracle </a></li>
+	                        <li><a href="/monitor/configFile/iparamlist" target="ajax" rel="paramlist">informix </a></li>
+	                     </ul>
+	                </li>
+				</ul>
+			</div>
+			<div id="paramlist" style="border: 1px solid rgb(204, 204, 204); line-height: 21px; background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: initial initial;margin-left:244px;">
+				@Html(data)
+			</div>
+		</div>
+	</div>
+	<div class="tabsFooter">
+		<div class="tabsFooterContent"></div>
+	</div>
+</div>
+
+

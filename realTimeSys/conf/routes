@@ -21,7 +21,11 @@ GET		/monitor/status/IO				controllers.monitor.status.RunningStatus.IO()
 GET		/monitor/status/network			controllers.monitor.status.RunningStatus.network()
 GET		/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
 POST	/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
-
+GET		/monitor/configFile/dbparmlist	controllers.monitor.configfile.ConfigFile.dbParamList()
+GET		/monitor/configFile/oparamlist	controllers.monitor.configfile.ConfigFile.OParamList()
+POST	/monitor/configFile/oparamlist	controllers.monitor.configfile.ConfigFile.OParamList()
+GET		/monitor/configFile/iparamlist	controllers.monitor.configfile.ConfigFile.IParamList()
+POST	/monitor/configFile/iparamlist	controllers.monitor.configfile.ConfigFile.IParamList()
 # 预警功能
 GET		/prewarning/makewarn		controllers.prewarn.PreWarn.makeWarn()
 POST	/prewarning/makewarn		controllers.prewarn.PreWarn.makeWarn()

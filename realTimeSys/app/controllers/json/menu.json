@@ -94,7 +94,7 @@
                   "id": "id8",
                   "title": "数据库配置参数文件",
                   "type": "item",
-                  "url": "#",
+                  "url": "/monitor/configFile/dbparmlist",
                   "desc": "数据库配置参数文件",
                   "icon": ""
                 },
