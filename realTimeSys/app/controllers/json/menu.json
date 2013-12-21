@@ -78,7 +78,7 @@
                   "id": "id6",
                   "title": "数据库信息",
                   "type": "item",
-                  "url": "#",
+                  "url": "/monitor/status/database",
                   "desc": "数据库信息",
                   "icon": ""
                 }

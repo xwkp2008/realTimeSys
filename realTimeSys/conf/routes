@@ -19,6 +19,7 @@ GET		/monitor/status/storageFrame	controllers.monitor.status.RunningStatus.stora
 GET		/monitor/status/CPU				controllers.monitor.status.RunningStatus.CPU()
 GET		/monitor/status/IO				controllers.monitor.status.RunningStatus.IO()
 GET		/monitor/status/network			controllers.monitor.status.RunningStatus.network()
+GET		/monitor/status/database		controllers.monitor.status.RunningStatus.database()
 GET		/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
 POST	/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
 
