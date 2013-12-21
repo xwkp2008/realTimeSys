@@ -1,0 +1,190 @@
+{
+  "url": "/system/jkxtgl/czxtlist",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+    {
+      "text": "新增",
+      "class": "add",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "title": "添加系统",
+      "href": "/system/jkxtgl/czxtadd"
+    },
+    {
+      "text": "修改",
+      "class": "edit",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"350",
+      "title": "系统资料编辑",
+      "href": "/system/jkxtgl/czxtedit?{rid}",
+      "warn": "请选择一个要修改的记录。"
+    },
+    {
+      "text": "注销",
+      "class": "delete",
+      "target": "ajaxTodo",
+      "title": "是否要注销该记录？删除以后将不可恢复。",
+      "href": "/ajaxDone?id={rid}",
+      "warn": "请选择一个要注销的记录。"
+    }
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "userId",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+    {
+      "id": "sysName",
+      "name": "系统名称",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"sysName"
+      }
+    },
+    {
+      "id": "sysType",
+      "name": "系统",
+      "tag": "comboxSelect",
+      "display":true,
+      "value":"",
+      "compare":"equal",
+      "attrs":{
+      	"name":"sysType"
+      },
+      "dict":[
+      	{
+      		"dictVal":"0",
+      		"dictName":"Linux"
+      	},
+      	{
+      		"dictVal":"1",
+      		"dictName":"Unix"
+      	}
+      ]
+    },
+    {
+      "id": "status",
+      "name": "在线状态",
+      "tag": "comboxSelect",
+      "display":true,
+      "value":"",
+      "compare":"equal",
+      "attrs":{
+      	"name":"status"
+      },
+      "dict":[
+      	{
+      		"dictVal":"0",
+      		"dictName":"线上"
+      	},
+      	{
+      		"dictVal":"1",
+      		"dictName":"线下"
+      	}
+      ]
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": true
+    },
+    {
+      "id": "sysName",
+      "name": "系统名称",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "sysType",
+      "name": "系统",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "ip",
+      "name": "IP",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "nh",
+      "name": "内核",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "bb",
+      "name": "版本",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "nc",
+      "name": "内存/GB",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "cpu",
+      "name": "CPU频率/核数/厂商",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "status",
+      "name": "在线状态",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "xn",
+      "name": "性能采集",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"G00001",
+  		"sysName":"vm-rac1-11g",
+  		"sysType":"<b>Linux</b>",
+  		"ip":"192.168.1.1",
+  		"nh":"2.6.18-128.i5",
+  		"bb":"Red Hat Enterprise Linux Server relase 6.3",
+  		"nc":"8",
+  		"cpu":"3.12/2/QEMU Virtual CPU version(cpu64)",
+  		"status":"<span style='color: white;background-color: green;margin: 2px;padding: 2px;'>线上</span>",
+  		"xn":"<span style='color: white;background-color: gray;margin: 2px;padding: 2px;'>已关闭</span>"
+  	},
+  	{
+  		"rid":"G00002",
+  		"sysName":"vm-rac1-11g",
+  		"sysType":"<b>Unix</b>",
+  		"ip":"192.168.1.10",
+  		"nh":"2.6.18-128.i5",
+  		"bb":"Red Hat Enterprise Linux Server relase 6.3",
+  		"nc":"8",
+  		"cpu":"3.12/2/QEMU Virtual CPU version(cpu64)",
+  		"status":"<span style='color: white;background-color: gray;margin: 2px;padding: 2px;'>线下</span>",
+  		"xn":"<span style='color: white;background-color: green;margin: 2px;padding: 2px;'>已开启</span>"
+  	}
+  ]
+}

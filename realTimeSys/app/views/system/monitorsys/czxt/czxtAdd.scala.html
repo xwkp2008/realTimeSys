@@ -1,0 +1,73 @@
+@(data:String)
+@import _root_.play.Play
+@import _root_.tng.ark.common.json.JSONUtils 
+
+@headin = {
+
+}
+
+@content={
+<form id="czxtAddForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="height: 208px; overflow: auto;">
+		<dl>
+			<dt>系统Ip：</dt>
+			<dd>
+				<input type="text" id="ip" name="ip" class="textInput">
+			</dd>
+		</dl>
+		<dl>
+			<dt>ssh端口：</dt>
+			<dd>
+				<input type="text" id="dk" name="dk" class="textInput">
+			</dd>
+		</dl>
+		<div class="divider"></div>
+		<dl>
+			<dt>系统用户账号：</dt>
+			<dd>
+				<input type="text" id="acct" name="acct" class="textInput">
+			</dd>
+		</dl>
+		<dl>
+			<dt>系统用户密码：</dt>
+			<dd>
+				<input type="password" id="psd" name="psd" class="textInput">
+			</dd>
+		</dl>
+		<dl>
+			<dt>在线状态：</dt>
+			<dd>
+				<label style="width: 50px; background-color: green;"><input type="radio" name="r1"><span style="color:white;">线上</span></label>
+				<label style="width: 50px; background-color: gray;"><input type="radio" name="r1"><span style="color:white;">下线</span></label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>性能监控：</dt>
+			<dd>
+				<label style="width: 50px; background-color: green;"><input type="radio" name="r2"><span style="color:white;">开启</span></label>
+				<label style="width: 50px; background-color: gray;"><input type="radio" name="r2"><span style="color:white;">关闭</span></label>
+			</dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="buttonActive">
+					<div class="buttonContent">
+						<button type="button" onclick="save('系统添加成功');">添加</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+}
+
+@formPage(headin,Html("添加操作系统信息"),content)
