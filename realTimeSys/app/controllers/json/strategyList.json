@@ -1,0 +1,155 @@
+{
+  "url": "/strategy/strategymanage",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+    {
+      "text": "新增",
+      "class": "add",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"470",
+      "title": "新增",
+      "href": "/strategy/addstrategy"
+    },
+    {
+      "text": "修改",
+      "class": "edit",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"470",
+      "title": "修改",
+      "href": "/strategy/editstrategy?{rid}",
+      "warn": "请选择一个要编辑的策略。"
+    },
+    {
+      "text": "策略更新",
+      "class": "edit",
+      "target": "dialog",
+      "mask":true,
+      "width":"500",
+      "height":"220",
+      "title": "策略更新",
+      "href": "/strategy/updatestrategy"
+    },
+    {
+      "text": "删除",
+      "class": "delete",
+      "target": "ajaxTodo",
+      "title": "是否要删除该策略？删除以后将不可恢复。",
+      "href": "/ajaxDone?id={rid}",
+      "warn": "请选择一个要删除的策略。"
+    }
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "key",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+  	{
+      "id": "fl",
+      "name": "所属分类",
+      "tag": "comboxSelect",
+      "display":true,
+      "value":"",
+      "compare":"equal",
+      "attrs":{
+      	"name":"org"
+      },
+      "dict":[
+      	{
+      		"dictVal":"0",
+      		"dictName":"SQL优化"
+      	},
+      	{
+      		"dictVal":"1",
+      		"dictName":"IO读写"
+      	}
+      ]
+    },
+    {
+      "id": "gjz",
+      "name": "关键字",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"gjz"
+      }
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": false
+    },
+    {
+      "id": "fl",
+      "name": "所属分类",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "gjz",
+      "name": "搜索关键字",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "nr",
+      "name": "内容",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"0001",
+  		"fl":"IO读写",
+  		"gjz":"IO 读写",
+  		"nr":"关于IO读写的内容，支持图片、字体等格式……"
+  	},
+  	{
+  		"rid":"0001",
+  		"fl":"IO读写",
+  		"gjz":"IO 读写",
+  		"nr":"关于IO读写的内容，支持图片、字体等格式……"
+  	},
+  	{
+  		"rid":"0001",
+  		"fl":"IO读写",
+  		"gjz":"IO 读写",
+  		"nr":"关于IO读写的内容，支持图片、字体等格式……"
+  	},
+  	{
+  		"rid":"0001",
+  		"fl":"IO读写",
+  		"gjz":"IO 读写",
+  		"nr":"关于IO读写的内容，支持图片、字体等格式……"
+  	},
+  	{
+  		"rid":"0001",
+  		"fl":"IO读写",
+  		"gjz":"IO 读写",
+  		"nr":"关于IO读写的内容，支持图片、字体等格式……"
+  	},
+  	{
+  		"rid":"0001",
+  		"fl":"IO读写",
+  		"gjz":"IO 读写",
+  		"nr":"关于IO读写的内容，支持图片、字体等格式……"
+  	}
+  ]
+}

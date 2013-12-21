@@ -1,0 +1,58 @@
+@(data:String)
+@import _root_.play.Play
+@import _root_.tng.ark.common.json.JSONUtils 
+
+@headin = {
+<script type="text/javascript" src="@routes.Assets.at("javascripts/strategy/strategyEdit.js")">
+</script>
+}
+
+@content={
+<form id="strategyAddForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="overflow: auto;">
+		<dl>
+			<dt>所属分类：</dt>
+			<dd>
+				<select>
+					<option value="0">SQL分析</option>
+					<option value="1">IO读写</option>
+					<option value="2">SQL优化</option>
+					<option value="3">内存管理</option>
+				</select>
+			</dd>
+		</dl>
+		<dl>
+			<dt>关键字：</dt>
+			<dd>
+				<input type="text" id="gjz" name="gjz" value="" class="textInput">
+			</dd>
+		</dl>
+		<dl>
+			<dt>内容：</dt>
+			<dd>
+				<textarea class="editor" name="description" rows="15" cols="80"></textarea>
+			</dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="buttonActive">
+					<div class="buttonContent">
+						<button type="button" onclick="saveStrategy();">添加</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+}
+
+@formPage(headin,Html("新增策略"),content)

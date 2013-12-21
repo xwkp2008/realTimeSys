@@ -22,7 +22,11 @@ GET		/monitor/status/network			controllers.monitor.status.RunningStatus.network(
 GET		/monitor/status/database		controllers.monitor.status.RunningStatus.database()
 GET		/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
 POST	/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
-
+GET		/monitor/configFile/dbparmlist	controllers.monitor.configfile.ConfigFile.dbParamList()
+GET		/monitor/configFile/oparamlist	controllers.monitor.configfile.ConfigFile.OParamList()
+POST	/monitor/configFile/oparamlist	controllers.monitor.configfile.ConfigFile.OParamList()
+GET		/monitor/configFile/iparamlist	controllers.monitor.configfile.ConfigFile.IParamList()
+POST	/monitor/configFile/iparamlist	controllers.monitor.configfile.ConfigFile.IParamList()
 # 预警功能
 GET		/prewarning/makewarn		controllers.prewarn.PreWarn.makeWarn()
 POST	/prewarning/makewarn		controllers.prewarn.PreWarn.makeWarn()
@@ -32,6 +36,17 @@ POST	/prewarning/warninfolist	controllers.prewarn.PreWarn.warnInfoList()
 GET		/prewarning/warnloglist	controllers.prewarn.PreWarn.warnLogList()
 POST	/prewarning/warnloglist	controllers.prewarn.PreWarn.warnLogList()
 GET		/prewarning/warnlogdetail		controllers.prewarn.PreWarn.warnLogDetail()
+
+# 专家策略
+GET		/strategy/typelist		controllers.strategy.Strategy.typeList()
+POST	/strategy/typelist		controllers.strategy.Strategy.typeList()
+GET     /strategy/addtype		controllers.strategy.Strategy.addType()
+GET     /strategy/edittype		controllers.strategy.Strategy.editType()
+GET		/strategy/strategymanage		controllers.strategy.Strategy.strategyList()
+POST	/strategy/strategymanage		controllers.strategy.Strategy.strategyList()
+GET     /strategy/addstrategy		controllers.strategy.Strategy.addStrategy()
+GET     /strategy/editstrategy		controllers.strategy.Strategy.editStrategy()
+GET     /strategy/updatestrategy		controllers.strategy.Strategy.updateStrategy()
 
 # 流水日志
 GET		/log/loglist				controllers.log.Log.list()

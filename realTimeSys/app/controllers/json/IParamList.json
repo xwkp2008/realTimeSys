@@ -1,0 +1,84 @@
+{
+  "url": "/monitor/configFile/iparamlist",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "165",
+    "id": ""
+  },
+  "operation": [
+    
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "key",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+  	{
+      "id": "key",
+      "name": "参数名",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"key"
+      }
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": false
+    },
+    {
+      "id": "key",
+      "name": "参数名",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "value",
+      "name": "参数值",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"0005",
+  		"key":"net.ipv4.tcp_timestamps",
+  		"value":"0"
+  	},
+  	{
+  		"rid":"0006",
+  		"key":"net.ipv4.tcp_sack",
+  		"value":"1"
+  	},
+  	{
+  		"rid":"0007",
+  		"key":"net.ipv4.tcp_window_scaling",
+  		"value":"1"
+  	},
+  	{
+  		"rid":"0008",
+  		"key":"net.core.rmem_max",
+  		"value":"256960"
+  	},
+  	{
+  		"rid":"0009",
+  		"key":"net.core.wmem_default",
+  		"value":"256960"
+  	},
+  	{
+  		"rid":"0010",
+  		"key":"net.core.wmem_max",
+  		"value":"256960"
+  	}
+  ]
+}

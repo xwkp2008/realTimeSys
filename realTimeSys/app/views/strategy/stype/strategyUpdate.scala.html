@@ -1,0 +1,56 @@
+@(data:String)
+@import _root_.play.Play
+@import _root_.tng.ark.common.json.JSONUtils 
+
+@headin = {
+<script type="text/javascript" src="@routes.Assets.at("javascripts/strategy/strategyEdit.js")">
+</script>
+}
+
+@content={
+<form id="strategyUpdateForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="overflow: auto;">
+		<dl>
+			<dt>更新类别：</dt>
+			<dd>
+				<select id="gxlb">
+					<option value="0">文件同步</option>
+					<option value="1">服务器同步</option>
+				</select>
+			</dd>
+		</dl>
+		<dl id="wjdz">
+			<dt>文件地址：</dt>
+			<dd>
+				<input type="file" id="mc" name="mc" value="" class="textInput">
+			</dd>
+		</dl>
+		<dl style="display: none;" id="fwqdz">
+			<dt>服务器地址：</dt>
+			<dd>
+				<input type="text" id="mc" name="mc" value="" class="textInput">
+			</dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="buttonActive">
+					<div class="buttonContent">
+						<button type="button" onclick="saveStrategyUpdate();">更新</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+}
+
+@formPage(headin,Html("策略更新"),content)
