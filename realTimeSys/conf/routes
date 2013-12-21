@@ -24,6 +24,7 @@ GET		/monitor/status/topSql			controllers.monitor.status.RunningStatus.topSql()
 GET		/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
 POST	/monitor/configFile/sysparmlist	controllers.monitor.configfile.ConfigFile.sysParamList()
 GET		/monitor/configFile/dbparmlist	controllers.monitor.configfile.ConfigFile.dbParamList()
+POST	/monitor/configFile/dbparmlist	controllers.monitor.configfile.ConfigFile.dbParamList()
 GET		/monitor/configFile/oparamlist	controllers.monitor.configfile.ConfigFile.OParamList()
 POST	/monitor/configFile/oparamlist	controllers.monitor.configfile.ConfigFile.OParamList()
 GET		/monitor/configFile/iparamlist	controllers.monitor.configfile.ConfigFile.IParamList()
@@ -81,6 +82,24 @@ POST	/system/privilege/group			controllers.system.privilege.Group.list()
 GET		/system/privilege/group/detail	controllers.system.privilege.Group.detail()
 GET		/system/privilege/group/add		controllers.system.privilege.Group.add()
 GET		/system/privilege/group/edit	controllers.system.privilege.Group.edit()
+
+#监控系统管理
+
+GET		/system/jkxtgl/czxtlist			controllers.system.monitorsys.MonitorSys.operaList()
+POST	/system/jkxtgl/czxtlist			controllers.system.monitorsys.MonitorSys.operaList()
+GET		/system/jkxtgl/czxtadd			controllers.system.monitorsys.MonitorSys.operaAdd()
+GET		/system/jkxtgl/czxtedit			controllers.system.monitorsys.MonitorSys.operaEdit()
+
+GET		/system/jkxtgl/sjklist/:dbtype	controllers.system.monitorsys.MonitorSys.dbList(dbtype:String)
+POST	/system/jkxtgl/sjklist/:dbtype	controllers.system.monitorsys.MonitorSys.dbList(dbtype:String)
+GET		/system/jkxtgl/odbadd			controllers.system.monitorsys.MonitorSys.odbAdd()
+GET		/system/jkxtgl/odbedit			controllers.system.monitorsys.MonitorSys.odbEdit()
+GET		/system/jkxtgl/odblist			controllers.system.monitorsys.MonitorSys.odbList()
+POST	/system/jkxtgl/odblist			controllers.system.monitorsys.MonitorSys.odbList()
+GET		/system/jkxtgl/idblist			controllers.system.monitorsys.MonitorSys.idbList()
+POST	/system/jkxtgl/idblist			controllers.system.monitorsys.MonitorSys.idbList()
+
+GET		/system/parameter				controllers.system.monitorsys.MonitorSys.czxtInfo()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

@@ -51,9 +51,13 @@ public class Application extends Controller {
             public void callback(String json) {
             	menuHtml.append("<li>");
     			if (!"".equals(JSONUtils.getStr(json, "url"))) {
+    					String target = JSONUtils.getStr(json, "target");
+    					if(!"dialog".equals(target)){
+    						target = "navTab";
+    					}
     					menuHtml.append("<a href=\"" + JSONUtils.getStr(json, "url")
     							+ "\" rel=\"" + JSONUtils.getStr(json, "title")
-    							+ "\" target=\"navTab\">");
+    							+ "\" target=\""+target+"\" width=\""+JSONUtils.getStr(json, "width")+"\">");
     					menuHtml.append(JSONUtils.getStr(json, "title"));
     					menuHtml.append("</a>");
     			} else {

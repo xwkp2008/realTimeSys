@@ -1,0 +1,102 @@
+@(data:String)
+@import _root_.play.Play
+@import _root_.tng.ark.common.json.JSONUtils 
+
+@headin = {
+}
+
+@content={
+<form id="staffEditForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="height: 208px; overflow: auto;">
+		<dl>
+			<dt>在线状态：</dt>
+			<dd>
+				<label style="width: 50px; background-color: green;"><input checked="checked" type="radio" name="r1"><span style="color:white;">线上</span></label>
+				<label style="width: 50px; background-color: gray;"><input type="radio" name="r1"><span style="color:white;">下线</span></label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>性能监控：</dt>
+			<dd>
+				<label style="width: 50px; background-color: green;"><input type="radio" name="r2"><span style="color:white;">开启</span></label>
+				<label style="width: 50px; background-color: gray;"><input checked="checked" type="radio" name="r2"><span style="color:white;">关闭</span></label>
+			</dd>
+		</dl>
+		<div class="divider"></div>
+		<dl>
+			<dt>数据库所在主机Ip：</dt>
+			<dd>
+				<input type="text" id="ip" name="ip" class="textInput" value="192.168.1.30">
+			</dd>
+		</dl>
+		<dl>
+			<dt>数据库名称：</dt>
+			<dd>
+				<input type="text" id="mc" name="mc" class="textInput" value="oracle10g测试库">
+			</dd>
+		</dl>
+		<dl>
+			<dt>数据库SID：</dt>
+			<dd>
+				<input type="text" id="sjksid" name="sjksid" class="textInput" value="test">
+			</dd>
+		</dl>
+		<dl>
+			<dt>数据库IP：</dt>
+			<dd>
+				<input type="text" id="sjkip" name="sjkip" class="textInput" value="192.168.1.30">
+			</dd>
+		</dl>
+		<dl>
+			<dt>数据库端口：</dt>
+			<dd>
+				<input type="text" id="dk" name="dk" class="textInput" value="1521">
+			</dd>
+		</dl>
+		<dl>
+			<dt>网络设备：</dt>
+			<dd>
+				<input type="text" id="sb" name="sb" class="textInput">
+			</dd>
+		</dl>
+		<dl>
+			<dt>是否为备库：</dt>
+			<dd>
+				<input type="checkbox" id="bk" name="bk" class="textInput" checked="checked">
+			</dd>
+		</dl>
+		<dl>
+			<dt>数据库用户账号：</dt>
+			<dd>
+				<input type="text" id="acct" name="acct" class="textInput" value="testoracle">
+			</dd>
+		</dl>
+		<dl>
+			<dt>数据库用户密码：</dt>
+			<dd>
+				<input type="password" id="psd" name="psd" class="textInput" value="123456">
+			</dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="buttonActive">
+					<div class="buttonContent">
+						<button type="button" onclick="saveEdit('oracle实例修改成功。');">保存</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+}
+
+@formPage(headin,Html("oracle编辑"),content)

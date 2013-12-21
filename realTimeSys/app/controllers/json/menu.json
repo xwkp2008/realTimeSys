@@ -298,6 +298,30 @@
               "desc": "监控系统管理",
               "icon": "",
               "menus": [
+              {
+                  "id": "czxtjk",
+                  "title": "操作系统监控列表",
+                  "type": "item",
+                  "url": "/system/jkxtgl/czxtlist",
+                  "desc": "操作系统监控列表",
+                  "icon": ""
+                },
+                {
+                  "id": "sjkjk",
+                  "title": "数据库监控列表",
+                  "type": "item",
+                  "url": "/system/jkxtgl/sjklist/oracle",
+                  "desc": "数据库监控列表",
+                  "icon": ""
+                },
+                {
+                  "id": "fujcjk",
+                  "title": "服务进程监控列表",
+                  "type": "item",
+                  "url": "/system/jkxtgl/fwjclist",
+                  "desc": "服务进程监控列表",
+                  "icon": ""
+                },
                 {
                   "id": "id31",
                   "title": "针对有代理采集软件的系统",
@@ -326,10 +350,12 @@
             },
             {
               "id": "id34",
-              "title": "参数配置",
+              "title": "当前系统参数配置",
               "type": "item",
+              "target":"dialog",
+              "width":"800",
               "url": "/system/parameter",
-              "desc": "参数配置",
+              "desc": "当前系统参数配置",
               "icon": ""
             }
           ]

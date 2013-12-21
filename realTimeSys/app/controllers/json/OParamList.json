@@ -1,5 +1,5 @@
 {
-  "url": "/monitor/configFile/oparamlist",
+  "url": "/monitor/configFile/dbparmlist",
   "checkbox": false,
   "pageAttrs": {
     "headHeight": "50",
