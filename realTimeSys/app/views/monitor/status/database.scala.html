@@ -1,5 +1,25 @@
 @(jsonStr: String)
-<div class="pageContent"  layoutH="0" style="width:60%;display:block;float:left;">
+<style>
+	span.green{
+		background: rgb(103, 211, 103);
+		padding: 1px 4px;
+		color: white;
+		border-radius: 2px;
+	}
+	span.yellow{
+		background: rgb(253, 190, 26);
+		padding: 1px 4px;
+		color: white;
+		border-radius: 2px;
+	}
+	span.grey{
+		background: rgb(177, 177, 177);
+		padding: 1px 4px;
+		color: white;
+		border-radius: 2px;
+	}
+</style>
+<div class="pageContent"  layoutH="0" style="display:block;">
 	<div class="panel">
 			<h1>数据库列表</h1>
 			<div>
@@ -13,7 +33,13 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr target="sid_user" rel="1" class="selected">
+						<tr target="sid_user" rel="4" class="selected">
+							<td>Oracle_11g_RAC</td>
+							<td>Oracle</td>
+							<td class="runtime">1天3小时39分21秒</td>
+							<td style="color:green;">线上</td>
+						</tr>
+						<tr target="sid_user" rel="1">
 							<td>MariaDB_5.5</td>
 							<td>MariaDB</td>
 							<td class="runtime">33天6小时58分52秒</td>
@@ -29,12 +55,6 @@
 							<td>MySQL_240_5.1</td>
 							<td>MySQL</td>
 							<td class="runtime">13天20小时56分1秒</td>
-							<td style="color:green;">线上</td>
-						</tr>
-						<tr target="sid_user" rel="4">
-							<td>Oracle_11g_RAC</td>
-							<td>Oracle</td>
-							<td class="runtime">1天3小时39分21秒</td>
 							<td style="color:green;">线上</td>
 						</tr>
 					</tbody>
@@ -155,26 +175,224 @@
 						</fieldset>
 					</div>
 			</div>
+			<!-- 性能曲线 -->
 			<div>
-				
-				<div class="tabs" currentIndex="0" eventType="click" style="width:300px">
-					<div class="tabsHeader">
-						<div class="tabsHeaderContent">
-							<ul>
-								<li><a href="javascript:;"><span>鏍囬1</span></a></li>
-								<li><a href="javascript:;"><span>鏍囬2</span></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="tabsContent" style="height:150px;">
-						<div>鍐呭1</div>
-						<div>鍐呭2</div>
-					</div>
-					<div class="tabsFooter">
-						<div class="tabsFooterContent"></div>
-					</div>
+				<div class="pageContent">
+					<div id="capChart" style="height:350px;margin:10px;"></div>
 				</div>
-				
+			</div>
+			<!-- top sql -->
+			<div>
+				<table id="objectList" class="list" width="100%">
+					<thead>
+						<tr>
+							<th width="100">SQL ID</th>
+							<th width="100">SQL代码</th>
+							<th width="100">字节流</th>
+							<th width="100">执行次数</th>
+							<th width="100">每次执行获取字节</th>
+							<th width="100">占比</th>
+							<th width="100">消耗时间</th>
+							<th width="100">CPU占用(%)</th>
+							<th width="100">IO占用(%)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr target="sid_user" rel="4">
+							<td><a href="/monitor/status/topSql" target="dialog" mask="true" rel="TOP SQL详情" title="TOP SQL详情" height="400">0248951009878</a></td>
+							<td>select output from</td>
+							<td>14654747</td>
+							<td>11</td>
+							<td>1332550.0</td>
+							<td>97.47</td>
+							<td>73.88</td>
+							<td>62.96</td>
+							<td>88.07</td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td><a href="/monitor/status/topSql" target="dialog" mask="true" rel="TOP SQL详情" title="TOP SQL详情" height="400">2w56etuexvvb2a</a></td>
+							<td>select * from member_tbl</td>
+							<td>100081</td>
+							<td>25000</td>
+							<td>4.0</td>
+							<td>0.67</td>
+							<td>1.67</td>
+							<td>0.75</td>
+							<td>0.0</td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td><a href="/monitor/status/topSql" target="dialog" mask="true" rel="TOP SQL详情" title="TOP SQL详情" height="400">5hjzv1e9flo</a></td>
+							<td>select b.* from (select</td>
+							<td>31022</td>
+							<td>12999</td>
+							<td>2.39</td>
+							<td>0.21</td>
+							<td>2.45</td>
+							<td>0.49</td>
+							<td>0.0</td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td><a href="/monitor/status/topSql" target="dialog" mask="true" rel="TOP SQL详情" title="TOP SQL详情" height="400">fhu9234kjga8fz</a></td>
+							<td>select</td>
+							<td>26786</td>
+							<td>5512</td>
+							<td>4.86</td>
+							<td>0.18</td>
+							<td>0.11</td>
+							<td>0.07</td>
+							<td>0.0</td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td><a href="/monitor/status/topSql" target="dialog" mask="true" rel="TOP SQL详情" title="TOP SQL详情" height="400">ag6dgjcxnz73</a></td>
+							<td>select</td>
+							<td>25256</td>
+							<td>1</td>
+							<td>25256</td>
+							<td>0.17</td>
+							<td>0.32</td>
+							<td>0.23</td>
+							<td>7.78</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- 空间 -->
+			<div>
+				<table class="list" width="100%">
+					<thead>
+						<tr>
+							<th width="100">名称</th>
+							<th width="100">类型</th>
+							<th width="100">物理大小/MB</th>
+							<th width="100">实际使用/MB</th>
+							<th width="100">剩余大小/MB</th>
+							<th width="100">剩余比例</th>
+							<th width="100">日增长/MB</th>
+							<th width="100">剩余天数</th>
+							<th width="100">状态</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr target="sid_user" rel="4">
+							<td>OLCLASSDATA</td>
+							<td>PERMANENT</td>
+							<td>100</td>
+							<td>81</td>
+							<td>19</td>
+							<td style="color:red;">19.0%</td>
+							<td>0</td>
+							<td></td>
+							<td style="color:green;">在线</td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td>OLCLASSIDX</td>
+							<td>PERMANENT</td>
+							<td>100</td>
+							<td>61</td>
+							<td>38</td>
+							<td style="color:#ff9900;">38.19%</td>
+							<td>0</td>
+							<td></td>
+							<td style="color:green;">在线</td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td>SHALV_TBS</td>
+							<td>PERMANENT</td>
+							<td>128</td>
+							<td>0</td>
+							<td>129</td>
+							<td style="color:green;">99.9%</td>
+							<td>0</td>
+							<td></td>
+							<td style="color:green;">在线</td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td>USERS</td>
+							<td>PERMANENT</td>
+							<td>100</td>
+							<td>72</td>
+							<td>28</td>
+							<td style="color:red;">28.0%</td>
+							<td>0</td>
+							<td></td>
+							<td style="color:green;">在线</td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td>SYSAUS</td>
+							<td>PERMANENT</td>
+							<td>1824</td>
+							<td>1105</td>
+							<td>818</td>
+							<td style="color:#ff9900;">44.87%</td>
+							<td>12</td>
+							<td>79</td>
+							<td style="color:green;">在线</td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td>SYSTEM</td>
+							<td>PERMANENT</td>
+							<td>2048</td>
+							<td>300</td>
+							<td>1747</td>
+							<td style="color:green;">85.36%</td>
+							<td>0</td>
+							<td>超过1年</td>
+							<td style="color:green;">在线</td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td>TEMP</td>
+							<td>TEMPORARY</td>
+							<td>16</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td style="color:green;">在线</td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td colspan="2">总计</td>
+							<td>6540</td>
+							<td>1519</td>
+							<td>2777</td>
+							<td style="color:green;">52.55%</td>
+							<td colspan="3">12</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- 报警 -->
+			<div>
+				<table class="list" width="100%">
+				<thead>
+						<tr>
+							<th width="100">类别</th>
+							<th width="100">状态</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr target="sid_user" rel="4">
+							<td>DBConnect/Locks</td>
+							<td><span class="green">OK</span></td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td>Table space</td>
+							<td><span class="yellow">warn</span></td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td>Memory/Process</td>
+							<td><span class="green">OK</span></td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td>Trans/Undo</td>
+							<td><span class="green">OK</span></td>
+						</tr>
+						<tr target="sid_user" rel="4">
+							<td>StandBy</td>
+							<td><span class="grey">N/A</span></td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<div class="tabsFooter">
@@ -183,45 +401,98 @@
 	</div>
 
 </div>
-	<div class="pageContent" layoutH="0" style="width:40%;display:block;float: left;clear: none;">
-	<div class="panel" minh="100">
-		<h1>物理空间</h1>
-		<div id="placeholderContainer" class="pageContent" layoutH="50">
-			<div id="placeholder" style="height:450px;width:90%;padding:20px;10px;"></div>
-		</div>
-	</div>
-</div>
-<div>
-<script src="@routes.Assets.at("javascripts/flot/jquery.flot.pie.min.js")" type="text/javascript"></script>
+
 <script type="text/javascript">
 	$(function() {
 		var previousPoint = null, previousLabel = null;
-		
-		var data = [
-			{ label: "10g测试库主库",  data: 4.56},
-			{ label: "oracle_11g_RAC",  data: 6.32}
-		];
-		
-		$.plot($("#placeholder", navTab.getCurrentPanel()), data,
-			{
-	        series: {
-	            pie: {
-	                show: true,
-	                radius: 1,
-		            label: {
-		                show: true,
-		                radius: 3/4,
-		                formatter: labelFormatter,
-		                background: { 
-		                    opacity: 0.5,
-		                    color: '#000'
-		                }
-		            }
-	            },
-		        legend: {
-		            show: false
-		        }
+		var $box = navTab.getCurrentPanel();
+		// 设置性能曲线的最晚时间（当前）和最早时间（3小时前）
+		var date = new Date();
+		var minDate = getMinDate();
+
+		// 性能曲线
+		var maximum = 38;
+		var capData = [];
+	
+	    function getRandomData() {
+	    	var tmp = new Date();
+			tmp.setHours(tmp.getHours()-3);
+	        if (capData.length) {
+	            capData = capData.slice(1);
 	        }
+	
+	        while (capData.length < maximum) {
+	            var previous = capData.length ? capData[capData.length - 1] : 30;
+	            var y = previous + Math.random() * 10 - 5;
+	            capData.push(y < 0 ? 0 : y > 60 ? 60 : y);
+	        }
+	
+	        var res = [];
+	        for (var i = 0; i < capData.length; ++i) {
+	            res.push([tmp.getTime(), capData[i]]);
+	            tmp.setMinutes(tmp.getMinutes() + 5);
+	        }
+	
+	        return res;
+	    }
+	
+		//
+	
+		var series = [{
+			data: getRandomData(),
+			lines: { show: true },
+			points: { show: true }
+		}];
+	
+		
+		function getMinDate(){
+			var tmp = new Date();
+			tmp.setHours(tmp.getHours()-3);
+			return tmp;
+		}
+		var plot = $.plot($("#capChart",$box), series, {
+			grid: {
+				borderWidth: 1,
+				minBorderMargin: 20,
+				labelMargin: 10,
+				backgroundColor: {
+					colors: ["#fff", "#e4f4f4"]
+				},
+				margin: {
+					top: 8,
+					bottom: 20,
+					left: 0
+				}
+			},
+			xaxis: {
+				mode: "time",
+				minTickSize: [1, "minute"],
+				min: minDate.getTime(),
+				max: date.getTime(),
+				twelveHourClock: true
+			},
+			yaxis: {
+				min: 0,
+				max: 100
+			},
+			legend: {
+				show: true
+			}
 		});
+	
+		var yaxisLabel = $("<div class='axisLabel yaxisLabel'></div>")
+			.text("(K)")
+			.appendTo($("#capChart",$box));
+	
+		yaxisLabel.css("margin-top", 5);
+	
+		/*setInterval(function updateRandom() {
+			date = new Date();
+			minDate = getMinDate();
+			series[0].data = getRandomData(data);
+			plot.setData(series);
+			plot.draw();
+		}, 1000);
+		*/
 	});
 </script>

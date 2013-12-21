@@ -1,0 +1,55 @@
+@(jsonStr: String)
+<div class="pageContent"  layoutH="0" style="display:block;">
+<h2 class="contentTitle">SQL语句(id:2w56etuexvvb2a)</h2>
+<textarea style="width:95%;height:100px" class="textInput">
+	select * from member_tbl where memberId = :v1
+</textarea>
+
+<h2 class="contentTitle">SQL执行计划</h2>
+	<table id="objectList" class="list" width="100%">
+		<thead>
+			<tr>
+				<th width="100">序号</th>
+				<th width="100">操作</th>
+				<th width="100">对象名称</th>
+				<th width="100">列</th>
+				<th width="100">字节</th>
+				<th width="100">CPU消耗(%)</th>
+				<th width="100">临时空间</th>
+				<th width="100">耗时</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr target="sid_user" rel="4">
+				<td>1</td>
+				<td>SELECT statement</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>2</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr target="sid_user" rel="4">
+				<td>2</td>
+				<td>TABLE ACCESS INDEX BY ROWID</td>
+				<td>MEMBER_TBL</td>
+				<td>1</td>
+				<td>86</td>
+				<td>2</td>
+				<td></td>
+				<td>00:00:01</td>
+			</tr>
+			<tr target="sid_user" rel="4">
+				<td>3</td>
+				<td>INDEX RANGE SCAN</td>
+				<td>IND_MEMBERID</td>
+				<td>1</td>
+				<td></td>
+				<td>1</td>
+				<td></td>
+				<td>00:00:01</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
