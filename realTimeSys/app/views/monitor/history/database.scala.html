@@ -65,196 +65,18 @@
 		<div class="tabsHeader">
 			<div class="tabsHeaderContent">
 				<ul>
-					<li><a href="javascript:;"><span>数据库信息</span></a></li>
 					<li><a href="javascript:;"><span>性能曲线</span></a></li>
-					<li><a href="javascript:;"><span>TOP SQL</span></a></li>
 					<li><a href="javascript:;"><span>空间</span></a></li>
 					<li><a href="javascript:;"><span>报警</span></a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="tabsContent">
-				<div style="background-color: white;">
-					<div class="pageFormContent" style="overflow: auto;">
-						<fieldset>
-							<legend>基本信息</legend>
-						<dl>
-							<dt>名称：</dt>
-							<dd>
-								ORACLE_11g_RAC1
-							</dd>
-						</dl>
-						<dl>
-							<dt>SID：</dt>
-							<dd>
-								rac11g1
-							</dd>
-						</dl>
-						<dl>
-							<dt>IP：</dt>
-							<dd>
-								192.168.1.191
-							</dd>
-						</dl>
-						<dl>
-							<dt>角色：</dt>
-							<dd>
-								主库
-							</dd>
-						</dl>
-						<dl>
-							<dt>端口：</dt>
-							<dd>
-								1521
-							</dd>
-						</dl>
-						<dl>
-							<dt>类型/版本：</dt>
-							<dd>
-								ORACLE /11.2.0.3.0 RAC
-							</dd>
-						</dl>
-						<dl>
-							<dt>性能采集状态：</dt>
-							<dd>
-								<span style="color:green;">已开启</span>
-							</dd>
-						</dl>
-						<dl>
-							<dt>在线状态：</dt>
-							<dd>
-								<span style="color:green;">线上</span>
-							</dd>
-						</dl>
-						</fieldset>
-						
-						<fieldset>
-							<legend>主机信息</legend>
-						<dl>
-							<dt>名称：</dt>
-							<dd>
-								vm-rac1-11g
-							</dd>
-						</dl>
-						<dl>
-							<dt>IP：</dt>
-							<dd>
-								192.168.1.191
-							</dd>
-						</dl>
-						<dl>
-							<dt>内存(GB)：</dt>
-							<dd>
-								3
-							</dd>
-						</dl>
-						<dl class="nowrap">
-							<dt>系统/内核/版本：</dt>
-							<dd>
-								Linux/2.6.32-279.el6.x86_64/Red Hat Enterprise Linux Server release 6.3(Santiago)
-							</dd>
-						</dl>
-						<dl class="nowrap">
-							<dt>CPU频率/核数/厂商：</dt>
-							<dd>
-								3.12/2/QEMU virtual CPU version(cpu64-rhel6)
-							</dd>
-						</dl>
-						<dl>
-							<dt>性能采集状态：</dt>
-							<dd>
-								<span style="color:green;">已开启</span>
-							</dd>
-						</dl>
-						<dl>
-							<dt>在线状态：</dt>
-							<dd>
-								<span style="color:green;">线上</span>
-							</dd>
-						</dl>
-						</fieldset>
-					</div>
-			</div>
 			<!-- 性能曲线 -->
 			<div>
 				<div class="pageContent">
 					<div id="capChart" style="height:350px;margin:10px;"></div>
 				</div>
-			</div>
-			<!-- top sql -->
-			<div>
-				<table id="objectList" class="list" width="100%">
-					<thead>
-						<tr>
-							<th width="100">SQL ID</th>
-							<th width="100">SQL代码</th>
-							<th width="100">字节流</th>
-							<th width="100">执行次数</th>
-							<th width="100">每次执行获取字节</th>
-							<th width="100">占比</th>
-							<th width="100">消耗时间</th>
-							<th width="100">CPU占用(%)</th>
-							<th width="100">IO占用(%)</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr target="sid_user" rel="4">
-							<td><a href="/monitor/status/topSql" target="dialog" mask="true" rel="TOP SQL详情" title="TOP SQL详情" height="400">0248951009878</a></td>
-							<td>select output from</td>
-							<td>14654747</td>
-							<td>11</td>
-							<td>1332550.0</td>
-							<td>97.47</td>
-							<td>73.88</td>
-							<td>62.96</td>
-							<td>88.07</td>
-						</tr>
-						<tr target="sid_user" rel="4">
-							<td><a href="/monitor/status/topSql" target="dialog" mask="true" rel="TOP SQL详情" title="TOP SQL详情" height="400">2w56etuexvvb2a</a></td>
-							<td>select * from member_tbl</td>
-							<td>100081</td>
-							<td>25000</td>
-							<td>4.0</td>
-							<td>0.67</td>
-							<td>1.67</td>
-							<td>0.75</td>
-							<td>0.0</td>
-						</tr>
-						<tr target="sid_user" rel="4">
-							<td><a href="/monitor/status/topSql" target="dialog" mask="true" rel="TOP SQL详情" title="TOP SQL详情" height="400">5hjzv1e9flo</a></td>
-							<td>select b.* from (select</td>
-							<td>31022</td>
-							<td>12999</td>
-							<td>2.39</td>
-							<td>0.21</td>
-							<td>2.45</td>
-							<td>0.49</td>
-							<td>0.0</td>
-						</tr>
-						<tr target="sid_user" rel="4">
-							<td><a href="/monitor/status/topSql" target="dialog" mask="true" rel="TOP SQL详情" title="TOP SQL详情" height="400">fhu9234kjga8fz</a></td>
-							<td>select</td>
-							<td>26786</td>
-							<td>5512</td>
-							<td>4.86</td>
-							<td>0.18</td>
-							<td>0.11</td>
-							<td>0.07</td>
-							<td>0.0</td>
-						</tr>
-						<tr target="sid_user" rel="4">
-							<td><a href="/monitor/status/topSql" target="dialog" mask="true" rel="TOP SQL详情" title="TOP SQL详情" height="400">ag6dgjcxnz73</a></td>
-							<td>select</td>
-							<td>25256</td>
-							<td>1</td>
-							<td>25256</td>
-							<td>0.17</td>
-							<td>0.32</td>
-							<td>0.23</td>
-							<td>7.78</td>
-						</tr>
-					</tbody>
-				</table>
 			</div>
 			<!-- 空间 -->
 			<div>
@@ -411,12 +233,12 @@
 		var minDate = getMinDate();
 
 		// 性能曲线
-		var maximum = 38;
+		var maximum = 73;
 		var capData = [];
 	
 	    function getRandomData() {
 	    	var tmp = new Date();
-			tmp.setHours(tmp.getHours()-3);
+			tmp.setHours(tmp.getHours()-72);
 	        if (capData.length) {
 	            capData = capData.slice(1);
 	        }
@@ -430,7 +252,7 @@
 	        var res = [];
 	        for (var i = 0; i < capData.length; ++i) {
 	            res.push([tmp.getTime(), capData[i]]);
-	            tmp.setMinutes(tmp.getMinutes() + 5);
+	            tmp.setHours(tmp.getHours() + 1);
 	        }
 	
 	        return res;
@@ -447,7 +269,7 @@
 		
 		function getMinDate(){
 			var tmp = new Date();
-			tmp.setHours(tmp.getHours()-3);
+			tmp.setHours(tmp.getHours()-72);
 			return tmp;
 		}
 		var plot = $.plot($("#capChart",$box), series, {
@@ -466,7 +288,7 @@
 			},
 			xaxis: {
 				mode: "time",
-				minTickSize: [1, "minute"],
+				minTickSize: [1, "day"],
 				min: minDate.getTime(),
 				max: date.getTime(),
 				twelveHourClock: true

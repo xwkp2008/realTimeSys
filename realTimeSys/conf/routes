@@ -29,6 +29,9 @@ GET		/monitor/configFile/oparamlist	controllers.monitor.configfile.ConfigFile.OP
 POST	/monitor/configFile/oparamlist	controllers.monitor.configfile.ConfigFile.OParamList()
 GET		/monitor/configFile/iparamlist	controllers.monitor.configfile.ConfigFile.IParamList()
 POST	/monitor/configFile/iparamlist	controllers.monitor.configfile.ConfigFile.IParamList()
+GET		/monitor/history/resource		controllers.monitor.history.History.resource()
+GET		/monitor/history/database		controllers.monitor.history.History.database()
+GET		/monitor/history/process		controllers.monitor.history.History.process()
 # 预警功能
 GET		/prewarning/makewarn		controllers.prewarn.PreWarn.makeWarn()
 POST	/prewarning/makewarn		controllers.prewarn.PreWarn.makeWarn()

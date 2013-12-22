@@ -1,0 +1,224 @@
+@(jsonStr: String)
+<div class="pageContent" layoutH="0">
+	<div class="pageContent" layoutH="0">
+		<div class="panel">
+			<h1>监控对象列表</h1>
+			<div>
+				<table id="objectList" class="list" width="100%">
+					<thead>
+						<tr>
+							<th width="100" orderField="num">对象名</th>
+							<th width="100">状态</th>
+							<th width="100">运行时间</th>
+							<th width="100">输入超出预警线时间占比</th>
+							<th width="100">输出超出预警线时间占比</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr target="sid_user" rel="1" class="selected">
+							<td>Alert Cleanup</td>
+							<td style="color:green;">运行中</td>
+							<td class="runtime">15天20小时31分19秒</td>
+							<td>1.7%</td>
+							<td>0%</td>
+						</tr>
+						<tr target="sid_user" rel="2">
+							<td>B系统</td>
+							<td style="color:green;">运行中</td>
+							<td class="runtime">9天7小时44分17秒</td>
+							<td>0.6%</td>
+							<td>0.4%</td>
+						</tr>
+						<tr target="sid_user" rel="3">
+							<td>C系统</td>
+							<td style="color:red;">停止</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="panel">
+		<h1>资源占用率（过去72小时）</h1>
+		<div class="pageContent" >
+			<div>
+				<label><input type="checkbox" id="cpu" checked>CPU</label>
+				<label><input type="checkbox" id="io" checked>IO</label>
+				<label><input type="checkbox" id="storage" checked>硬盘空间</label>
+				<label><input type="checkbox" id="memory" checked>内存</label>
+				<label><input type="checkbox" id="network" checked>网络</label>
+			</div>
+			<div id="placeholder" style="width:96%;height:350px;margin:10px;"></div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+$(function() {
+	var $box = navTab.getCurrentPanel();
+	var maximum = 73;
+	var refresh = true;
+	var data = [[],[],[],[],[]];// cpu io storage memory network
+	var date = new Date();
+	var minDate = getMinDate();
+	/*
+	$("#cpu:checkbox", $box).click(function(){ series[0].lines. = $(this).is(':checked');});
+	$("#io:checkbox", $box).click(function(){ showIO = $(this).is(':checked');});
+	$("#storage:checkbox", $box).click(function(){ showStorage = $(this).is(':checked');});
+	$("#memory:checkbox", $box).click(function(){ showMemory = $(this).is(':checked');});
+	$("#network:checkbox", $box).click(function(){ showNetwork = $(this).is(':checked');});
+	*/
+
+    function getRandomData(index) {
+    	var tmp = new Date();
+		tmp.setHours(tmp.getHours()-72);
+        if (data[index].length) {
+            data[index] = data[index].slice(1);
+        }
+
+        while (data[index].length < maximum) {
+            var previous = data[index].length ? data[index][data[index].length - 1] : 20;
+            var y = previous + Math.random() * 10 - 5;
+            data[index].push(y < 0 ? 0 : y > 100 ? 100 : y);
+        }
+
+        var res = [];
+        for (var i = 0; i < data[index].length; ++i) {
+            res.push([tmp.getTime(), data[index][i]]);
+            tmp.setHours(tmp.getHours() + 1);
+        }
+
+        return res;
+    }
+
+	//
+
+	var series = {
+		"cpu":{
+			data: getRandomData(0),
+			label: "CPU", 
+			lines: {
+				fill: false
+			}
+		},
+		"io":{
+			data: getRandomData(1),
+			label: "IO", 
+			lines: {
+				fill: false
+			}
+		},
+		"storage":{
+			data: getRandomData(2),
+			label: "硬盘空间", 
+			lines: {
+				fill: false
+			}
+		},
+		"memory":{
+			data: getRandomData(3),
+			label: "内存", 
+			lines: {
+				fill: false
+			}
+		},
+		"network":{
+			data: getRandomData(4),
+			label: "网络", 
+			lines: {
+				fill: false
+			}
+		}
+	};
+
+	function getMinDate(){
+		var tmp = new Date();
+		tmp.setHours(tmp.getHours()-72);
+		return tmp;
+	}
+	
+	var overviewPlot;
+	var previousPoint = null, previousLabel = null;
+	$box.find("input").click(plotAccordingToChoices);
+	function plotAccordingToChoices() {
+		var data = [];
+		$box.find("input:checked").each(function () {
+			var key = $(this).attr("id");
+			if (key && series[key]) {
+				data.push(series[key]);
+			}
+		});
+
+		if (data.length > 0) {
+			overviewPlot = $.plot($("#placeholder",$box), data, {
+				grid: {
+					hoverable: true,
+					borderWidth: 1,
+					minBorderMargin: 20,
+					labelMargin: 10,
+					backgroundColor: {
+						colors: ["#fff", "#e4f4f4"]
+					},
+					margin: {
+						top: 8,
+						bottom: 20,
+						left: 0
+					},
+					markings: function(axes) {
+						var markings = [];
+						var xaxis = axes.xaxis;
+						for (var x = Math.floor(xaxis.min); x < xaxis.max; x += xaxis.tickSize * 2) {
+							markings.push({ xaxis: { from: x, to: x + xaxis.tickSize }, color: "rgba(232, 232, 255, 0.2)" });
+						}
+						return markings;
+					}
+				},
+				xaxis: {
+					mode: "time",
+					min: minDate.getTime(),
+					max: date.getTime(),
+					twelveHourClock: false
+				},
+				yaxis: {
+					min: 0,
+					max: 100
+				},
+				legend: {
+					show: true
+				},
+				series: {
+	                lines: {
+	                    show: true
+	                },
+	                points: {
+	                    radius: 3,
+	                    fill: true,
+	                    show: true
+	                }
+	            }
+			});
+			var yaxisLabel = $("<div class='axisLabel yaxisLabel'></div>")
+				.text("使用率(%)")
+				.appendTo($("#placeholder",$box));
+		
+			yaxisLabel.css("margin-top", 5);
+			$("#placeholder",$box).UseTooltip2(previousPoint, previousLabel);
+		}
+	}
+
+	plotAccordingToChoices();
+
+	$("#objectList tbody tr", $box).click(function(){
+		var index = $(this).index();
+		if(index == 2){
+			overviewPlot.setData([]);
+			overviewPlot.draw();
+		}else{
+			plotAccordingToChoices();
+		}
+    });
+});
+</script>

@@ -30,6 +30,33 @@ $.fn.UseTooltip = function (previousPoint, previousLabel) {
                 }
             });
         };
+
+$.fn.UseTooltip2 = function (previousPoint, previousLabel) {
+            $(this).bind("plothover", function (event, pos, item) {
+                if (item) {
+                    if ((previousLabel != item.series.label) || (previousPoint != item.dataIndex)) {
+                        previousPoint = item.dataIndex;
+                        previousLabel = item.series.label;
+                        $("#tooltip").remove();
+ 
+                        var x = item.datapoint[0];
+                        var y = item.datapoint[1];
+ 
+                        var color = item.series.color;
+                        var month = new Date(x).getMonth();
+ 
+                        //console.log(item);
+                        showTooltip(item.pageX,
+                        item.pageY,
+                        color,
+                        "<strong>" + item.series.label + "</strong><br>" + new Date(x).toLocaleString() + " : <strong>" + $.formatNumber(y, { format: "#.##", locale: "us" }) + "</strong>(%)");
+                    }
+                } else {
+                    $("#tooltip").remove();
+                    previousPoint = null;
+                }
+            });
+        };
         
 function showTooltip(x, y, color, contents) {
     $('<div id="tooltip">' + contents + '</div>').css({

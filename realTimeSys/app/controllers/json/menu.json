@@ -126,7 +126,7 @@
                   "id": "id11",
                   "title": "系统资源占用率趋势图",
                   "type": "item",
-                  "url": "#",
+                  "url": "/monitor/history/resource",
                   "desc": "系统资源占用率趋势图",
                   "icon": ""
                 },
@@ -134,7 +134,7 @@
                   "id": "id12",
                   "title": "数据库占用率趋势图",
                   "type": "item",
-                  "url": "#",
+                  "url": "/monitor/history/database",
                   "desc": "数据库占用率趋势图",
                   "icon": ""
                 },
@@ -142,7 +142,7 @@
                   "id": "jczy",
                   "title": "进程资源占用率趋势图",
                   "type": "item",
-                  "url": "#",
+                  "url": "/monitor/history/process",
                   "desc": "进程资源占用率趋势图",
                   "icon": ""
                 }
