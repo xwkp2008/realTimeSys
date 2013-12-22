@@ -1,0 +1,203 @@
+@(jsonStr: String)
+<div class="pageContent" layoutH="0">
+	<div class="panel" minh="100">
+		<h1>监控对象列表</h1>
+		<div>
+			<table class="list" width="100%">
+				<thead>
+					<tr>
+						<th width="50" orderField="name" class="asc">编号</th>
+						<th width="120" orderField="num">访问IP</th>
+						<th width="200">SQL</th>
+						<th>执行时间(s)</th>
+						<th>占用率</th>
+						<th>访问时间</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr target="sid_user" rel="2">
+						<td>1000</td>
+						<td>192.168.2.30</td>
+						<td><a href="/analyse/sqldetail" target="dialog" mask="true" style="color:blue;" rel="SQL详情" title="SQL详情" height="300">select t.currency from ORDER_INFO t</a></td>
+						<td>0.003</td>
+						<td>0.03%</td>
+						<td>2013-12-22 13:25:17</td>
+					</tr>
+					<tr target="sid_user" rel="3">
+						<td>1000</td>
+						<td>192.168.2.30</td>
+						<td><a href="/analyse/sqldetail" target="dialog" mask="true" style="color:blue;" rel="SQL详情" title="SQL详情" height="300">select t.currency from ORDER_INFO t</a></td>
+						<td>0.003</td>
+						<td>0.03%</td>
+						<td>2013-12-22 13:25:17</td>
+					</tr>
+					<tr target="sid_user" rel="6">
+						<td>1000</td>
+						<td>192.168.2.30</td>
+						<td><a href="/analyse/sqldetail" target="dialog" mask="true" style="color:blue;" rel="SQL详情" title="SQL详情" height="300">select t.currency from ORDER_INFO t</a></td>
+						<td>0.003</td>
+						<td>0.03%</td>
+						<td>2013-12-22 13:25:17</td>
+					</tr>
+					<tr target="sid_user" rel="7">
+						<td>1000</td>
+						<td>192.168.2.30</td>
+						<td><a href="/analyse/sqldetail" target="dialog" mask="true" style="color:blue;" rel="SQL详情" title="SQL详情" height="300">select t.currency from ORDER_INFO t</a></td>
+						<td>0.003</td>
+						<td>0.03%</td>
+						<td>2013-12-22 13:25:17</td>
+					</tr>
+					<tr target="sid_user" rel="15">
+						<td>1000</td>
+						<td>192.168.2.30</td>
+						<td><a href="/analyse/sqldetail" target="dialog" mask="true" style="color:blue;" rel="SQL详情" title="SQL详情" height="300">select t.currency from ORDER_INFO t</a></td>
+						<td>0.003</td>
+						<td>0.03%</td>
+						<td>2013-12-22 13:25:17</td>
+					</tr>
+					<tr target="sid_user" rel="16">
+						<td>1000</td>
+						<td>192.168.2.30</td>
+						<td><a href="/analyse/sqldetail" target="dialog" mask="true" style="color:blue;" rel="SQL详情" title="SQL详情" height="300">select t.currency from ORDER_INFO t</a></td>
+						<td>0.003</td>
+						<td>0.03%</td>
+						<td>2013-12-22 13:25:17</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="tabs">
+      <div class="tabsHeader">
+            <div class="tabsHeaderContent">
+                  <ul>
+                        <li class="selected"><a href="#"><span>执行计划分析</span></a></li>
+                        <li><a href="#"><span>表分析</span></a></li>
+                  </ul>
+            </div>
+      </div>
+      <div class="tabsContent">
+      	<div class="pageContent" layoutH="260">
+	        <table class="list" width="100%">
+				<thead>
+					<tr>
+						<th width="100">序号</th>
+						<th width="100">操作</th>
+						<th width="100">对象名称</th>
+						<th width="100">列</th>
+						<th width="100">字节</th>
+						<th width="100">CPU消耗(%)</th>
+						<th width="100">临时空间</th>
+						<th width="100">耗时</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr target="sid_user" rel="4">
+						<td>1</td>
+						<td>SELECT statement</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr target="sid_user" rel="4">
+						<td>2</td>
+						<td>TABLE ACCESS INDEX BY ROWID</td>
+						<td>MEMBER_TBL</td>
+						<td>1</td>
+						<td>86</td>
+						<td>2</td>
+						<td></td>
+						<td>00:00:01</td>
+					</tr>
+					<tr target="sid_user" rel="4">
+						<td>3</td>
+						<td>INDEX RANGE SCAN</td>
+						<td>IND_MEMBER_ID</td>
+						<td>1</td>
+						<td></td>
+						<td>1</td>
+						<td></td>
+						<td>00:00:10</td>
+					</tr>
+					<tr target="sid_user" rel="4">
+						<td>4</td>
+						<td>INDEX RANGE SCAN</td>
+						<td>IDX_MEMBERID</td>
+						<td>1</td>
+						<td></td>
+						<td>1</td>
+						<td></td>
+						<td>00:00:08</td>
+					</tr>
+					<tr target="sid_user" rel="4">
+						<td>5</td>
+						<td>INDEX RANGE SCAN</td>
+						<td>IDX_ID</td>
+						<td>1</td>
+						<td></td>
+						<td>1</td>
+						<td></td>
+						<td>00:00:03</td>
+					</tr>
+					<tr target="sid_user" rel="4">
+						<td>6</td>
+						<td>INDEX RANGE SCAN</td>
+						<td>IDX_ORGID</td>
+						<td>1</td>
+						<td></td>
+						<td>1</td>
+						<td></td>
+						<td>00:00:01</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+        <div class="pageContent" layoutH="260">
+			<table class="list" width="100%">
+				<thead>
+					<tr>
+						<th width="100">TABLE_NAME</th>
+						<th width="100">NUM_ROWS</th>
+						<th width="100">SAMPLE_SIZE</th>
+						<th width="100">BLOCKS</th>
+						<th width="100">同级收集次数</th>
+						<th width="100">运行统计命令</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>ORDER_INFO</td>
+						<td>1005452</td>
+						<td>250023</td>
+						<td>2260</td>
+						<td>1</td>
+						<td><a href="/analyse/sqldetail" target="dialog" mask="true" style="color:blue;" rel="SQL详情" title="SQL详情" height="300">select t.currency from ORDER_INFO t</a></td>
+					</tr>
+					<tr>
+						<td>ORDER_INFO</td>
+						<td>1001225</td>
+						<td>59557</td>
+						<td>2261</td>
+						<td>2</td>
+						<td><a href="/analyse/sqldetail" target="dialog" mask="true" style="color:blue;" rel="SQL详情" title="SQL详情" height="300">select t.currency from ORDER_INFO t</a></td>
+					</tr>
+					<tr>
+						<td>ORDER_INFO</td>
+						<td>1008393</td>
+						<td>58470</td>
+						<td>2262</td>
+						<td>3</td>
+						<td><a href="/analyse/sqldetail" target="dialog" mask="true" style="color:blue;" rel="SQL详情" title="SQL详情" height="300">select t.currency from ORDER_INFO t</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+      </div>
+      <div class="tabsFooter">
+            <div class="tabsFooterContent"></div>
+      </div>
+	</div>
+</div>

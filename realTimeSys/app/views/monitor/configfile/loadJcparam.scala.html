@@ -1,0 +1,64 @@
+@(data:String)
+@import _root_.play.Play
+@import _root_.tng.ark.common.json.JSONUtils 
+
+@headin = {
+<script type="text/javascript" src="@routes.Assets.at("javascripts/staff/staffEdit.js")">
+</script>
+}
+
+@content={
+<form id="jcparamForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="height: 208px; overflow: auto;">
+		<dl>
+			<dt>进程名：</dt>
+			<dd>
+				ORACLE
+			</dd>
+		</dl>
+		<dl>
+			<dt>进程ID：</dt>
+			<dd>
+				1890
+			</dd>
+		</dl>
+		<dl>
+			<dt>所属用户：</dt>
+			<dd>
+				oracle
+			</dd>
+		</dl>
+		<dl>
+			<dt>进程状态：</dt>
+			<dd>
+				S
+			</dd>
+		</dl>
+		<dl>
+			<dt>进程占内存：</dt>
+			<dd>
+				1%
+			</dd>
+		</dl>
+		<dl>
+			<dt>进程占CPU：</dt>
+			<dd>
+				5%
+			</dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+}
+
+@formPage(headin,Html("进程参数详情"),content)

@@ -1,0 +1,60 @@
+@(data:String)
+@import _root_.play.Play
+@import _root_.tng.ark.common.json.JSONUtils 
+
+@headin = {
+<script type="text/javascript" src="@routes.Assets.at("javascripts/prewarn/warnEdit.js")">
+</script>
+}
+
+@content={
+<form id="jcparamEditForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="overflow: auto;">
+		<dl>
+			<dt>进程名：</dt>
+			<dd>
+				<input type="text" id="jcName" name="jcName" class="textInput" value="ORACLE">
+			</dd>
+		</dl>
+		<div class="divider"></div>
+		<dl>
+			<dt>文件名：</dt>
+			<dd>
+				<input type="text" id="wjName" name="wjName" class="textInput" value="ORACLE_RUNNING">
+			</dd>
+		</dl>
+		<dl>
+			<dt>文件路径：</dt>
+			<dd>
+				<input type="text" id="wjPath" name="wjPath" class="textInput" value="/etc/usr/oracle">
+			</dd>
+		</dl>
+		<dl>
+			<dt>描述：</dt>
+			<dd>
+				<textarea style="width: 510px;height: 50px;">ORACLE进程参数文件</textarea>
+			</dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="buttonActive">
+					<div class="buttonContent">
+						<button type="button" onclick="saveEdit('修改成功！');">保存</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+}
+
+@formPage(headin,Html("编辑"),content)

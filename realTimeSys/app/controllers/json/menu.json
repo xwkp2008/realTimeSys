@@ -110,7 +110,7 @@
                   "id": "id9",
                   "title": "进程参数",
                   "type": "item",
-                  "url": "#",
+                  "url": "/monitor/configFile/jcparamlist",
                   "desc": "进程参数",
                   "icon": ""
                 }
@@ -160,14 +160,14 @@
               "id":"sqlcj",
               "title": "SQL记录采集",
               "type": "item",
-              "url":"#",
+              "url":"/analyse/sqlcollect",
               "desc": "SQL记录采集",
               "icon": ""
             },
             {
               "id":"sqlyh",
               "title": "SQL优化分析",
-              "url":"#",
+              "url":"/analyse/sqlanalyse",
               "type": "item",
               "desc": "SQL优化分析",
               "icon": ""
@@ -326,7 +326,7 @@
                   "id": "id31",
                   "title": "针对有代理采集软件的系统",
                   "type": "item",
-                  "url": "#",
+                  "url": "/system/jkxtgl/cjoperalist",
                   "desc": "针对有代理采集软件的系统",
                   "icon": ""
                 },
@@ -334,16 +334,8 @@
                   "id": "id32",
                   "title": "配置IP和权限用户",
                   "type": "item",
-                  "url": "#",
+                  "url": "/system/jkxtgl/qxyhlist",
                   "desc": "配置IP和权限用户",
-                  "icon": ""
-                },
-                {
-                  "id": "id33",
-                  "title": "配置授权用户",
-                  "type": "item",
-                  "url": "#",
-                  "desc": "配置授权用户",
                   "icon": ""
                 }
               ]
