@@ -1,0 +1,46 @@
+@(data:String)
+@import _root_.play.Play
+@import _root_.tng.ark.common.json.JSONUtils 
+
+@headin = {
+
+}
+
+@content={
+<form id="fwjcAddForm" method="post" action="/" class="pageForm" validated="validated">
+	<div class="pageFormContent" layouth="97" style="height: 208px; overflow: auto;">
+		<dl>
+			<dt>进程名：</dt>
+			<dd>
+				<input type="text" id="jcName" name="jcName" class="textInput">
+			</dd>
+		</dl>
+		<dl>
+			<dt>路径：</dt>
+			<dd>
+				<input type="text" id="path" name="path" class="textInput"><span class="info">存放进程ID的文件路径</span>
+			</dd>
+		</dl>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li>
+				<div class="buttonActive">
+					<div class="buttonContent">
+						<button type="button" onclick="save('进程对象添加成功');">添加</button>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="button">
+					<div class="buttonContent">
+						<button type="button" class="close">关闭</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</form>
+}
+
+@formPage(headin,Html("添加进程对象"),content)

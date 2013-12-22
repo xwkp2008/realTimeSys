@@ -1,0 +1,132 @@
+{
+  "url": "/system/jkxtgl/fwjclist",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+    {
+      "text": "新增",
+      "class": "add",
+      "target": "dialog",
+      "mask":true,
+      "width":"400",
+      "height":"260",
+      "title": "添加进程对象",
+      "href": "/system/jkxtgl/fwjcadd"
+    },
+    {
+      "text": "修改",
+      "class": "edit",
+      "target": "dialog",
+      "mask":true,
+      "width":"400",
+      "height":"260",
+      "title": "进程对象资料编辑",
+      "href": "/system/jkxtgl/fwjcedit?{rid}",
+      "warn": "请选择一个要修改的记录。"
+    },
+    {
+      "text": "删除",
+      "class": "delete",
+      "target": "ajaxTodo",
+      "title": "是否要删除该记录？删除以后将不可恢复。",
+      "href": "/ajaxDone?id={rid}",
+      "warn": "请选择一个要删除的记录。"
+    }
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "roleId",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+    {
+      "id": "jcName",
+      "name": "进程名",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"jcName"
+      }
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": false
+    },
+    {
+      "id": "jcName",
+      "name": "进程名",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "user",
+      "name": "用户名",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "pid",
+      "name": "进程号",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "ppid",
+      "name": "父进程号",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "size",
+      "name": "内存大小(Kbytes)",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "cmd",
+      "name": "执行命令的简单格式",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "stat",
+      "name": "进程状态",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"0001",
+  		"jcName":"ORACLE",
+  		"user":"oracleuser",
+  		"pid":"1920",
+  		"ppid":"1",
+  		"size":"10000",
+  		"cmd":"khelper",
+  		"stat":"S"
+  	},
+  	{
+  		"rid":"0002",
+  		"jcName":"JAVA",
+  		"user":"javauser",
+  		"pid":"1950",
+  		"ppid":"1",
+  		"size":"1024",
+  		"cmd":"javac",
+  		"stat":"S"
+  	}
+  ]
+}

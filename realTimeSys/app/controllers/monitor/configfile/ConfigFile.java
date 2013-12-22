@@ -60,4 +60,29 @@ public class ConfigFile extends Controller{
 		}
 		return ok(list.render(jsonStr));
     }
+
+	// 进程参数列表
+	public static Result jcparamList() {
+		File jsonFile = Play.application().getFile(
+				"/app/controllers/json/jcparamList.json");
+		String jsonStr = "{}";
+		try {
+			jsonStr = FileUtils.readFileToString(jsonFile);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ok(list.render(jsonStr));
+    }
+	//新增进程参数
+	public static Result jcparamAdd(){
+		return ok(views.html.monitor.configfile.jcparamAdd.render(""));
+	}
+	//编辑进程参数
+	public static Result jcparamEdit(){
+		return ok(views.html.monitor.configfile.jcparamEdit.render(""));
+	}
+	//加载进程参数
+	public static Result loadJcparam(){
+		return ok(views.html.monitor.configfile.loadJcparam.render(""));
+	}
 }

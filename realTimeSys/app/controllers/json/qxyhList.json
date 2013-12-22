@@ -1,0 +1,121 @@
+{
+  "url": "/system/jkxtgl/qxyhlist",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+    {
+      "text": "新增",
+      "class": "add",
+      "target": "dialog",
+      "mask":true,
+      "width":"500",
+      "height":"260",
+      "title": "新增",
+      "href": "/system/jkxtgl/qxyhadd"
+    },
+    {
+      "text": "修改",
+      "class": "edit",
+      "target": "dialog",
+      "mask":true,
+      "width":"500",
+      "height":"260",
+      "title": "编辑",
+      "href": "/system/jkxtgl/qxyhedit?{rid}",
+      "warn": "请选择一条要编辑的记录。"
+    },
+    {
+      "text": "删除",
+      "class": "delete",
+      "target": "ajaxTodo",
+      "title": "是否要删除该记录？删除以后将不可恢复。",
+      "href": "/ajaxDone?id={rid}",
+      "warn": "请选择一条要删除的记录。"
+    }
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "roleId",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+    
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": false
+    },
+    {
+      "id": "ip",
+      "name": "允许的ip",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "userName",
+      "name": "用户名",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"0001",
+  		"ip":"192.168.1.10",
+  		"type":"oracle",
+  		"userName":"oraclesys"
+  	},
+  	{
+  		"rid":"0002",
+  		"type":"oracle",
+  		"ip":"192.168.1.11",
+  		"userName":"oracledb"
+  	},
+  	{
+  		"rid":"0003",
+  		"ip":"192.168.2.100",
+  		"type":"infomix",
+  		"userName":"infomix"
+  	},
+  	{
+  		"rid":"0004",
+  		"ip":"192.168.1.101",
+  		"type":"infomix",
+  		"userName":"infomixtest"
+  	},
+  	{
+  		"rid":"0005",
+  		"ip":"192.168.1.*",
+  		"type":"zhuji",
+  		"userName":"root"
+  	},
+  	{
+  		"rid":"0006",
+  		"ip":"192.168.2.*",
+  		"type":"zhuji",
+  		"userName":"root"
+  	},
+  	{
+  		"rid":"0007",
+  		"ip":"192.168.1.200",
+  		"type":"oracle",
+  		"userName":"oracletest"
+  	}
+  	,
+  	{
+  		"rid":"0008",
+  		"ip":"192.168.1.*",
+  		"type":"infomix",
+  		"userName":"infomixroot"
+  	}
+  ]
+}

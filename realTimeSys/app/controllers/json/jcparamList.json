@@ -1,0 +1,126 @@
+{
+  "url": "/monitor/configFile/jcparamlist",
+  "checkbox": false,
+  "pageAttrs": {
+    "headHeight": "50",
+    "bodyLayoutH": "115",
+    "id": ""
+  },
+  "operation": [
+    {
+      "text": "新增",
+      "class": "add",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"300",
+      "title": "添加",
+      "href": "/monitor/configFile/jcparamadd"
+    },
+    {
+      "text": "修改",
+      "class": "edit",
+      "target": "dialog",
+      "mask":true,
+      "width":"800",
+      "height":"300",
+      "title": "编辑",
+      "href": "/monitor/configFile/jcparamedit?{rid}",
+      "warn": "请选择一个要修改的记录。"
+    },
+    {
+      "text": "删除",
+      "class": "delete",
+      "target": "ajaxTodo",
+      "title": "是否要删除该记录？删除以后将不可恢复。",
+      "href": "/ajaxDone?id={rid}",
+      "warn": "请选择一个要删除的记录。"
+    },
+    {
+      "text": "加载进程",
+      "class": "icon",
+      "target": "dialog",
+      "mask":true,
+      "width":"400",
+      "height":"360",
+      "title": "加载进程参数",
+      "href": "/monitor/configFile/loadjcparam?{rid}",
+      "warn": "请选择一个要加载的进程。"
+    }
+  ],
+  "pagerInfo": {
+    "pageNum": "1",
+    "total": "56",
+    "numPerPage": "20",
+    "orderField": "roleId",
+    "orderDirection": "desc"
+  },
+  "searchList": [
+    {
+      "id": "jcName",
+      "name": "进程名",
+      "tag": "input",
+      "display":true,
+      "value":"",
+      "compare":"like",
+      "attrs":{
+      	"name":"jcName"
+      }
+    }
+  ],
+  "cols": [
+    {
+      "id": "rid",
+      "name": "编号",
+      "orderField": true,
+      "display": true
+    },
+    {
+      "id": "jcName",
+      "name": "进程名",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "wjm",
+      "name": "文件名",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "wjlj",
+      "name": "文件路径",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "ms",
+      "name": "描述",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "cjsj",
+      "name": "创建时间",
+      "orderField": false,
+      "display": true
+    },
+    {
+      "id": "zt",
+      "name": "状态",
+      "orderField": false,
+      "display": true
+    }
+  ],
+  "data": [
+  	{
+  		"rid":"0001",
+  		"jcName":"ORACLE",
+  		"wjm":"ORACLE_RUNNING",
+  		"wjlj":"/etc/usr/oracle",
+  		"ms":"ORACLE进程参数文件",
+  		"cjsj":"2013-12-22 12:06:05",
+  		"zt":"有效"
+  	}
+  ]
+}

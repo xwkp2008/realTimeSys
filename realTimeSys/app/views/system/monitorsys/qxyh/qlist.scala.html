@@ -13,9 +13,6 @@ $(function(){
 		advSearchBtn.hide();
 	}
 });
-function cjOperaList(){
-	navTab.reload("/system/jkxtgl/cjoperalist/reload");
-}
 </script>
 }
 
@@ -36,11 +33,6 @@ function cjOperaList(){
 <form id="pagerForm" method="post" action="@(JSONUtils.getStr(data, "url"))">
 	@getPager(data)
 </form>
-<div class="pageHeader">
-	<form rel="pagerForm" onsubmit="return dwzSearch(this@if(JSONUtils.getBln(data, "$.pagerInfo.dialog")){,'dialog'});" action="@(JSONUtils.getStr(data, "url"))" method="post">
-		@dwzListHeadTag(data)
-	</form>
-</div>
 <div class="pageContent">
 	@dwzListBodyTag(data)
 	@dwzListPagerTag(data)
