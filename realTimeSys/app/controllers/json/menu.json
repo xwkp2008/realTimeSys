@@ -160,7 +160,7 @@
               "id":"sqlcj",
               "title": "SQL记录采集",
               "type": "item",
-              "url":"#",
+              "url":"/analyse/sqlcollect",
               "desc": "SQL记录采集",
               "icon": ""
             },

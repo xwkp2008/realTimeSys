@@ -1,0 +1,15 @@
+@(jsonStr: String)
+<div class="pageContent"  layoutH="0" style="display:block;">
+<h2 class="contentTitle">SQL详情</h2>
+<textarea style="width:95%;height:200px" class="textInput">
+select o.order_id,
+       s.arrival,
+       s.departure,
+       decode((select p.pay_status from pay_info p where p.pay_id=o.pay_id), 1, '支付成功','等待支付') pay_status,
+       to_char(s.takeoff_time,'yyyy-MM-dd hh24:mi') takeoff_time
+  from ORDER_INFO o, FLIGHT_ITEM_INFO f, SEGMENT_INFO s
+ where o.order_id = f.order_id
+   and s.item_id = f.item_id
+   and o.userid='qqcom'
+</textarea>
+</div>

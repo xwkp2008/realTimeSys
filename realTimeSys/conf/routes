@@ -35,6 +35,10 @@ GET		/monitor/configFile/jcparamadd	controllers.monitor.configfile.ConfigFile.jc
 GET		/monitor/configFile/jcparamedit	controllers.monitor.configfile.ConfigFile.jcparamEdit()
 GET		/monitor/configFile/loadjcparam	controllers.monitor.configfile.ConfigFile.loadJcparam()
 
+#分析功能
+GET		/analyse/sqlcollect		controllers.analyse.Analyse.sqlCollect()
+GET		/analyse/sqldetail		controllers.analyse.Analyse.sqlDetail()
+
 # 预警功能
 GET		/prewarning/makewarn		controllers.prewarn.PreWarn.makeWarn()
 POST	/prewarning/makewarn		controllers.prewarn.PreWarn.makeWarn()
