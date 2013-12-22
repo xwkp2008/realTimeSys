@@ -63,4 +63,9 @@ public class RunningStatus extends Controller {
 		return ok(database.render(""));
     }
 	
+	// 数据库状态一览
+	public static Result topSql() {
+		return ok(topSql.render(""));
+    }
+	
 }
