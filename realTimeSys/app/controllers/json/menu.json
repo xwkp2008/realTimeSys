@@ -167,7 +167,7 @@
             {
               "id":"sqlyh",
               "title": "SQL优化分析",
-              "url":"#",
+              "url":"/analyse/sqlanalyse",
               "type": "item",
               "desc": "SQL优化分析",
               "icon": ""

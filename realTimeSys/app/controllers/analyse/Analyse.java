@@ -15,4 +15,9 @@ public class Analyse extends Controller {
 		return ok(views.html.analyse.sqlDetail.render(""));
     }
 	
+	// sql优化分析
+	public static Result sqlAnalyse() {
+		return ok(views.html.analyse.sqlAnalyse.render(""));
+    }
+	
 }
