@@ -121,49 +121,33 @@
   	{
   		"rid":"0001",
   		"roleId":"10000",
-  		"roleName":"管理员",
+  		"roleName":"超级管理员",
   		"desc":"超级管理员角色",
-  		"createTime":"2013-12-14 11:57:45",
+  		"createTime":"2013-12-16",
   		"status":"有效"
   	},
   	{
   		"rid":"0001",
-  		"roleId":"10000",
+  		"roleId":"10002",
   		"roleName":"管理员",
-  		"desc":"超级管理员角色",
-  		"createTime":"2013-12-14 11:57:45",
+  		"desc":"管理员角色",
+  		"createTime":"2013-12-16",
   		"status":"有效"
   	},
   	{
   		"rid":"0001",
-  		"roleId":"10000",
-  		"roleName":"管理员",
-  		"desc":"超级管理员角色",
-  		"createTime":"2013-12-14 11:57:45",
+  		"roleId":"10003",
+  		"roleName":"数据维护员",
+  		"desc":"数据维护员角色",
+  		"createTime":"2013-12-15",
   		"status":"有效"
   	},
   	{
   		"rid":"0001",
-  		"roleId":"10000",
-  		"roleName":"管理员",
-  		"desc":"超级管理员角色",
-  		"createTime":"2013-12-14 11:57:45",
-  		"status":"有效"
-  	},
-  	{
-  		"rid":"0001",
-  		"roleId":"10000",
-  		"roleName":"管理员",
-  		"desc":"超级管理员角色",
-  		"createTime":"2013-12-14 11:57:45",
-  		"status":"有效"
-  	},
-  	{
-  		"rid":"0001",
-  		"roleId":"10000",
-  		"roleName":"管理员",
-  		"desc":"超级管理员角色",
-  		"createTime":"2013-12-14 11:57:45",
+  		"roleId":"10001",
+  		"roleName":"运维人员",
+  		"desc":"运维人员角色",
+  		"createTime":"2013-12-17",
   		"status":"有效"
   	}
   ]

@@ -147,7 +147,7 @@
       "xn": "<span style='color: white;background-color: gray;margin: 2px;padding: 2px;'>已关闭</span>"
     },
     {
-      "rid": "G00001",
+      "rid": "G00002",
       "sysName": "10g正式库",
       "sysType": "<b>Oracle</b>",
       "ip": "192.168.1.21",

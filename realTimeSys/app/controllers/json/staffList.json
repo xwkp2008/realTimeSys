@@ -205,55 +205,55 @@
   	{
   		"rid":"0001",
   		"userAcct":"10010",
-  		"userName":"张三",
+  		"userName":"张风",
   		"userPhone":"18512345678",
   		"org":"技术部",
   		"group":"管理组",
-  		"role":"管理员"
+  		"role":"超级管理员"
   	},
   	{
   		"rid":"0001",
-  		"userAcct":"10010",
-  		"userName":"张三",
-  		"userPhone":"18512345678",
-  		"org":"技术部",
+  		"userAcct":"10011",
+  		"userName":"张青灵",
+  		"userPhone":"18900875678",
+  		"org":"运维部",
   		"group":"运维组",
-  		"role":"管理员"
+  		"role":"运维人员"
   	},
   	{
   		"rid":"0001",
-  		"userAcct":"10010",
-  		"userName":"张三",
-  		"userPhone":"18512345678",
-  		"org":"技术部",
-  		"group":"运维组",
-  		"role":"管理员"
-  	},
-  	{
-  		"rid":"0001",
-  		"userAcct":"10010",
-  		"userName":"张三",
-  		"userPhone":"18512345678",
-  		"org":"技术部",
-  		"group":"运维组",
-  		"role":"管理员"
-  	},
-  	{
-  		"rid":"0001",
-  		"userAcct":"10010",
-  		"userName":"张三",
-  		"userPhone":"18512345678",
+  		"userAcct":"10012",
+  		"userName":"林清",
+  		"userPhone":"13512390874",
   		"org":"技术部",
   		"group":"技术组",
   		"role":"管理员"
   	},
   	{
   		"rid":"0001",
-  		"userAcct":"10010",
-  		"userName":"张三",
-  		"userPhone":"18512345678",
+  		"userAcct":"10013",
+  		"userName":"陈三",
+  		"userPhone":"13002843332",
+  		"org":"技术部",
+  		"group":"运维组",
+  		"role":"数据维护员"
+  	},
+  	{
+  		"rid":"0001",
+  		"userAcct":"10014",
+  		"userName":"冯天赐",
+  		"userPhone":"13512139303",
   		"org":"技术部",
   		"group":"技术组",
+  		"role":"管理员"
+  	},
+  	{
+  		"rid":"0001",
+  		"userAcct":"10015",
+  		"userName":"刘东",
+  		"userPhone":"13899087765",
+  		"org":"运维部",
+  		"group":"运维组",
   		"role":"管理员"
   	}
   ]

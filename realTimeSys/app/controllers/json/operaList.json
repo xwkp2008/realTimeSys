@@ -176,12 +176,12 @@
   	},
   	{
   		"rid":"G00002",
-  		"sysName":"vm-rac1-11g",
+  		"sysName":"vm-unix-10g",
   		"sysType":"<b>Unix</b>",
   		"ip":"192.168.1.10",
-  		"nh":"2.6.18-128.i5",
-  		"bb":"Red Hat Enterprise Linux Server relase 6.3",
-  		"nc":"8",
+  		"nh":"2.6.18-256.i7",
+  		"bb":"Unix solaris 11.1",
+  		"nc":"16",
   		"cpu":"3.12/2/QEMU Virtual CPU version(cpu64)",
   		"status":"<span style='color: white;background-color: gray;margin: 2px;padding: 2px;'>线下</span>",
   		"xn":"<span style='color: white;background-color: green;margin: 2px;padding: 2px;'>已开启</span>"

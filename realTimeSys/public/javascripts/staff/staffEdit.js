@@ -1,9 +1,9 @@
-function save(){
+function saveStaff(){
 	$.pdialog.closeCurrent();
-	alertMsg.correct("人员新增成功。");
+	alertMsg.correct("员工新增成功。");
 }
 
-function saveEdit(){
+function saveEditStaff(){
 	$.pdialog.closeCurrent();
-	alertMsg.correct("人员资料修改成功。");
+	alertMsg.correct("员工修改成功。");
 }
