@@ -324,10 +324,10 @@
                 },
                 {
                   "id": "id31",
-                  "title": "针对有代理采集软件的系统",
+                  "title": "代理软件探测",
                   "type": "item",
                   "url": "/system/jkxtgl/cjoperalist",
-                  "desc": "针对有代理采集软件的系统",
+                  "desc": "代理软件探测",
                   "icon": ""
                 },
                 {

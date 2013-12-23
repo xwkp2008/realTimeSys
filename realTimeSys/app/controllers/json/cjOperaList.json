@@ -10,8 +10,12 @@
     {
       "text": "探测",
       "class": "icon",
-      "title": "重新探测",
-      "href": "javascript:cjOperaList()"
+      "target": "dialog",
+      "mask":true,
+      "width":"400",
+      "height":"230",
+      "title": "探测代理软件",
+      "href": "/system/jkxtgl/cjoperaadd"
     }
   ],
   "pagerInfo": {
