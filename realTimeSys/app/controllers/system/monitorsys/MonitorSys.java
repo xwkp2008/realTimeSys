@@ -95,6 +95,11 @@ public class MonitorSys extends Controller{
 		return ok(czxtInfo.render(""));
 	}
 	
+	//当前操作系统信息
+	public static Result cjOperaAdd(){
+		return ok(views.html.system.monitorsys.qxyh.cjOperaAdd.render(""));
+	}
+	
 	//采集软件的系统
 	public static Result cjOperaList(String reload) {
 		String jsonFilePath = "/app/controllers/json/cjOperaList.json";
