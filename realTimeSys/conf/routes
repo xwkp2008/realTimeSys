@@ -48,8 +48,8 @@ POST	/prewarning/makewarn		controllers.prewarn.PreWarn.makeWarn()
 GET		/prewarning/editWarn		controllers.prewarn.PreWarn.editWarn()
 GET		/prewarning/warninfolist	controllers.prewarn.PreWarn.warnInfoList()
 POST	/prewarning/warninfolist	controllers.prewarn.PreWarn.warnInfoList()
-GET		/prewarning/warnloglist	controllers.prewarn.PreWarn.warnLogList()
-POST	/prewarning/warnloglist	controllers.prewarn.PreWarn.warnLogList()
+GET		/prewarning/warnloglist		controllers.prewarn.PreWarn.warnLogList()
+POST	/prewarning/warnloglist		controllers.prewarn.PreWarn.warnLogList()
 GET		/prewarning/warnlogdetail		controllers.prewarn.PreWarn.warnLogDetail()
 
 # 专家策略

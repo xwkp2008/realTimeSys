@@ -117,38 +117,38 @@
   "data": [
   	{
   		"rid":"0001",
-  		"logType":"<span style='color:#33cc00'>内存</span>",
-  		"logLevel":"<span style='color:#33cc00'>WARN</span>",
-  		"desc":"<span style='color:#33cc00'>进程ID为5902的进程占用内存达70%，请及时检查！</span>",
-  		"createTime":"<span style='color:#33cc00'>2013-12-15 11:58:40</span>"
+  		"logType":"内存",
+  		"logLevel":"<span class='yellow'>WARN</span>",
+  		"desc":"进程ID：5902。描述：进程占用内存超过70%。",
+  		"createTime":"2013-12-20 23:12:36"
   	},
   	{
   		"rid":"0002",
-  		"logType":"<span style='color:#ff0000'>IO</span>",
-  		"logLevel":"<span style='color:#ff0000'>ERROR</span>",
-  		"desc":"<span style='color:#ff0000'>读取文件config.json时出现IO错误，请立即检查！</span>",
-  		"createTime":"<span style='color:#ff0000'>2013-12-15 11:58:40</span>"
+  		"logType":"IO",
+  		"logLevel":"<span class='red'>ERROR</span>",
+  		"desc":"读取文件config.json时出现IO错误。",
+  		"createTime":"2013-12-18 09:13:25"
   	},
   	{
   		"rid":"0003",
-  		"logType":"<span style='color:#33cc00'>内存</span>",
-  		"logLevel":"<span style='color:#33cc00'>WARN</span>",
-  		"desc":"<span style='color:#33cc00'>进程ID为5902的进程占用内存达70%，请及时检查！</span>",
-  		"createTime":"<span style='color:#33cc00'>2013-12-15 11:58:40</span>"
+  		"logType":"内存",
+  		"logLevel":"<span class='yellow'>WARN</span>",
+  		"desc":"进程ID：5902。描述：进程占用内超过70%。",
+  		"createTime":"2013-12-17 15:21:53"
   	},
   	{
   		"rid":"0005",
-  		"logType":"<span style='color:#ff0000'>IO</span>",
-  		"logLevel":"<span style='color:#ff0000'>ERROR</span>",
-  		"desc":"<span style='color:#ff0000'>读取文件config.json时出现IO错误，请立即检查！</span>",
-  		"createTime":"<span style='color:#ff0000'>2013-12-15 11:59:40</span>"
+  		"logType":"IO",
+  		"logLevel":"<span class='red'>ERROR</span>",
+  		"desc":"进程ID：1770。描述：IO负载过高（1580KB/s）。",
+  		"createTime":"2013-12-17 22:56:03"
   	},
   	{
   		"rid":"0006",
-  		"logType":"<span style='color:#ff0000'>IO</span>",
-  		"logLevel":"<span style='color:#ff0000'>ERROR</span>",
-  		"desc":"<span style='color:#ff0000'>读取文件config.json时出现IO错误，请立即检查！</span>",
-  		"createTime":"<span style='color:#ff0000'>2013-12-15 11:59:50</span>"
+  		"logType":"硬盘存储",
+  		"logLevel":"<span class='red'>ERROR</span>",
+  		"desc":"datadbs空间已满。",
+  		"createTime":"2013-12-15 11:59:50"
   	}
   ]
 }

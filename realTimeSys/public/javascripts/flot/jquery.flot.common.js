@@ -49,7 +49,7 @@ $.fn.UseTooltip2 = function (previousPoint, previousLabel) {
                         showTooltip(item.pageX,
                         item.pageY,
                         color,
-                        "<strong>" + item.series.label + "</strong><br>" + new Date(x).toLocaleString() + " : <strong>" + $.formatNumber(y, { format: "#.##", locale: "us" }) + "</strong>(%)");
+                        "<strong>" + item.series.label + "</strong><br>" + new Date(x).toLocaleString() + " : <strong>" + $.formatNumber(y, { format: "#.##", locale: "us" }) + "</strong>%");
                     }
                 } else {
                     $("#tooltip").remove();

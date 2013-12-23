@@ -1,24 +1,4 @@
 @(jsonStr: String)
-<style>
-	span.green{
-		background: rgb(103, 211, 103);
-		padding: 1px 4px;
-		color: white;
-		border-radius: 2px;
-	}
-	span.yellow{
-		background: rgb(253, 190, 26);
-		padding: 1px 4px;
-		color: white;
-		border-radius: 2px;
-	}
-	span.grey{
-		background: rgb(177, 177, 177);
-		padding: 1px 4px;
-		color: white;
-		border-radius: 2px;
-	}
-</style>
 <div class="pageContent"  layoutH="0" style="display:block;">
 	<div class="panel">
 			<h1>数据库列表</h1>
@@ -304,16 +284,6 @@
 		var yaxisLabel = $("<div class='axisLabel yaxisLabel'></div>")
 			.text("(K)")
 			.appendTo($("#capChart",$box));
-	
 		yaxisLabel.css("margin-top", 5);
-	
-		/*setInterval(function updateRandom() {
-			date = new Date();
-			minDate = getMinDate();
-			series[0].data = getRandomData(data);
-			plot.setData(series);
-			plot.draw();
-		}, 1000);
-		*/
 	});
 </script>

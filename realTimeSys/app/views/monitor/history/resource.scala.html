@@ -23,14 +23,14 @@
 							<td>0%</td>
 						</tr>
 						<tr target="sid_user" rel="2">
-							<td>B系统</td>
+							<td>Intelligent analysis system(IAS)</td>
 							<td style="color:green;">运行中</td>
 							<td class="runtime">9天7小时44分17秒</td>
 							<td>0.6%</td>
 							<td>0.4%</td>
 						</tr>
 						<tr target="sid_user" rel="3">
-							<td>C系统</td>
+							<td>Solaris11_x64</td>
 							<td style="color:red;">停止</td>
 							<td></td>
 							<td></td>
@@ -50,7 +50,7 @@
 				<label><input type="checkbox" id="memory" checked>内存</label>
 				<label><input type="checkbox" id="network" checked>网络</label>
 			</div>
-			<div id="placeholder" style="width:96%;height:350px;margin:10px;"></div>
+			<div id="placeholder" style="width:96%;height:280px;margin:10px;"></div>
 		</div>
 	</div>
 </div>
@@ -60,79 +60,143 @@
 $(function() {
 	var $box = navTab.getCurrentPanel();
 	var maximum = 73;
-	var refresh = true;
-	var data = [[],[],[],[],[]];// cpu io storage memory network
+	var data = [];
 	var date = new Date();
 	var minDate = getMinDate();
-	/*
-	$("#cpu:checkbox", $box).click(function(){ series[0].lines. = $(this).is(':checked');});
-	$("#io:checkbox", $box).click(function(){ showIO = $(this).is(':checked');});
-	$("#storage:checkbox", $box).click(function(){ showStorage = $(this).is(':checked');});
-	$("#memory:checkbox", $box).click(function(){ showMemory = $(this).is(':checked');});
-	$("#network:checkbox", $box).click(function(){ showNetwork = $(this).is(':checked');});
-	*/
 
-    function getRandomData(index) {
+    function getRandomData() {
     	var tmp = new Date();
 		tmp.setHours(tmp.getHours()-72);
-        if (data[index].length) {
-            data[index] = data[index].slice(1);
+        if (data.length) {
+            data = data.slice(1);
         }
 
-        while (data[index].length < maximum) {
-            var previous = data[index].length ? data[index][data[index].length - 1] : 20;
+        while (data.length < maximum) {
+            var previous = data.length ? data[data.length - 1] : 20;
             var y = previous + Math.random() * 10 - 5;
-            data[index].push(y < 0 ? 0 : y > 100 ? 100 : y);
+            data.push(y < 0 ? 0 : y > 100 ? 100 : y);
         }
 
         var res = [];
-        for (var i = 0; i < data[index].length; ++i) {
-            res.push([tmp.getTime(), data[index][i]]);
+        for (var i = 0; i < data.length; ++i) {
+            res.push([tmp.getTime(), data[i]]);
             tmp.setHours(tmp.getHours() + 1);
         }
-
+        data = [];
         return res;
     }
 
 	//
 
-	var series = {
+	var seriesArr = [{
 		"cpu":{
-			data: getRandomData(0),
+			data: getRandomData(),
 			label: "CPU", 
 			lines: {
 				fill: false
 			}
 		},
 		"io":{
-			data: getRandomData(1),
+			data: getRandomData(),
 			label: "IO", 
 			lines: {
 				fill: false
 			}
 		},
 		"storage":{
-			data: getRandomData(2),
+			data: getRandomData(),
 			label: "硬盘空间", 
 			lines: {
 				fill: false
 			}
 		},
 		"memory":{
-			data: getRandomData(3),
+			data: getRandomData(),
 			label: "内存", 
 			lines: {
 				fill: false
 			}
 		},
 		"network":{
-			data: getRandomData(4),
+			data: getRandomData(),
 			label: "网络", 
 			lines: {
 				fill: false
 			}
 		}
-	};
+	},{
+		"cpu":{
+			data: getRandomData(),
+			label: "CPU", 
+			lines: {
+				fill: false
+			}
+		},
+		"io":{
+			data: getRandomData(),
+			label: "IO", 
+			lines: {
+				fill: false
+			}
+		},
+		"storage":{
+			data: getRandomData(),
+			label: "硬盘空间", 
+			lines: {
+				fill: false
+			}
+		},
+		"memory":{
+			data: getRandomData(),
+			label: "内存", 
+			lines: {
+				fill: false
+			}
+		},
+		"network":{
+			data: getRandomData(),
+			label: "网络", 
+			lines: {
+				fill: false
+			}
+		}
+	},{
+		"cpu":{
+			data: [],
+			label: "CPU", 
+			lines: {
+				fill: false
+			}
+		},
+		"io":{
+			data: [],
+			label: "IO", 
+			lines: {
+				fill: false
+			}
+		},
+		"storage":{
+			data: [],
+			label: "硬盘空间", 
+			lines: {
+				fill: false
+			}
+		},
+		"memory":{
+			data: [],
+			label: "内存", 
+			lines: {
+				fill: false
+			}
+		},
+		"network":{
+			data: [],
+			label: "网络", 
+			lines: {
+				fill: false
+			}
+		}
+	}];
 
 	function getMinDate(){
 		var tmp = new Date();
@@ -142,18 +206,18 @@ $(function() {
 	
 	var overviewPlot;
 	var previousPoint = null, previousLabel = null;
-	$box.find("input").click(plotAccordingToChoices);
-	function plotAccordingToChoices() {
-		var data = [];
+	function plotAccordingToChoices(series) {
+		var dataSet = [];
+		var checkIDs = "";
 		$box.find("input:checked").each(function () {
 			var key = $(this).attr("id");
+			checkIDs += key + "-";
 			if (key && series[key]) {
-				data.push(series[key]);
+				dataSet.push(series[key]);
 			}
 		});
-
-		if (data.length > 0) {
-			overviewPlot = $.plot($("#placeholder",$box), data, {
+		//alert(dataSet.length);
+			overviewPlot = $.plot($("#placeholder",$box), dataSet, {
 				grid: {
 					hoverable: true,
 					borderWidth: 1,
@@ -206,19 +270,15 @@ $(function() {
 		
 			yaxisLabel.css("margin-top", 5);
 			$("#placeholder",$box).UseTooltip2(previousPoint, previousLabel);
-		}
 	}
 
-	plotAccordingToChoices();
+	plotAccordingToChoices(seriesArr[0]);
 
 	$("#objectList tbody tr", $box).click(function(){
-		var index = $(this).index();
-		if(index == 2){
-			overviewPlot.setData([]);
-			overviewPlot.draw();
-		}else{
-			plotAccordingToChoices();
-		}
+			plotAccordingToChoices(seriesArr[$(this).index()]);
     });
+	$box.find("input").click(function(){
+		plotAccordingToChoices(seriesArr[0]);
+	});
 });
 </script>
